@@ -37,12 +37,64 @@ class MapConroller: UIViewController, CLLocationManagerDelegate {
         marker.snippet = "Okinawa"
         marker.map = mapView
         
+        //MyPositionMarker(mylocation: mapView.myLocation!)
+        
+
+        
     }
+    
     
     override func viewDidLoad() {
         
-
+        
     }
+    /*
+    func MyPositionMarker(mylocation: CLLocation){
+        
+        if let _mylocation = mylocation {
+            print("User's location: \(mylocation)")
+        } else {
+            return
+        }
+        let myPositionMarker = GMSMarker()
+        
+        myPositionMarker.position = mylocation
+        
+        
+    }*/
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        switch status {
+        case .notDetermined:
+            print("ユーザーはこのアプリケーションに関してまだ選択を行っていません")
+            manager.requestAlwaysAuthorization()
+            break
+        case .denied:
+            print("ローケーションサービスの設定が「無効」になっています (ユーザーによって、明示的に拒否されています）")
+            manager.requestAlwaysAuthorization()
+            // 「設定 > プライバシー > 位置情報サービス で、位置情報サービスの利用を許可して下さい」を表示する
+            break
+        
+        case .restricted:
+            print("このアプリケーションは位置情報サービスを使用できません(ユーザによって拒否されたわけではありません)")
+            // 「このアプリは、位置情報を取得できないために、正常に動作できません」を表示する
+            break
+ 
+        case .authorizedAlways:
+            print("常時、位置情報の取得が許可されています。")
+            // 位置情報取得の開始処理
+            break
+        case .authorizedWhenInUse:
+            print("起動時のみ、位置情報の取得が許可されています。")
+            // 位置情報取得の開始処理
+            break
+        
+        }
+    }
+
+    
+    
+
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
