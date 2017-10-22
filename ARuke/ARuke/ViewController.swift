@@ -12,39 +12,58 @@ import ARKit
 
 class ViewController: UIViewController, ARSCNViewDelegate {
 
-    @IBOutlet var sceneView: ARSCNView!
+    @IBOutlet weak var ScoreView: UIView!
+    @IBOutlet weak var StartView: UIView!
+    
+    @IBOutlet weak var Kiro: UILabel!
+    @IBOutlet weak var Score: UILabel!
+    
+    @IBOutlet weak var TitleLabel: UILabel!
+    @IBOutlet weak var Map: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        TitleLabel.adjustsFontSizeToFitWidth = true;
+        //Map.adjustsFontSizeToFitWidth = true;
+        
+        ScoreView.layer.borderColor = UIColor.white.cgColor
+        ScoreView.layer.borderWidth = 2.0
+        ScoreView.layer.masksToBounds = true
+        
+        StartView.layer.borderColor = UIColor.white.cgColor
+        StartView.layer.borderWidth = 2.0
+        StartView.layer.masksToBounds = true
+        
+        Score.text = "100"
+        Kiro.text = "10000"
+        //ScoreLabel.text = "合計スコア"
+        //KiroLabel.text = "合計距離"
         // Set the view's delegate
-        sceneView.delegate = self
-        
+        //sceneView.delegate = self
         // Show statistics such as fps and timing information
-        sceneView.showsStatistics = true
-        
+        //sceneView.showsStatistics = true
         // Create a new scene
-        let scene = SCNScene(named: "art.scnassets/ship.scn")!
-        
+        //let scene = SCNScene(named: "art.scnassets/ship.scn")!
         // Set the scene to the view
-        sceneView.scene = scene
+        //sceneView.scene = scene
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         // Create a session configuration
-        let configuration = ARWorldTrackingConfiguration()
+        //let configuration = ARWorldTrackingConfiguration()
 
         // Run the view's session
-        sceneView.session.run(configuration)
+        //sceneView.session.run(configuration)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         // Pause the view's session
-        sceneView.session.pause()
+        //sceneView.session.pause()
     }
     
     override func didReceiveMemoryWarning() {
