@@ -14,7 +14,8 @@ import SwiftyJSON
 class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelegate {
     let locationManager = CLLocationManager()
     
-    var mapView: GMSMapView!
+    @IBOutlet var mapView: GMSMapView!
+    //var mapView: GMSMapView!
     
     // WGS84の座標系での琉球大学の位置(緯度, 経度)
     let ryukyuLatitude = 26.253726
@@ -42,14 +43,15 @@ class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelega
         let camera = GMSCameraPosition.camera(withLatitude: ryukyuLatitude, longitude: ryukyuLongitude, zoom: zoomLevel)
         
         // GoogleMapの初期化
-        mapView = GMSMapView.map(withFrame: view.bounds, camera: camera)
-        mapView.delegate = self
-        mapView.settings.compassButton = true
-        mapView.settings.myLocationButton = true
+        //self.mapView = GMSMapView.map(withFrame: .zero, camera: camera)
+        self.mapView.camera = camera
+        self.mapView.delegate = self
+        self.mapView.settings.compassButton = true
+        self.mapView.settings.myLocationButton = true
         
         // 地形の起伏と道路を表示するマップ
-        mapView.mapType = GMSMapViewType.terrain
-        view = mapView
+        self.mapView.mapType = GMSMapViewType.terrain
+        // view = mapView
         
     }
     
@@ -124,8 +126,7 @@ class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelega
         let camera = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude,
                                               longitude: location.coordinate.longitude,
                                               zoom: zoomLevel)
-        mapView.camera = camera
-        
+        self.mapView.camera = camera
     }
     
     // Handle location manager errors.
