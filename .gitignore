@@ -22,5 +22,14 @@ DerivedData/
 *.perspectivev3
 !default.perspectivev3
 
+# CocoaPod
+ARuke/Pods/*
+
+# Gem
+ARuke/vendor/*
+
+# env
+.env
+
 # Mac
 *.DS_Store
