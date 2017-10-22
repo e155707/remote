@@ -114,7 +114,7 @@
                                             </attributedString>
                                         </state>
                                         <connections>
-                                            <segue destination="Uyn-bn-Kc1" kind="show" id="D7B-fs-88r"/>
+                                            <segue destination="TuF-dH-70Z" kind="show" id="kLB-yE-Ajm"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -137,19 +137,13 @@
             </objects>
             <point key="canvasLocation" x="141.59999999999999" y="133.5832083958021"/>
         </scene>
-        <!--EventControlle-->
-        <scene sceneID="Z8R-cP-0LB">
+        <!--Map-->
+        <scene sceneID="Jos-S2-if8">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="EventControlle" storyboardName="EventControlle" referencedIdentifier="EventControlle" id="Uyn-bn-Kc1" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cgf-wm-CUy" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <view contentMode="scaleToFill" id="g6G-hu-SaB" customClass="ScoreView">
-                    <rect key="frame" x="0.0" y="0.0" width="295" height="170"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <viewLayoutGuide key="safeArea" id="D9s-Sr-zLL"/>
-                </view>
+                <viewControllerPlaceholder storyboardIdentifier="Map" storyboardName="Map" referencedIdentifier="Map" id="TuF-dH-70Z" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3TU-CH-5hy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="787" y="121"/>
+            <point key="canvasLocation" x="642" y="138"/>
         </scene>
     </scenes>
 </document>

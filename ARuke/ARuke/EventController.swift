@@ -26,11 +26,23 @@ class EventController: UIViewController, ARSCNViewDelegate {
         sceneView.debugOptions = ARSCNDebugOptions.showFeaturePoints
         
         // Create a new scene
-        let scene = SCNScene(named: "art.scnassets/tresure/untitled.dae")!
+        let scene = SCNScene(named: "art.scnassets/tresure/takarabako.dae")!
         let Node = scene.rootNode.childNode(withName: "takarabako", recursively: true)
         
         Node?.scale = SCNVector3(0.001, 0.001, 0.001)
         Node?.position = SCNVector3(0, 0, -0.1)
+        
+        //let scene2 = SCNScene(named: "art.scnassets/tresure/takarabako.dae")!
+        let Node2 = scene.rootNode.childNode(withName: "takarabako", recursively: true)
+        
+        Node2?.scale = SCNVector3(0.001, 0.001, 0.001)
+        Node2?.position = SCNVector3(1, 0, -0.1)
+        
+        //let scene3 = SCNScene(named: "art.scnassets/tresure/takarabako.dae")!
+        let Node3 = scene.rootNode.childNode(withName: "takarabako", recursively: true)
+        
+        Node3?.scale = SCNVector3(0.001, 0.001, 0.001)
+        Node3?.position = SCNVector3(2, 0, -0.1)
         
         //sceneView.pointOfView?.addChildNode(Node!)
         //Node?.position = SCNVector3(1,1,0)

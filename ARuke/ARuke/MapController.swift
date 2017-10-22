@@ -13,6 +13,7 @@ import SwiftyJSON
 
 class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelegate {
     let locationManager = CLLocationManager()
+    
     var mapView: GMSMapView!
     
     // WGS84の座標系での琉球大学の位置(緯度, 経度)
@@ -30,6 +31,9 @@ class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelega
         setLocateManager()
         ryukyuLocationMarker()
         getRyukyuLoopRoutes()
+        
+        //let button = UIButton()
+        
     }
     
     // mapViewの初期化. 最初は琉球大学を写すよう指定
