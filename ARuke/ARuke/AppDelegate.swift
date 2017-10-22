@@ -20,7 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
 
         // add googleMapAPIKey
-        let cGoogleMapsAPIKey = Keys().googleMapAPIKey
+        
+        let cGoogleMapsAPIKey = ARukeKeys().googleMapAPIKey
         GMSServices.provideAPIKey(cGoogleMapsAPIKey)
         return true
     }
