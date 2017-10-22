@@ -15,6 +15,9 @@
 		B0C3EA641F96FC7600385081 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0C3EA621F96FC7600385081 /* LaunchScreen.storyboard */; };
 		B0C3EA6F1F96FC7700385081 /* ARukeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C3EA6E1F96FC7700385081 /* ARukeTests.swift */; };
 		B0C3EA7A1F96FC7700385081 /* ARukeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C3EA791F96FC7700385081 /* ARukeUITests.swift */; };
+		F0E1F9B91F9BCADA00555BC0 /* yurumoji.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F0E1F9B81F9BC1BD00555BC0 /* yurumoji.ttf */; };
+		F0E794C21F98EF9C006CA3A1 /* EventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E794C11F98EF9C006CA3A1 /* EventController.swift */; };
+		F0E794C41F98F710006CA3A1 /* EventControlle.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0E794C31F98F710006CA3A1 /* EventControlle.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		B0C3EA751F96FC7700385081 /* ARukeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ARukeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0C3EA791F96FC7700385081 /* ARukeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARukeUITests.swift; sourceTree = "<group>"; };
 		B0C3EA7B1F96FC7700385081 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0E1F9B81F9BC1BD00555BC0 /* yurumoji.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = yurumoji.ttf; sourceTree = "<group>"; };
+		F0E794C11F98EF9C006CA3A1 /* EventController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventController.swift; sourceTree = "<group>"; };
+		F0E794C31F98F710006CA3A1 /* EventControlle.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EventControlle.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +105,13 @@
 		B0C3EA561F96FC7600385081 /* ARuke */ = {
 			isa = PBXGroup;
 			children = (
+				F0E1F9B81F9BC1BD00555BC0 /* yurumoji.ttf */,
 				B0C3EA571F96FC7600385081 /* AppDelegate.swift */,
 				B0C3EA591F96FC7600385081 /* art.scnassets */,
 				B0C3EA5B1F96FC7600385081 /* ViewController.swift */,
 				B0C3EA5D1F96FC7600385081 /* Main.storyboard */,
+				F0E794C31F98F710006CA3A1 /* EventControlle.storyboard */,
+				F0E794C11F98EF9C006CA3A1 /* EventController.swift */,
 				B0C3EA601F96FC7600385081 /* Assets.xcassets */,
 				B0C3EA621F96FC7600385081 /* LaunchScreen.storyboard */,
 				B0C3EA651F96FC7600385081 /* Info.plist */,
@@ -235,9 +244,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0E1F9B91F9BCADA00555BC0 /* yurumoji.ttf in Resources */,
 				B0C3EA5A1F96FC7600385081 /* art.scnassets in Resources */,
 				B0C3EA641F96FC7600385081 /* LaunchScreen.storyboard in Resources */,
 				B0C3EA611F96FC7600385081 /* Assets.xcassets in Resources */,
+				F0E794C41F98F710006CA3A1 /* EventControlle.storyboard in Resources */,
 				B0C3EA5F1F96FC7600385081 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,6 +276,7 @@
 			files = (
 				B0C3EA5C1F96FC7600385081 /* ViewController.swift in Sources */,
 				B0C3EA581F96FC7600385081 /* AppDelegate.swift in Sources */,
+				F0E794C21F98EF9C006CA3A1 /* EventController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,9 +443,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UDN7C83R23;
 				INFOPLIST_FILE = ARuke/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Ryukyu.ARuke;
+				PRODUCT_BUNDLE_IDENTIFIER = Ryukyu.ARuke.AR.ac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -445,9 +458,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UDN7C83R23;
 				INFOPLIST_FILE = ARuke/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Ryukyu.ARuke;
+				PRODUCT_BUNDLE_IDENTIFIER = Ryukyu.ARuke.AR.ac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
