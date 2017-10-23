@@ -14,6 +14,7 @@ class EventController: UIViewController, ARSCNViewDelegate {
     
     @IBOutlet weak var sceneView: ARSCNView!
     
+    var hit:Int = 1;
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,18 +32,21 @@ class EventController: UIViewController, ARSCNViewDelegate {
         
         Node?.scale = SCNVector3(0.001, 0.001, 0.001)
         Node?.position = SCNVector3(0, 0, -0.1)
+        Node?.name = "takarabako1"
         
         let scene2 = SCNScene(named: "art.scnassets/tresure/takarabako.dae")!
         let Node2 = scene2.rootNode.childNode(withName: "takarabako", recursively: true)
         
         Node2?.scale = SCNVector3(0.001, 0.001, 0.001)
         Node2?.position = SCNVector3(0.05, 0, -0.1)
+        Node2?.name = "takarabako2"
         
-        let scene3 = SCNScene(named: "art.scnassets/itemx2.dae")!
-        let Node3 = scene3.rootNode.childNode(withName: "Text", recursively: true)
+        let scene3 = SCNScene(named: "art.scnassets/tresure/takarabako.dae")!
+        let Node3 = scene3.rootNode.childNode(withName: "takarabako", recursively: true)
         
-        Node3?.scale = SCNVector3(0.0001, 0.0001, 0.0001)
+        Node3?.scale = SCNVector3(0.001, 0.001, 0.001)
         Node3?.position = SCNVector3(0.1, 0, -0.1)
+        Node3?.name = "takarabako3"
         
         //sceneView.pointOfView?.addChildNode(Node!)
         //sceneView.pointOfView?.addChildNode(Node2!)
@@ -77,7 +81,19 @@ class EventController: UIViewController, ARSCNViewDelegate {
             //結果は配列で返る．一つ以上ヒットしており，かつヒットしたgeometryのノードに名前があれば実行する
             if let res = results.first, let name = res.node.name {
                 print(name)
+                sceneView.scene.rootNode.childNode(withName: name, recursively: false)?.runAction(SCNAction.removeFromParentNode())
                 
+                if(hit == 1){
+                    let scene4 = SCNScene(named: "art.scnassets/itemx2.dae")!
+                    let Node4 = scene4.rootNode.childNode(withName: "Text", recursively: true)
+                
+                    Node4?.scale = SCNVector3(0.000001, 0.000001, 0.000001)
+                    Node4?.position = SCNVector3(0.1, 0, -0.1)
+                    Node4?.name = "x2"
+                
+                sceneView.scene.rootNode.addChildNode(Node4!)
+                hit = hit + 1
+                }
             }
         }
     }
@@ -133,3 +149,50 @@ class EventController: UIViewController, ARSCNViewDelegate {
     }
 }
 
+
+
+extension SCNNode {
+    
+    //アニメーションの実行，停止をboolで指定できるように
+    func ctrlAnimation(forKey: String, play:Bool)
+    {
+        if let anim = animationPlayer(forKey: forKey) {
+            if (play)
+            {anim.play()}
+            else
+            {anim.stop()}
+        }
+    }
+    
+    //自分と子ノードのすべてのアニメーションをコントロールするコンビニエンス関数
+    func ctrlAnimationOfAllChildren(do_play:Bool, anim_id:String = "")
+    {
+        for child in childNodes {
+            child.ctrlAnimationOfAllChildren(do_play:do_play, anim_id:anim_id)
+        }
+        
+        //anim_idが空文字列の場合，nodeの最初のアニメーションidを取得する
+        if anim_id == "" && animationKeys.count > 0 {
+            for key in animationKeys {
+                ctrlAnimation(forKey: key, play:do_play)
+            }
+        }else {
+            ctrlAnimation(forKey: anim_id, play: do_play)
+        }
+        
+        
+    }
+    
+    //自分と子ノードに設定されているすべてのアニメーションのkey(識別子)をprintする
+    func printAllAnimationKeys ()
+    {
+        for child in childNodes {
+            child.printAllAnimationKeys()
+        }
+        
+        let node_name:String
+        node_name = (name != nil) ? name! : "no name"
+        
+        print ( node_name, animationKeys)
+    }
+}
