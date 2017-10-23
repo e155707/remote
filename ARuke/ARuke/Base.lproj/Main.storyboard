@@ -64,20 +64,20 @@
                                 <attributedString key="attributedText">
                                     <fragment content="A">
                                         <attributes>
-                                            <font key="NSFont" size="80" name="Yurumoji"/>
+                                            <font key="NSFont" metaFont="system" size="80"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content="r">
                                         <attributes>
                                             <color key="NSColor" red="0.60000002384185791" green="0.40000000596046448" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="80" name="Yurumoji"/>
+                                            <font key="NSFont" metaFont="system" size="80"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content="uke">
                                         <attributes>
-                                            <font key="NSFont" size="80" name="Yurumoji"/>
+                                            <font key="NSFont" metaFont="system" size="80"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -107,7 +107,7 @@
                                                 <fragment content="ぼうけんにでかける">
                                                     <attributes>
                                                         <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <font key="NSFont" size="25" name="Yurumoji"/>
+                                                        <font key="NSFont" metaFont="system" size="25"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                     </attributes>
                                                 </fragment>

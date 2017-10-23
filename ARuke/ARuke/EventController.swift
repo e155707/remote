@@ -32,23 +32,29 @@ class EventController: UIViewController, ARSCNViewDelegate {
         Node?.scale = SCNVector3(0.001, 0.001, 0.001)
         Node?.position = SCNVector3(0, 0, -0.1)
         
-        //let scene2 = SCNScene(named: "art.scnassets/tresure/takarabako.dae")!
-        let Node2 = scene.rootNode.childNode(withName: "takarabako", recursively: true)
+        let scene2 = SCNScene(named: "art.scnassets/tresure/takarabako.dae")!
+        let Node2 = scene2.rootNode.childNode(withName: "takarabako", recursively: true)
         
         Node2?.scale = SCNVector3(0.001, 0.001, 0.001)
-        Node2?.position = SCNVector3(1, 0, -0.1)
+        Node2?.position = SCNVector3(0.05, 0, -0.1)
         
-        //let scene3 = SCNScene(named: "art.scnassets/tresure/takarabako.dae")!
-        let Node3 = scene.rootNode.childNode(withName: "takarabako", recursively: true)
+        let scene3 = SCNScene(named: "art.scnassets/itemx2.dae")!
+        let Node3 = scene3.rootNode.childNode(withName: "Text", recursively: true)
         
-        Node3?.scale = SCNVector3(0.001, 0.001, 0.001)
-        Node3?.position = SCNVector3(2, 0, -0.1)
+        Node3?.scale = SCNVector3(0.0001, 0.0001, 0.0001)
+        Node3?.position = SCNVector3(0.1, 0, -0.1)
         
         //sceneView.pointOfView?.addChildNode(Node!)
+        //sceneView.pointOfView?.addChildNode(Node2!)
+        //sceneView.pointOfView?.addChildNode(Node3!)
         //Node?.position = SCNVector3(1,1,0)
+        //Node2?.position = SCNVector3(2,1,0)
+        //Node3?.position = SCNVector3(3,1,0)
         
         
-        
+        scene.rootNode.addChildNode(Node2!)
+        scene.rootNode.addChildNode(Node3!)
+
         // Set the scene to the view
         sceneView.scene = scene
         
@@ -71,6 +77,7 @@ class EventController: UIViewController, ARSCNViewDelegate {
             //結果は配列で返る．一つ以上ヒットしており，かつヒットしたgeometryのノードに名前があれば実行する
             if let res = results.first, let name = res.node.name {
                 print(name)
+                
             }
         }
     }
