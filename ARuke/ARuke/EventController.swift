@@ -14,8 +14,6 @@ class EventController: UIViewController, ARSCNViewDelegate {
     
     @IBOutlet weak var sceneView: ARSCNView!
     
-    var hit:Int = 1;
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -81,18 +79,24 @@ class EventController: UIViewController, ARSCNViewDelegate {
             //結果は配列で返る．一つ以上ヒットしており，かつヒットしたgeometryのノードに名前があれば実行する
             if let res = results.first, let name = res.node.name {
                 print(name)
-                sceneView.scene.rootNode.childNode(withName: name, recursively: false)?.runAction(SCNAction.removeFromParentNode())
-                
-                if(hit == 1){
+                if(name == "takarabako1"){
+                    sceneView.scene.rootNode.childNode(withName: name, recursively: false)?.runAction(SCNAction.removeFromParentNode())
                     let scene4 = SCNScene(named: "art.scnassets/itemx2.dae")!
                     let Node4 = scene4.rootNode.childNode(withName: "Text", recursively: true)
-                
-                    Node4?.scale = SCNVector3(0.000001, 0.000001, 0.000001)
-                    Node4?.position = SCNVector3(0.1, 0, -0.1)
+                    Node4?.scale = SCNVector3(0.01, 0.01, 0.01)
+                    Node4?.position = SCNVector3(0, 0, -0.1)
                     Node4?.name = "x2"
-                
-                sceneView.scene.rootNode.addChildNode(Node4!)
-                hit = hit + 1
+                    
+                    sceneView.scene.rootNode.addChildNode(Node4!)
+                    
+                    sceneView.scene.rootNode.ctrlAnimationOfAllChildren(do_play: false)
+                    
+                }else if(name == "takarabako2"){
+                    sceneView.scene.rootNode.childNode(withName: name, recursively: false)?.runAction(SCNAction.removeFromParentNode())
+                }else if(name == "takarabako3"){
+                    sceneView.scene.rootNode.childNode(withName: name, recursively: false)?.runAction(SCNAction.removeFromParentNode())
+                }else{
+                    
                 }
             }
         }
@@ -157,10 +161,11 @@ extension SCNNode {
     func ctrlAnimation(forKey: String, play:Bool)
     {
         if let anim = animationPlayer(forKey: forKey) {
-            if (play)
-            {anim.play()}
-            else
-            {anim.stop()}
+            if (play){
+                anim.play()
+            }else{
+                anim.stop(withBlendOutDuration: 1.0)
+            }
         }
     }
     
