@@ -18,22 +18,29 @@ class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelega
     
     var lineMeToGoal = GMSPolyline()
 
-    var mylocation = CLLocationCoordinate2D()
-    var goal = CLLocationCoordinate2D()
+    var mylocation = CLLocation()
+    var goal = CLLocation()
+    var count = 0
     // WGS84の座標系での琉球大学の位置(緯度, 経度)
     let ryukyuLatitude = 26.253726
     let ryukyuLongitude = 127.766949
     let zoomLevel:Float = 17
     
+    // Scoreや歩いている距離に関する変数
+    var tmpScore:Double = 0 // 誤差を保存しておく
+    var totalScore:Int64 = 0 // これが表示されるScore
+    var scoreRatio:Double = 1 // 倍率
     
-    var score:UInt64 = 0
+    var tmpWalkInKilometre:Double = 0 // 誤差を保存しておく
+    var totalWalk: Double = 0 //今まで歩いた数. 単位はメートル
+    
     
     /** override vieDidLoad()
      * Viewの初期化,locationManagerの初期化. GoogleMapをMap.storyboardに表示する.
      */
     override func viewDidLoad() {
         super.viewDidLoad()
-        goal = CLLocationCoordinate2D.init(latitude: ryukyuLatitude, longitude: ryukyuLongitude)
+        goal = CLLocation(latitude: ryukyuLatitude, longitude: ryukyuLongitude)
         initMapView()
         setLocateManager()
         ryukyuLocationMarker()
@@ -75,6 +82,14 @@ class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelega
         locationManager.distanceFilter = 1
         locationManager.delegate = self
         locationManager.startUpdatingLocation()
+    }
+    
+    func initScore(_ distanceInMeters: CLLocationDistance){
+        if count == 0 {
+            totalScore = 0
+            count = 1
+        }
+        
     }
     
     // flagがtrueの場合, 自分の位置を表示. 役割をわかりやすくするために関数化しただけ.
@@ -135,34 +150,53 @@ class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelega
                                               longitude: location.coordinate.longitude,
                                               zoom: zoomLevel)
         self.mapView.camera = camera
-        mylocation = location.coordinate
+        
+        
         routePath.replaceCoordinate(at: 0, with: location.coordinate)
-        if (isCheckpointArrive(routePath.coordinate(at: 0), location.coordinate)){
+        
+        let locationDistance = location.distance(from: mylocation)
+        if (isCheckpointArrive(location, goal)){
+            let storyboard: UIStoryboard = UIStoryboard(name: "EventControlle", bundle: nil)
+            let next: UIViewController = storyboard.instantiateInitialViewController() as! UIViewController
+            present(next, animated: true, completion: nil)
             
+            // let distanceInMeters = coordinate0.distance(from: coordinate1)
+            
+        }else{
+
             lineMeToGoal.map = nil
             lineMeToGoal = GMSPolyline(path: self.routePath)
             lineMeToGoal.strokeColor = .blue
             lineMeToGoal.strokeWidth = 10.0
             lineMeToGoal.map = self.mapView
-            print("0e")
-        }else{
-            let storyboard: UIStoryboard = UIStoryboard(name: "EventControlle", bundle: nil)
-            let next: UIViewController = storyboard.instantiateInitialViewController() as! UIViewController
-            present(next, animated: true, completion: nil)
-          print("ae")
+            addScore(locationDistance)
+            addWalk(locationDistance)
+            initScore(locationDistance)
+            mylocation = location
         }
     }
     
-    
-    func isCheckpointArrive(_ firstLocation:CLLocationCoordinate2D, _ secondLocation:CLLocationCoordinate2D ) -> Bool{
-        let errorRange:Double = 0.0001
-        if abs(secondLocation.latitude - firstLocation.latitude) <= errorRange,
-            abs(secondLocation.longitude - firstLocation.longitude) <= errorRange{
+    // チェックポイントについたかどうかの判定
+    func isCheckpointArrive(_ firstLocation:CLLocation, _ secondLocation:CLLocation) -> Bool{
+        let errorRange:Double = 10 // error 10m
+        let distanceInMeters = firstLocation.distance(from: secondLocation)
+        if distanceInMeters <= errorRange{
             return true
-        
         }
         return false
         
+    }
+    
+    
+    func addScore(_ distanceInMeters: CLLocationDistance){
+        tmpScore = scoreRatio * distanceInMeters
+        totalScore  = totalScore + Int64(tmpScore)
+        print(totalScore)
+    }
+    
+    func addWalk(_ distanceInMeters: CLLocationDistance){
+        tmpWalkInKilometre = distanceInMeters
+        totalWalk = totalWalk + tmpWalkInKilometre
     }
     
     // Handle location manager errors.
@@ -182,7 +216,7 @@ class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelega
     }
     
     
-    func getRoutes(_ start:CLLocationCoordinate2D, _ end:CLLocationCoordinate2D) {
+    func getRoutes(_ start:CLLocation, _ end:CLLocation) {
         
         let requestURL = createRequeseURL(start, end)
         print(requestURL)
@@ -213,7 +247,7 @@ class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelega
                     polyline.map = self.mapView
                 }
                 else{
-                    self.routePath.add(self.goal)
+                    self.routePath.add(self.goal.coordinate)
                     print("statusがokではありません")
                     
                 }
@@ -229,15 +263,15 @@ class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelega
         
     }
     
-    func createRequeseURL(_ start:CLLocationCoordinate2D, _ goal:CLLocationCoordinate2D) -> String{
+    func createRequeseURL(_ start:CLLocation, _ goal:CLLocation) -> String{
         
         // baseURLの作成.
         let pearentURL = "https://maps.googleapis.com/maps/api/directions"
         
         // 必須項目
         let outputFormat="json" // json or xml
-        let origin = "\(start.latitude),\(start.longitude)"// 出発点の緯度と経度
-        let destination = "\(goal.latitude),\(goal.longitude)" // 到着点の緯度と経度
+        let origin = "\(start.coordinate.latitude),\(start.coordinate.longitude)"// 出発点の緯度と経度
+        let destination = "\(goal.coordinate.latitude),\(goal.coordinate.longitude)" // 到着点の緯度と経度
         
         // 省略可能な項目
         let mode = "walking" //driving(default), walking, bicycling, transit
