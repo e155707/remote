@@ -1,8 +1,8 @@
 //
-//  ViewController.swift
+//  ResultController.swift
 //  ARuke
 //
-//  Created by 赤堀　貴一 on 2017/10/18.
+//  Created by e155707 on 2017/10/24.
 //  Copyright © 2017年 Ryukyu. All rights reserved.
 //
 
@@ -10,37 +10,37 @@ import UIKit
 import SceneKit
 import ARKit
 
-class ViewController: UIViewController, ARSCNViewDelegate {
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+class ResultController: UIViewController{
+    
+    @IBOutlet weak var Result: UIView!
     
     
-    
-    @IBOutlet weak var ScoreView: UIView!
-    @IBOutlet weak var StartView: UIView!
+    @IBOutlet weak var ThisKiro: UILabel!
+    @IBOutlet weak var ThisScore: UILabel!
     
     @IBOutlet weak var Kiro: UILabel!
     @IBOutlet weak var Score: UILabel!
     
-    @IBOutlet weak var TitleLabel: UILabel!
-    @IBOutlet weak var Map: UIButton!
+    //@IBOutlet weak var Map: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        TitleLabel.adjustsFontSizeToFitWidth = true;
+        //TitleLabel.adjustsFontSizeToFitWidth = true;
         //Map.adjustsFontSizeToFitWidth = true;
+    
         
-        ScoreView.layer.borderColor = UIColor.white.cgColor
-        ScoreView.layer.borderWidth = 2.0
-        ScoreView.layer.masksToBounds = true
+        Result.layer.borderColor = UIColor.white.cgColor
+        Result.layer.borderWidth = 2.0
+        Result.layer.masksToBounds = true
         
-        StartView.layer.borderColor = UIColor.white.cgColor
-        StartView.layer.borderWidth = 2.0
-        StartView.layer.masksToBounds = true
+        ThisKiro.text = "1"
+        ThisScore.text = "100"
         
-        Score.text = "100"
-        Kiro.text = "10000"
-        //ScoreLabel.text = "合計スコア"
+        Kiro.text = "101"
+        Score.text = "10100"
+        
         //KiroLabel.text = "合計距離"
         // Set the view's delegate
         //sceneView.delegate = self
@@ -57,7 +57,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         // Create a session configuration
         //let configuration = ARWorldTrackingConfiguration()
-
+        
         // Run the view's session
         //sceneView.session.run(configuration)
     }
@@ -73,17 +73,17 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         super.didReceiveMemoryWarning()
         // Release any cached data, images, etc that aren't in use.
     }
-
+    
     // MARK: - ARSCNViewDelegate
     
-/*
-    // Override to create and configure nodes for anchors added to the view's session.
-    func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
-        let node = SCNNode()
+    /*
+     // Override to create and configure nodes for anchors added to the view's session.
+     func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
+     let node = SCNNode()
      
-        return node
-    }
-*/
+     return node
+     }
+     */
     
     func session(_ session: ARSession, didFailWithError error: Error) {
         // Present an error message to the user
@@ -100,3 +100,4 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
     }
 }
+

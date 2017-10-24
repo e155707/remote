@@ -23,6 +23,9 @@
 		F0E1F9C01F9C6DEB00555BC0 /* Keys.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0E1F9C11F9C6DEB00555BC0 /* Keys.framework */; };
 		F0E1F9C21F9C6DEF00555BC0 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0E1F9C31F9C6DEF00555BC0 /* SwiftyJSON.framework */; };
 		F0E1F9C41F9C72FA00555BC0 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0E1F9BA1F9C551E00555BC0 /* Map.storyboard */; };
+		F0E1F9C81F9E3E9100555BC0 /* Plane.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E1F9C71F9E3E9100555BC0 /* Plane.swift */; };
+		F0E1F9CC1F9ED89200555BC0 /* ResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E1F9CB1F9ED89200555BC0 /* ResultController.swift */; };
+		F0E1F9CE1F9EDD3C00555BC0 /* Result.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0E1F9CD1F9EDCAA00555BC0 /* Result.storyboard */; };
 		F0E794C21F98EF9C006CA3A1 /* EventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E794C11F98EF9C006CA3A1 /* EventController.swift */; };
 		F0E794C41F98F710006CA3A1 /* EventControlle.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0E794C31F98F710006CA3A1 /* EventControlle.storyboard */; };
 		F1160ACB685DC7BEDA343670 /* Pods_ARuke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8BEF0CB163B9958E217B93E /* Pods_ARuke.framework */; };
@@ -74,6 +77,10 @@
 		F0E1F9BF1F9C6DE800555BC0 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0E1F9C11F9C6DEB00555BC0 /* Keys.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Keys.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0E1F9C31F9C6DEF00555BC0 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0E1F9C71F9E3E9100555BC0 /* Plane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plane.swift; sourceTree = "<group>"; };
+		F0E1F9C91F9ED16200555BC0 /* Result.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Result.storyboard; sourceTree = "<group>"; };
+		F0E1F9CB1F9ED89200555BC0 /* ResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultController.swift; sourceTree = "<group>"; };
+		F0E1F9CD1F9EDCAA00555BC0 /* Result.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Result.storyboard; sourceTree = "<group>"; };
 		F0E794C11F98EF9C006CA3A1 /* EventController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventController.swift; sourceTree = "<group>"; };
 		F0E794C31F98F710006CA3A1 /* EventControlle.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EventControlle.storyboard; sourceTree = "<group>"; };
 		FF0DC3E6B336F5A5DD70E946 /* Pods-ARukeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARukeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ARukeTests/Pods-ARukeTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -155,7 +162,11 @@
 				B0C3EA5D1F96FC7600385081 /* Main.storyboard */,
 				F0E1F9BA1F9C551E00555BC0 /* Map.storyboard */,
 				F0E794C31F98F710006CA3A1 /* EventControlle.storyboard */,
+				F0E1F9C91F9ED16200555BC0 /* Result.storyboard */,
+				F0E1F9CD1F9EDCAA00555BC0 /* Result.storyboard */,
+				F0E1F9CB1F9ED89200555BC0 /* ResultController.swift */,
 				F0E794C11F98EF9C006CA3A1 /* EventController.swift */,
+				F0E1F9C71F9E3E9100555BC0 /* Plane.swift */,
 				F0E1F9BB1F9C552D00555BC0 /* MapController.swift */,
 				B0C3EA601F96FC7600385081 /* Assets.xcassets */,
 				B0C3EA621F96FC7600385081 /* LaunchScreen.storyboard */,
@@ -311,6 +322,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0E1F9CE1F9EDD3C00555BC0 /* Result.storyboard in Resources */,
 				F0E1F9C41F9C72FA00555BC0 /* Map.storyboard in Resources */,
 				F0E1F9B91F9BCADA00555BC0 /* yurumoji.ttf in Resources */,
 				B0C3EA5A1F96FC7600385081 /* art.scnassets in Resources */,
@@ -502,6 +514,8 @@
 			files = (
 				F0E1F9BC1F9C552D00555BC0 /* MapController.swift in Sources */,
 				B0C3EA5C1F96FC7600385081 /* ViewController.swift in Sources */,
+				F0E1F9CC1F9ED89200555BC0 /* ResultController.swift in Sources */,
+				F0E1F9C81F9E3E9100555BC0 /* Plane.swift in Sources */,
 				B0C3EA581F96FC7600385081 /* AppDelegate.swift in Sources */,
 				F0E794C21F98EF9C006CA3A1 /* EventController.swift in Sources */,
 			);
