@@ -26,9 +26,12 @@ class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelega
     let ryukyuLongitude = 127.766949
     let zoomLevel:Float = 17
     
+    //AppDelegateを呼ぶ
+    var appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
+    
     // Scoreや歩いている距離に関する変数
     var tmpScore:Double = 0 // 誤差を保存しておく
-    var totalScore:Int64 = 0 // これが表示されるScore
+    //appDelegate.totalScore// これが表示されるScore
     var scoreRatio:Double = 1 // 倍率
     
     var tmpWalkInKilometre:Double = 0 // 誤差を保存しておく
@@ -86,7 +89,7 @@ class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelega
     
     func initScore(_ distanceInMeters: CLLocationDistance){
         if count == 0 {
-            totalScore = 0
+            appDelegate.totalScore = 0
             count = 1
         }
         
@@ -178,7 +181,7 @@ class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelega
     
     // チェックポイントについたかどうかの判定
     func isCheckpointArrive(_ firstLocation:CLLocation, _ secondLocation:CLLocation) -> Bool{
-        let errorRange:Double = 10 // error 10m
+        let errorRange:Double = 1 // error 10m
         let distanceInMeters = firstLocation.distance(from: secondLocation)
         if distanceInMeters <= errorRange{
             return true
@@ -190,8 +193,8 @@ class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelega
     
     func addScore(_ distanceInMeters: CLLocationDistance){
         tmpScore = scoreRatio * distanceInMeters
-        totalScore  = totalScore + Int64(tmpScore)
-        print(totalScore)
+        appDelegate.totalScore  = appDelegate.totalScore + Int64(tmpScore)
+        print(appDelegate.totalScore)
     }
     
     func addWalk(_ distanceInMeters: CLLocationDistance){

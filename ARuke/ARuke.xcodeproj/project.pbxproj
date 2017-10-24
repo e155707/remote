@@ -80,7 +80,7 @@
 		F0E1F9C71F9E3E9100555BC0 /* Plane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plane.swift; sourceTree = "<group>"; };
 		F0E1F9C91F9ED16200555BC0 /* Result.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Result.storyboard; sourceTree = "<group>"; };
 		F0E1F9CB1F9ED89200555BC0 /* ResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultController.swift; sourceTree = "<group>"; };
-		F0E1F9CD1F9EDCAA00555BC0 /* Result.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Result.storyboard; path = ARuke/Result.storyboard; sourceTree = "<group>"; };
+		F0E1F9CD1F9EDCAA00555BC0 /* Result.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Result.storyboard; sourceTree = "<group>"; };
 		F0E794C11F98EF9C006CA3A1 /* EventController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventController.swift; sourceTree = "<group>"; };
 		F0E794C31F98F710006CA3A1 /* EventControlle.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EventControlle.storyboard; sourceTree = "<group>"; };
 		FF0DC3E6B336F5A5DD70E946 /* Pods-ARukeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARukeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ARukeTests/Pods-ARukeTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -133,7 +133,6 @@
 		B0C3EA4B1F96FC7600385081 = {
 			isa = PBXGroup;
 			children = (
-				F0E1F9CD1F9EDCAA00555BC0 /* Result.storyboard */,
 				B0C3EA561F96FC7600385081 /* ARuke */,
 				B0C3EA6D1F96FC7700385081 /* ARukeTests */,
 				B0C3EA781F96FC7700385081 /* ARukeUITests */,
@@ -164,6 +163,7 @@
 				F0E1F9BA1F9C551E00555BC0 /* Map.storyboard */,
 				F0E794C31F98F710006CA3A1 /* EventControlle.storyboard */,
 				F0E1F9C91F9ED16200555BC0 /* Result.storyboard */,
+				F0E1F9CD1F9EDCAA00555BC0 /* Result.storyboard */,
 				F0E1F9CB1F9ED89200555BC0 /* ResultController.swift */,
 				F0E794C11F98EF9C006CA3A1 /* EventController.swift */,
 				F0E1F9C71F9E3E9100555BC0 /* Plane.swift */,

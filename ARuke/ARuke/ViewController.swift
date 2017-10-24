@@ -11,7 +11,10 @@ import SceneKit
 import ARKit
 
 class ViewController: UIViewController, ARSCNViewDelegate {
-
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
+    
+    
     @IBOutlet weak var ScoreView: UIView!
     @IBOutlet weak var StartView: UIView!
     

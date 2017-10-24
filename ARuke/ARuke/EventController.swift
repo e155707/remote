@@ -122,8 +122,8 @@ class EventController: UIViewController, ARSCNViewDelegate {
                     Opennode.childNode(withName: name, recursively: false)?.runAction(SCNAction.removeFromParentNode())
                 }else{
                     let storyboard: UIStoryboard = UIStoryboard(name:"Map",bundle: nil)
-                    let next: UIViewController = storyboard.instantiateInitialViewController() as! UIViewController
-                    present(next, animated: true,completion: nil)
+                    let next = storyboard.instantiateViewController(withIdentifier: "Map") as! MapConroller
+                    present(next as UIViewController, animated: true,completion: nil)
                     print("Map")
                 }
             }
