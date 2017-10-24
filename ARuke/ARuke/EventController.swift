@@ -121,7 +121,10 @@ class EventController: UIViewController, ARSCNViewDelegate {
                 }else if(name == "takarabako3"){
                     Opennode.childNode(withName: name, recursively: false)?.runAction(SCNAction.removeFromParentNode())
                 }else{
-                    
+                    let storyboard: UIStoryboard = UIStoryboard(name:"Map",bundle: nil)
+                    let next: UIViewController = storyboard.instantiateInitialViewController() as! UIViewController
+                    present(next, animated: true,completion: nil)
+                    print("Map")
                 }
             }
         }
