@@ -1,0 +1,24 @@
+いろいろなモジュールインストールしなきゃいけないので, 「sh module_install.sh」をやって下さい. ARukeの下に, module_install.shがあります.
+
+% ls
+Daily/      Manual.txt      ARuke/      LICENSE     README.md
+% cd ARuke
+% ls -a
+./                 .env               ARukeTests/        Podfile            vendor/
+../                ARuke/             ARukeUITests/      Podfile.lock
+.DS_Store          ARuke.xcodeproj/   Gemfile            Pods/
+.bundle/           ARuke.xcworkspace/ Gemfile.lock       module_install.sh
+% sh module_install.sh
+Password: (自分のmacのパスワードを入力)
+
+~~ インストールが始まります. ~~ 
+
+
+そのあと, .envにAPIkeyをいれて, bundle exec pod updateを行えば, 自分の位置情報が取得できると思います(ただし, .envファイルはgit addしないで下さい)
+
+モジュールは, ARuke -> General -> Linked Frameworks and Libraries に 
+- Alamofire.framework
+- Keys.framework
+- SwiftyJSON
+- Pods_ARuke.framework
+があると思うので, 追加して下さい.
