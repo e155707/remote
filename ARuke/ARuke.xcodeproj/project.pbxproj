@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		6AAEC452598364D3A317CFA5 /* Pods_ARukeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 743EF61749857DACD641D0ED /* Pods_ARukeTests.framework */; };
 		6D99BB4BFE87E7FCD80209BB /* Pods_ARukeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADEFC53DE2B645E4A9E56D44 /* Pods_ARukeUITests.framework */; };
+		B09D26F11FA5BECC005F7904 /* MapErrorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09D26EE1FA5BECB005F7904 /* MapErrorController.swift */; };
+		B09D26F31FA5BECC005F7904 /* MapRouteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09D26F01FA5BECC005F7904 /* MapRouteManager.swift */; };
 		B0C3EA581F96FC7600385081 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C3EA571F96FC7600385081 /* AppDelegate.swift */; };
 		B0C3EA5A1F96FC7600385081 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = B0C3EA591F96FC7600385081 /* art.scnassets */; };
 		B0C3EA5C1F96FC7600385081 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C3EA5B1F96FC7600385081 /* ViewController.swift */; };
@@ -59,6 +61,8 @@
 		5E00FF6AD8B43D4A0769262F /* Pods-ARukeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARukeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ARukeTests/Pods-ARukeTests.release.xcconfig"; sourceTree = "<group>"; };
 		743EF61749857DACD641D0ED /* Pods_ARukeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ARukeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADEFC53DE2B645E4A9E56D44 /* Pods_ARukeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ARukeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B09D26EE1FA5BECB005F7904 /* MapErrorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapErrorController.swift; sourceTree = "<group>"; };
+		B09D26F01FA5BECC005F7904 /* MapRouteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapRouteManager.swift; sourceTree = "<group>"; };
 		B0C3EA541F96FC7600385081 /* ARuke.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARuke.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0C3EA571F96FC7600385081 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0C3EA591F96FC7600385081 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -171,7 +175,6 @@
 				B0C3EA5B1F96FC7600385081 /* ViewController.swift */,
 				F0DD10FD1FA0233C006048AD /* Score.swift */,
 				B0C3EA5D1F96FC7600385081 /* Main.storyboard */,
-				F0E1F9BB1F9C552D00555BC0 /* MapController.swift */,
 				F0E1F9BA1F9C551E00555BC0 /* Map.storyboard */,
 				F0E794C11F98EF9C006CA3A1 /* EventController.swift */,
 				F00B58181FA4612A0018C429 /* ObjectManager.swift */,
@@ -179,6 +182,9 @@
 				F00B58161FA45C970018C429 /* TapEvent.swift */,
 				F0E1F9C71F9E3E9100555BC0 /* Plane.swift */,
 				F00B58141FA45AA60018C429 /* PlaneEvent.swift */,
+				F0E1F9BB1F9C552D00555BC0 /* MapController.swift */,
+				B09D26EE1FA5BECB005F7904 /* MapErrorController.swift */,
+				B09D26F01FA5BECC005F7904 /* MapRouteManager.swift */,
 				F0E794C31F98F710006CA3A1 /* EventControlle.storyboard */,
 				F0E1F9CB1F9ED89200555BC0 /* ResultController.swift */,
 				F0E1F9C91F9ED16200555BC0 /* Result.storyboard */,
@@ -532,8 +538,10 @@
 				B0C3EA5C1F96FC7600385081 /* ViewController.swift in Sources */,
 				F0E1F9CC1F9ED89200555BC0 /* ResultController.swift in Sources */,
 				F00B58191FA4612A0018C429 /* ObjectManager.swift in Sources */,
+				B09D26F31FA5BECC005F7904 /* MapRouteManager.swift in Sources */,
 				F0E1F9C81F9E3E9100555BC0 /* Plane.swift in Sources */,
 				B0C3EA581F96FC7600385081 /* AppDelegate.swift in Sources */,
+				B09D26F11FA5BECC005F7904 /* MapErrorController.swift in Sources */,
 				F0E794C21F98EF9C006CA3A1 /* EventController.swift in Sources */,
 				F09AF1451FA235B100E1FE13 /* EventAnime.swift in Sources */,
 				F00B58171FA45C970018C429 /* TapEvent.swift in Sources */,

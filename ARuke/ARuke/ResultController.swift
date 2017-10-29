@@ -29,14 +29,17 @@ class ResultController: UIViewController{
         
         //TitleLabel.adjustsFontSizeToFitWidth = true;
         //Map.adjustsFontSizeToFitWidth = true;
-    
+        //クラスのインスタンス
+        let score = ScoreManager()
+        let distance = DistanceManager()
+        
+        ThisScore.text = score.getScore()
+        ThisKiro.text = distance.getDistance()
+        
         
         Result.layer.borderColor = UIColor.white.cgColor
         Result.layer.borderWidth = 2.0
         Result.layer.masksToBounds = true
-        
-        ThisKiro.text = "1"
-        ThisScore.text = "100"
         
         Kiro.text = "101"
         Score.text = "10100"
