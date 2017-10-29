@@ -40,16 +40,6 @@ class ResultController: UIViewController{
         
         Kiro.text = "101"
         Score.text = "10100"
-        
-        //KiroLabel.text = "合計距離"
-        // Set the view's delegate
-        //sceneView.delegate = self
-        // Show statistics such as fps and timing information
-        //sceneView.showsStatistics = true
-        // Create a new scene
-        //let scene = SCNScene(named: "art.scnassets/ship.scn")!
-        // Set the scene to the view
-        //sceneView.scene = scene
     }
     
     override func viewWillAppear(_ animated: Bool) {
