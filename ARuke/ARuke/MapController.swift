@@ -18,24 +18,22 @@ class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelega
     
     var lineMeToGoal = GMSPolyline()
 
-    var mylocation = CLLocation()
-    var goal = CLLocation()
+    var myLocation = CLLocation()
+    var goalLocation = CLLocation()
     var count = 0
     // WGS84の座標系での琉球大学の位置(緯度, 経度)
     let ryukyuLatitude = 26.253726
     let ryukyuLongitude = 127.766949
     let zoomLevel:Float = 17
     
+    var mapRouteManager = MapRouteManager()
+    
     //AppDelegateを呼ぶ
     var appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
     
-    // Scoreや歩いている距離に関する変数
-    var tmpScore:Double = 0 // 誤差を保存しておく
     //appDelegate.totalScore// これが表示されるScore
     var scoreRatio:Double = 1 // 倍率
-    
-    var tmpWalkInKilometre:Double = 0 // 誤差を保存しておく
-    var totalWalk: Double = 0 //今まで歩いた数. 単位はメートル
+    var totalWalkDistance: Double = 0 //今まで歩いた数. 単位はメートル
     
     
     /** override vieDidLoad()
@@ -43,7 +41,7 @@ class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelega
      */
     override func viewDidLoad() {
         super.viewDidLoad()
-        goal = CLLocation(latitude: ryukyuLatitude, longitude: ryukyuLongitude)
+        goalLocation = CLLocation(latitude: ryukyuLatitude, longitude: ryukyuLongitude)
         initMapView()
         setLocateManager()
         ryukyuLocationMarker()
@@ -65,7 +63,6 @@ class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelega
         
         // 地形の起伏と道路を表示するマップ
         self.mapView.mapType = GMSMapViewType.terrain
-        // view = mapView
         
     }
     
@@ -85,6 +82,7 @@ class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelega
         locationManager.distanceFilter = 1
         locationManager.delegate = self
         locationManager.startUpdatingLocation()
+        
     }
     
     func initScore(_ distanceInMeters: CLLocationDistance){
@@ -116,19 +114,19 @@ class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelega
             // 位置情報アクセスを常に許可するかを問いかける
             locationManager.requestAlwaysAuthorization()
             // 「設定 > プライバシー > 位置情報サービス で、位置情報サービスの利用を許可して下さい」を表示する
-            alertMessage(message: "設定 > プライバシー > 位置情報サービス で、位置情報サービスの利用を許可して下さい")
+            MapErrorController().notGetLocation()
             break
         
         case .restricted:
             print("このアプリケーションは位置情報サービスを使用できません(ユーザによって拒否されたわけではありません)")
             // 「このアプリは、位置情報を取得できないために、正常に動作できません」を表示する
-            alertMessage(message: "このアプリは位置情報を取得できないために、正常に動作できません")
+             MapErrorController().notGetLocation()
             break
  
         case .authorizedAlways:
             print("常時、位置情報の取得が許可されています。")
             myLocationMarker(true)
-            getRoutes(mylocation, goal)
+            mapRouteManager.getInitDummyRoutes(myLocation, mapView)
             break
             
         case .authorizedWhenInUse:
@@ -136,7 +134,7 @@ class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelega
             //alertMessage(message: "このアプリは常に位置情報が必要です.")
             myLocationMarker(true)
             locationManager.requestAlwaysAuthorization()
-            getRoutes(mylocation, goal)
+            mapRouteManager.getInitDummyRoutes(myLocation, mapView)
             // 位置情報取得の開始処理
             break
         
@@ -157,8 +155,8 @@ class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelega
         
         routePath.replaceCoordinate(at: 0, with: location.coordinate)
         
-        let locationDistance = location.distance(from: mylocation)
-        if (isCheckpointArrive(location, goal)){
+        let locationDistance = location.distance(from: myLocation)
+        if (isCheckpointArrive(location, goalLocation)){
             let storyboard: UIStoryboard = UIStoryboard(name: "EventControlle", bundle: nil)
             let next: UIViewController = storyboard.instantiateInitialViewController() as! UIViewController
             present(next, animated: true, completion: nil)
@@ -175,7 +173,7 @@ class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelega
             addScore(locationDistance)
             addWalk(locationDistance)
             initScore(locationDistance)
-            mylocation = location
+            myLocation = location
         }
     }
     
@@ -192,197 +190,18 @@ class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelega
     
     
     func addScore(_ distanceInMeters: CLLocationDistance){
-        tmpScore = scoreRatio * distanceInMeters
-        appDelegate.totalScore  = appDelegate.totalScore + Int64(tmpScore)
+        appDelegate.totalScore  = appDelegate.totalScore + scoreRatio * distanceInMeters
         print(appDelegate.totalScore)
     }
     
     func addWalk(_ distanceInMeters: CLLocationDistance){
-        tmpWalkInKilometre = distanceInMeters
-        totalWalk = totalWalk + tmpWalkInKilometre
+        totalWalkDistance = totalWalk + distanceInMeters
     }
     
     // Handle location manager errors.
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         locationManager.stopUpdatingLocation()
         print("Error: \(error)")
-    }
-    
-    //メッセージ出力メソッド
-    func alertMessage(message:String) {
-        let aleartController = UIAlertController(title: "注意", message: message, preferredStyle: .alert)
-        let defaultAction = UIAlertAction(title:"OK", style: .default, handler:nil)
-        aleartController.addAction(defaultAction)
-        
-        present(aleartController, animated:true, completion:nil)
-        
-    }
-    
-    
-    func getRoutes(_ start:CLLocation, _ end:CLLocation) {
-        
-        let requestURL = createRequeseURL(start, end)
-        print(requestURL)
-        Alamofire.request(requestURL).responseJSON { response in
-        
-            // そもそも通信が成功しているか(サーバーからの返答があるか)判定
-            switch response.result {
-            
-            case .success:
-                print(response.request?.url! as Any)
-                
-                let json = JSON(response.result.value!)
-                if json["status"].stringValue == "OK" {
-                    
-                    // 検索ルート候補のすべてを取得
-                    let routes = json["routes"].arrayValue
-                    // 検索ルート候補の0番目の始点から終点までのルートの情報を取得
-                    let overviewPolyline = routes[0]["overview_polyline"].dictionary
-                    let route = overviewPolyline!["points"]?.stringValue
-                    
-                    // ルートの線を引く GMSPathは静的配列のため, 動的配列のGMSMutablePathを使う.
-                    self.routePath = GMSMutablePath.init(fromEncodedPath: route!)!
-                    
-                    let polyline = GMSPolyline(path: self.routePath)
-                    
-                    polyline.strokeColor = .blue
-                    polyline.strokeWidth = 10.0
-                    polyline.map = self.mapView
-                }
-                else{
-                    self.routePath.add(self.goal.coordinate)
-                    print("statusがokではありません")
-                    
-                }
-                
-            case .failure(let error):
-                print(error)
-                self.alertMessage(message: "通信ができないので, ルートを検索することができません.")
-                return
-                
-            }
-            
-        }
-        
-    }
-    
-    func createRequeseURL(_ start:CLLocation, _ goal:CLLocation) -> String{
-        
-        // baseURLの作成.
-        let pearentURL = "https://maps.googleapis.com/maps/api/directions"
-        
-        // 必須項目
-        let outputFormat="json" // json or xml
-        let origin = "\(start.coordinate.latitude),\(start.coordinate.longitude)"// 出発点の緯度と経度
-        let destination = "\(goal.coordinate.latitude),\(goal.coordinate.longitude)" // 到着点の緯度と経度
-        
-        // 省略可能な項目
-        let mode = "walking" //driving(default), walking, bicycling, transit
-        /*
-         let waypoints = ["26.245985,127.763861", // 中継点.  琉球大学南口
-         "26.247313,127.768448"] // 琉球大学東口
-         .joined(separator: "|")*/
-        let alternatives = "false" // 複数のルートを表示 -> true , いらない -> false
-        
-        // 子URLの作成
-        let childURL = ["\(outputFormat)?",
-            "origin=\(origin)",
-            "destination=\(destination)",
-            "alternatives=\(alternatives)",
-            "mode=\(mode)"
-            //"waypoints=\(waypoints)"
-            ]
-            .joined(separator: "&")
-        
-        // URLの結合
-        let requestURL = "\(pearentURL)/\(childURL)"
-        // パイプライン(|)のエンコード(これをしないと中継点が正しく認識されない.
-        if let requestEncodeURL = requestURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed){
-            return requestEncodeURL
-        }
-        
-        return requestURL
-        
-    }
-    
-    func getRyukyuLoopRoutes() {
-        let requestURL = createRequestRyukyuURL()
-
-        print(requestURL)
-        Alamofire.request(requestURL).responseJSON { response in
-            
-            // そもそも通信が成功しているか(サーバーからの返答があるか)判定
-            switch response.result {
-                
-            case .success:
-                print(response.request?.url! as Any)
-                
-                let json = JSON(response.result.value!)
-                if json["status"].stringValue == "OK" {
-                    
-                    // 検索ルート候補のすべてを取得
-                    let routes = json["routes"].arrayValue
-                    // 検索ルート候補の0番目の始点から終点までのルートの情報を取得
-                    let overviewPolyline = routes[0]["overview_polyline"].dictionary
-                    let route = overviewPolyline!["points"]?.stringValue
-                    
-                    // ルートの線を引く GMSPathは静的配列のため, 動的配列のGMSMutablePathを使う.
-                    self.routePath = GMSMutablePath.init(fromEncodedPath: route!)!
-                    
-                    let polyline = GMSPolyline(path: self.routePath)
-                    
-                    polyline.strokeColor = .blue
-                    polyline.strokeWidth = 10.0
-                    polyline.map = self.mapView
-                }
-                
-            case .failure(let error):
-                print(error)
-                self.alertMessage(message: "通信ができないので, ルートを検索することができません.")
-                return
-                
-            }
-        }
-    }
-    // 琉球大学のループ道路のルート検索URL
-    func createRequestRyukyuURL() -> String{
-        
-        // baseURLの作成.
-        let pearentURL = "https://maps.googleapis.com/maps/api/directions"
-        
-        
-        // 必須項目
-        let outputFormat="json" // json or xml
-        let origin = "\(ryukyuLatitude),\(ryukyuLongitude)"// 出発点の緯度と経度
-        let destination = "\(ryukyuLatitude),\(ryukyuLongitude)" // 到着点の緯度と経度
-        
-        // 省略可能な項目
-        let mode = "walking" //driving(default), walking, bicycling, transit
-        /*
-        let waypoints = ["26.245985,127.763861", // 中継点.  琉球大学南口
-                         "26.247313,127.768448"] // 琉球大学東口
-                        .joined(separator: "|")*/
-        let alternatives = "false" // 複数のルートを表示 -> true , いらない -> false
-        
-        // 子URLの作成
-        let childURL = ["\(outputFormat)?",
-            "origin=\(origin)",
-            "destination=\(destination)",
-            "alternatives=\(alternatives)",
-            "mode=\(mode)"
-            //"waypoints=\(waypoints)"
-            ]
-            .joined(separator: "&")
-        
-        // URLの結合
-        let requestURL = "\(pearentURL)/\(childURL)"
-        // パイプライン(|)のエンコード(これをしないと中継点が正しく認識されない.
-        if let requestEncodeURL = requestURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed){
-            return requestEncodeURL
-        }
-        
-        return requestURL
-        
     }
     
     // 琉球大学の場所にmarkerを設置できる関数
