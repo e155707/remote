@@ -19,6 +19,7 @@ class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelega
     var lineMeToGoal = GMSPolyline()
 
     var mylocation = CLLocation()
+    
     var goal = CLLocation()
     var count = 0
     // WGS84の座標系での琉球大学の位置(緯度, 経度)
@@ -46,6 +47,7 @@ class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelega
         goal = CLLocation(latitude: ryukyuLatitude, longitude: ryukyuLongitude)
         initMapView()
         setLocateManager()
+        // makeCheckpointに直す
         ryukyuLocationMarker()
         
     }
@@ -53,6 +55,9 @@ class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelega
     // mapViewの初期化. 最初は琉球大学を写すよう指定
     func initMapView(){
         // WGS84の座標系でカメラを設定. latitude: 緯度, longitude: 経度
+        
+        
+        // positonMasure -> getCurrentposition or makeダミーpositionみたいな感じで琉球大学をさす
         let camera = GMSCameraPosition.camera(withLatitude: ryukyuLatitude, longitude: ryukyuLongitude, zoom: zoomLevel)
 
    
@@ -60,6 +65,7 @@ class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelega
         //self.mapView = GMSMapView.map(withFrame: .zero, camera: camera)
         self.mapView.camera = camera
         self.mapView.delegate = self
+    
         self.mapView.settings.compassButton = true
         self.mapView.settings.myLocationButton = true
         
@@ -143,7 +149,8 @@ class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelega
         }
     }
     
-    
+    //　遷移関係は, 別のクラスを用意したりする. gameEngine
+    // プロトコルを作る. locationChangedという
     
     // 位置情報がlocationManager.distanceFilterの値分更新された時に呼び出されるメソッド.
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -218,7 +225,7 @@ class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelega
         
     }
     
-    
+    // routeManagerを作る
     func getRoutes(_ start:CLLocation, _ end:CLLocation) {
         
         let requestURL = createRequeseURL(start, end)
