@@ -13,21 +13,19 @@ import SwiftyJSON
 
 class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelegate {
     let locationManager = CLLocationManager()
-    var routePath = GMSMutablePath()
+    let scoreManager = ScoreManager()
+    let distanceManager = DistanceManager()
+    
     @IBOutlet var mapView: GMSMapView!
     
-    var lineMeToGoal = GMSPolyline()
-
     var myLocation = CLLocation()
-    var goalLocation = CLLocation()
+
     var count = 0
-    // WGS84の座標系での琉球大学の位置(緯度, 経度)
-    let ryukyuLatitude = 26.253726
-    let ryukyuLongitude = 127.766949
+
     let zoomLevel:Float = 17
     
     var mapRouteManager = MapRouteManager()
-    
+    var total: Double = 0
     //AppDelegateを呼ぶ
     var appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
     
@@ -41,22 +39,25 @@ class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelega
      */
     override func viewDidLoad() {
         super.viewDidLoad()
-        goalLocation = CLLocation(latitude: ryukyuLatitude, longitude: ryukyuLongitude)
+        //goalLocation = CLLocation(latitude: ryukyuLatitude, longitude: ryukyuLongitude)
         initMapView()
+        initManager()
         setLocateManager()
-        ryukyuLocationMarker()
         
+    }
+    
+    func initManager(){
+        mapRouteManager.mapView = mapView
+        mapRouteManager.getDummyCheckpoint()
     }
     
     // mapViewの初期化. 最初は琉球大学を写すよう指定
     func initMapView(){
-        // WGS84の座標系でカメラを設定. latitude: 緯度, longitude: 経度
-        let camera = GMSCameraPosition.camera(withLatitude: ryukyuLatitude, longitude: ryukyuLongitude, zoom: zoomLevel)
 
-   
+
         // GoogleMapの初期化
-        //self.mapView = GMSMapView.map(withFrame: .zero, camera: camera)
-        self.mapView.camera = camera
+
+        getInitDummyCamera()
         self.mapView.delegate = self
         self.mapView.settings.compassButton = true
         self.mapView.settings.myLocationButton = true
@@ -64,6 +65,15 @@ class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelega
         // 地形の起伏と道路を表示するマップ
         self.mapView.mapType = GMSMapViewType.terrain
         
+    }
+    
+    func getInitDummyCamera(){
+        // WGS84の座標系でカメラを設定. latitude: 緯度, longitude: 経度
+        // WGS84の座標系での琉球大学の位置(緯度, 経度)
+        let ryukyuLatitude = 26.253726
+        let ryukyuLongitude = 127.766949
+        let camera = GMSCameraPosition.camera(withLatitude: ryukyuLatitude, longitude: ryukyuLongitude, zoom: zoomLevel)
+        self.mapView.camera = camera
     }
     
     // 位置情報の設定
@@ -79,17 +89,9 @@ class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelega
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         
         // 現在位置からどれぐらい動いたら更新するか. 単位はm
-        locationManager.distanceFilter = 1
+        locationManager.distanceFilter = 100
         locationManager.delegate = self
         locationManager.startUpdatingLocation()
-        
-    }
-    
-    func initScore(_ distanceInMeters: CLLocationDistance){
-        if count == 0 {
-            appDelegate.totalScore = 0
-            count = 1
-        }
         
     }
     
@@ -120,13 +122,18 @@ class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelega
         case .restricted:
             print("このアプリケーションは位置情報サービスを使用できません(ユーザによって拒否されたわけではありません)")
             // 「このアプリは、位置情報を取得できないために、正常に動作できません」を表示する
-             MapErrorController().notGetLocation()
+            MapErrorController().notGetLocation()
             break
  
         case .authorizedAlways:
             print("常時、位置情報の取得が許可されています。")
             myLocationMarker(true)
-            mapRouteManager.getInitDummyRoutes(myLocation, mapView)
+            if let myLocation = mapView.myLocation {
+                print("User's location: \(myLocation)")
+            } else {
+                print("User's location is unknown")
+            }
+            mapRouteManager.getInitDummyRoutes(myLocation)
             break
             
         case .authorizedWhenInUse:
@@ -134,7 +141,12 @@ class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelega
             //alertMessage(message: "このアプリは常に位置情報が必要です.")
             myLocationMarker(true)
             locationManager.requestAlwaysAuthorization()
-            mapRouteManager.getInitDummyRoutes(myLocation, mapView)
+            if let myLocation = mapView.myLocation {
+                print("User's location: \(myLocation)")
+            } else {
+                print("User's location is unknown")
+            }
+            mapRouteManager.getInitDummyRoutes(myLocation)
             // 位置情報取得の開始処理
             break
         
@@ -151,51 +163,40 @@ class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelega
                                               longitude: location.coordinate.longitude,
                                               zoom: zoomLevel)
         self.mapView.camera = camera
-        
-        
-        routePath.replaceCoordinate(at: 0, with: location.coordinate)
+        /*
+        if(count==0){
+            myLocation = location
+            count = count+1
+        }*/
         
         let locationDistance = location.distance(from: myLocation)
-        if (isCheckpointArrive(location, goalLocation)){
+        total = total + locationDistance
+        print("total = \(total), locationDistance = \(locationDistance)")
+        if (mapRouteManager.isDummyCheckpointArrive(location)){
             let storyboard: UIStoryboard = UIStoryboard(name: "EventControlle", bundle: nil)
             let next: UIViewController = storyboard.instantiateInitialViewController() as! UIViewController
             present(next, animated: true, completion: nil)
             
-            // let distanceInMeters = coordinate0.distance(from: coordinate1)
+            //let distanceInMeters = coordinate0.distance(from: coordinate1)
             
         }else{
 
-            lineMeToGoal.map = nil
-            lineMeToGoal = GMSPolyline(path: self.routePath)
-            lineMeToGoal.strokeColor = .blue
-            lineMeToGoal.strokeWidth = 10.0
-            lineMeToGoal.map = self.mapView
+            mapRouteManager.updateRoute(myLocation: location)
             addScore(locationDistance)
             addWalk(locationDistance)
-            initScore(locationDistance)
             myLocation = location
         }
     }
     
-    // チェックポイントについたかどうかの判定
-    func isCheckpointArrive(_ firstLocation:CLLocation, _ secondLocation:CLLocation) -> Bool{
-        let errorRange:Double = 1 // error 10m
-        let distanceInMeters = firstLocation.distance(from: secondLocation)
-        if distanceInMeters <= errorRange{
-            return true
-        }
-        return false
-        
-    }
+
     
     
     func addScore(_ distanceInMeters: CLLocationDistance){
-        appDelegate.totalScore  = appDelegate.totalScore + scoreRatio * distanceInMeters
-        print(appDelegate.totalScore)
+        scoreManager.setScore(distanceInMeters)
     }
     
     func addWalk(_ distanceInMeters: CLLocationDistance){
-        totalWalkDistance = totalWalk + distanceInMeters
+        distanceManager.setdistance(distanceInMeters)
     }
     
     // Handle location manager errors.
@@ -204,18 +205,7 @@ class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelega
         print("Error: \(error)")
     }
     
-    // 琉球大学の場所にmarkerを設置できる関数
-    func ryukyuLocationMarker(){
-        // Creates a marker in the center of the map.
-        let marker = GMSMarker()
-        
-        // マーカーの場所を表示. WGS84の座標系. latitude: 緯度, longitude: 経度
-        marker.position = CLLocationCoordinate2D(latitude: ryukyuLatitude, longitude: ryukyuLongitude)
-        marker.title = "Ryuukyuu"
-        marker.snippet = "Okinawa"
-        marker.map = mapView
-    }
-    
+
     
     
     override func viewWillAppear(_ animated: Bool) {

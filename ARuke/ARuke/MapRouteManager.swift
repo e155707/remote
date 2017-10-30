@@ -13,9 +13,40 @@ import SwiftyJSON
 
 class MapRouteManager{
     
+    var mapView = GMSMapView()
     var routePath = GMSMutablePath()
+    
+    var drawLineFromPath = GMSPolyline()
 
-    func getInitRoutes(_ start:CLLocation, _ goal:CLLocation,_ mapView:GMSMapView) {
+    func drawRouteFromPath(){
+        // ルートの線を引く GMSPathは静的配列のため, 動的配列のGMSMutablePathを使う.
+        
+        drawLineFromPath.map = nil
+        drawLineFromPath = GMSPolyline(path: routePath)
+        drawLineFromPath.strokeColor = .blue
+        drawLineFromPath.strokeWidth = 10.0
+        drawLineFromPath.map = mapView
+
+    }
+    
+    func updateRoute(myLocation myLocation:CLLocation){
+        routePath.replaceCoordinate(at: 0, with: myLocation.coordinate)
+        drawRouteFromPath()
+    }
+    
+    // チェックポイントについたかどうかの判定
+    func isCheckpointArrive(_ myLocation:CLLocation, _ checkPointLocation:CLLocation) -> Bool{
+        let errorRange:Double = 10 // error 10m
+        let distanceInMeters = myLocation.distance(from: checkPointLocation)
+        if distanceInMeters <= errorRange{
+            return true
+        }
+        return false
+        
+    }
+    
+    
+    func getRoutes(_ start:CLLocation, _ goal:CLLocation) {
         
         let requestURL = createRequeseURL(start, goal)
         print(requestURL)
@@ -37,13 +68,10 @@ class MapRouteManager{
                     let route = overviewPolyline!["points"]?.stringValue
                     
                     // ルートの線を引く GMSPathは静的配列のため, 動的配列のGMSMutablePathを使う.
-                    self.routePath = GMSMutablePath.init(fromEncodedPath: route!)!
+                    self.routePath = GMSMutablePath(fromEncodedPath: route!)!
                     
-                    let polyline = GMSPolyline(path: self.routePath)
+                    self.drawRouteFromPath()
                     
-                    polyline.strokeColor = .blue
-                    polyline.strokeWidth = 10.0
-                    polyline.map = mapView
                 }
                 else{
                     self.routePath.add(goal.coordinate)
@@ -94,18 +122,37 @@ class MapRouteManager{
         if let requestEncodeURL = requestURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed){
             return requestEncodeURL
         }
-        
         return requestURL
         
     }
     
-    func getInitDummyRoutes(_ myLocation:CLLocation, _ mapView:GMSMapView){
-        // WGS84の座標系での琉球大学の位置(緯度, 経度)
-        let ryukyuLatitude = 26.253726
-        let ryukyuLongitude = 127.766949
+    
+    
+    // ---- ここから, ダミーの値を返す関数群 ---- //
+    
+    // ダミーの琉球大学のチェックポイント
+    let dummyCheckpoint = CLLocation(latitude: 26.253726, longitude: 127.766949)
+    
+    func getInitDummyRoutes(_ myLocation:CLLocation){
+        let goalLocation = dummyCheckpoint
+        getRoutes(myLocation, goalLocation)
+    }
+    
+    // 琉球大学の場所にmarkerを設置できる関数
+    func getDummyCheckpoint(){
+        // Creates a marker in the center of the map.
+        let marker = GMSMarker()
         
-        let goalLocation = CLLocation(latitude: ryukyuLatitude, longitude: ryukyuLongitude)
-        getInitRoutes(myLocation, goalLocation ,mapView)
+        // マーカーの場所を表示. WGS84の座標系. latitude: 緯度, longitude: 経度
+        marker.position = dummyCheckpoint.coordinate
+        marker.title = "Ryuukyuu"
+        marker.snippet = "Okinawa"
+        marker.map = mapView
+    }
+    
+    // チェックポイントについたかどうかの判定
+    func isDummyCheckpointArrive(_ myLocation:CLLocation) -> Bool{
+        return isCheckpointArrive(myLocation,dummyCheckpoint)
     }
 }
 
