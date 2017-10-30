@@ -20,6 +20,7 @@ class EventController: UIViewController, ARSCNViewDelegate {
     var planeVector:SCNVector3 = SCNVector3()
     var planes:[Plane] = []
     
+    let answer:QuizEventManager = QuizEventManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -56,7 +56,7 @@ class QuizEventManager{
         return blueAnswer
     }
     
-    func getAnswergreen() -> Bool{
+    func getAnswerGreen() -> Bool{
         greenAnswer = defaults.bool(forKey: "greenKey")
         
         return greenAnswer

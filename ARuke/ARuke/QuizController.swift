@@ -18,18 +18,33 @@ class QuizController: UIViewController{
         Answer.setAnswerRed(true)
         Answer.setAnswerBlue(false)
         Answer.setAnswerGreen(false)
+        
+        let storyboard: UIStoryboard = UIStoryboard(name:"EventController",bundle: nil)
+        let next = storyboard.instantiateViewController(withIdentifier: "EventController") as! EventController
+        present(next as UIViewController, animated: true,completion: nil)
+        print("Event")
     }
     
     @IBAction func blue(_ sender: Any) {
         Answer.setAnswerRed(false)
         Answer.setAnswerBlue(true)
         Answer.setAnswerGreen(false)
+        
+        let storyboard: UIStoryboard = UIStoryboard(name:"EventController",bundle: nil)
+        let next = storyboard.instantiateViewController(withIdentifier: "EventController") as! EventController
+        present(next as UIViewController, animated: true,completion: nil)
+        print("Event")
     }
     
     @IBAction func green(_ sender: Any) {
         Answer.setAnswerRed(false)
         Answer.setAnswerBlue(false)
         Answer.setAnswerGreen(true)
+        
+        let storyboard: UIStoryboard = UIStoryboard(name:"EventController",bundle: nil)
+        let next = storyboard.instantiateViewController(withIdentifier: "EventController") as! EventController
+        present(next as UIViewController, animated: true,completion: nil)
+        print("Event")
     }
     
     

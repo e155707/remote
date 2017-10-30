@@ -30,9 +30,9 @@ class ObjectManager{
         Node2.scale = SCNVector3(0.005, 0.005, 0.005)
         Node3.scale = SCNVector3(0.005, 0.005, 0.005)
     
-        Node.name = "miss"
+        Node.name = "miss1"
         Node2.name = "hit"
-        Node3.name = "miss"
+        Node3.name = "miss2"
         
         Node.position  = planeVector
         Node.position.x = Node.position.x - 0.5

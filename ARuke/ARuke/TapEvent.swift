@@ -26,8 +26,9 @@ extension EventController{
             //結果は配列で返る．一つ以上ヒットしており，かつヒットしたgeometryのノードに名前があれば実行する
             if let res = results.first, let name = res.node.name {
                 print(name)
-                if(name == "hit"){
+                if(name == "hit" && answer.getAnswerBlue() == true){
                     
+                    print(answer.getAnswerBlue())
                     planeNode.childNode(withName: name, recursively: false)?.runAction(SCNAction.removeFromParentNode())
                     
                     let score:ScoreManager = ScoreManager()
@@ -37,19 +38,34 @@ extension EventController{
                     object.managerObjectItem(planeVector,planeNode)
                     
                     
-                }else if(name == "miss"){
+                }else if(name == "miss1" && answer.getAnswerRed() == true){
                     
+                    print(answer.getAnswerRed())
                     planeNode.childNode(withName: name, recursively: false)?.runAction(SCNAction.removeFromParentNode())
-
                     
-                }else{
+                    let storyboard: UIStoryboard = UIStoryboard(name:"Map",bundle: nil)
+                    let next = storyboard.instantiateViewController(withIdentifier: "Map") as! MapConroller
+                    present(next as UIViewController, animated: true,completion: nil)
+                    print("Map")
+                
+                }else if(name == "miss2" && answer.getAnswerGreen() == true){
+                    
+                    print(answer.getAnswerGreen())
+                    planeNode.childNode(withName: name, recursively: false)?.runAction(SCNAction.removeFromParentNode())
                     
                     let storyboard: UIStoryboard = UIStoryboard(name:"Map",bundle: nil)
                     let next = storyboard.instantiateViewController(withIdentifier: "Map") as! MapConroller
                     present(next as UIViewController, animated: true,completion: nil)
                     print("Map")
                     
-                }
+                }else if(name == "x2"){
+                    
+                    let storyboard: UIStoryboard = UIStoryboard(name:"Map",bundle: nil)
+                    let next = storyboard.instantiateViewController(withIdentifier: "Map") as! MapConroller
+                    present(next as UIViewController, animated: true,completion: nil)
+                    print("Map")
+                    
+                }else{}
             }
         }
     }
