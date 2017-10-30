@@ -15,24 +15,13 @@ class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelega
     let locationManager = CLLocationManager()
     let scoreManager = ScoreManager()
     let distanceManager = DistanceManager()
+    let mapRouteManager = MapRouteManager()
     
     @IBOutlet var mapView: GMSMapView!
     
-    var myLocation = CLLocation()
-
-    var count = 0
+    var oldLocation:CLLocation!
 
     let zoomLevel:Float = 17
-    
-    var mapRouteManager = MapRouteManager()
-    var total: Double = 0
-    //AppDelegateを呼ぶ
-    var appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
-    
-    //appDelegate.totalScore// これが表示されるScore
-    var scoreRatio:Double = 1 // 倍率
-    var totalWalkDistance: Double = 0 //今まで歩いた数. 単位はメートル
-    
     
     /** override vieDidLoad()
      * Viewの初期化,locationManagerの初期化. GoogleMapをMap.storyboardに表示する.
@@ -54,9 +43,7 @@ class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelega
     // mapViewの初期化. 最初は琉球大学を写すよう指定
     func initMapView(){
 
-
         // GoogleMapの初期化
-
         getInitDummyCamera()
         self.mapView.delegate = self
         self.mapView.settings.compassButton = true
@@ -89,7 +76,7 @@ class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelega
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         
         // 現在位置からどれぐらい動いたら更新するか. 単位はm
-        locationManager.distanceFilter = 100
+        locationManager.distanceFilter = 10
         locationManager.delegate = self
         locationManager.startUpdatingLocation()
         
@@ -128,12 +115,7 @@ class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelega
         case .authorizedAlways:
             print("常時、位置情報の取得が許可されています。")
             myLocationMarker(true)
-            if let myLocation = mapView.myLocation {
-                print("User's location: \(myLocation)")
-            } else {
-                print("User's location is unknown")
-            }
-            mapRouteManager.getInitDummyRoutes(myLocation)
+            
             break
             
         case .authorizedWhenInUse:
@@ -141,12 +123,6 @@ class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelega
             //alertMessage(message: "このアプリは常に位置情報が必要です.")
             myLocationMarker(true)
             locationManager.requestAlwaysAuthorization()
-            if let myLocation = mapView.myLocation {
-                print("User's location: \(myLocation)")
-            } else {
-                print("User's location is unknown")
-            }
-            mapRouteManager.getInitDummyRoutes(myLocation)
             // 位置情報取得の開始処理
             break
         
@@ -163,33 +139,26 @@ class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelega
                                               longitude: location.coordinate.longitude,
                                               zoom: zoomLevel)
         self.mapView.camera = camera
-        /*
-        if(count==0){
-            myLocation = location
-            count = count+1
-        }*/
         
-        let locationDistance = location.distance(from: myLocation)
-        total = total + locationDistance
-        print("total = \(total), locationDistance = \(locationDistance)")
+        if oldLocation == nil {
+            oldLocation = location
+            mapRouteManager.getInitDummyRoutes(location)
+        }
+        let locationDistance = location.distance(from: oldLocation)
+        
         if (mapRouteManager.isDummyCheckpointArrive(location)){
             let storyboard: UIStoryboard = UIStoryboard(name: "EventControlle", bundle: nil)
             let next: UIViewController = storyboard.instantiateInitialViewController() as! UIViewController
             present(next, animated: true, completion: nil)
-            
-            //let distanceInMeters = coordinate0.distance(from: coordinate1)
             
         }else{
 
             mapRouteManager.updateRoute(myLocation: location)
             addScore(locationDistance)
             addWalk(locationDistance)
-            myLocation = location
+            oldLocation = location
         }
     }
-    
-
-    
     
     func addScore(_ distanceInMeters: CLLocationDistance){
         scoreManager.setScore(distanceInMeters)
@@ -204,9 +173,6 @@ class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelega
         locationManager.stopUpdatingLocation()
         print("Error: \(error)")
     }
-    
-
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
