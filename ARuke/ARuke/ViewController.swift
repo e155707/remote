@@ -40,6 +40,10 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         scoreLabel.text = score.getScore()
         distanceLabel.text = distance.getDistance()
+        
+        //Answerの初期化
+        let Answer:QuizEventManager = QuizEventManager()
+        Answer.answerInitialization()
     
     }
     

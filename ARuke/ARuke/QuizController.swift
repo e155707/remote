@@ -12,20 +12,24 @@ import ARKit
 
 class QuizController: UIViewController{
     
-    var red:Int = 0
-    var blue:Int = 0
-    var green:Int = 0
+    let Answer:QuizEventManager = QuizEventManager()
     
     @IBAction func red(_ sender: Any) {
-        red = 1
+        Answer.setAnswerRed(true)
+        Answer.setAnswerBlue(false)
+        Answer.setAnswerGreen(false)
     }
     
     @IBAction func blue(_ sender: Any) {
-        blue = 1
+        Answer.setAnswerRed(false)
+        Answer.setAnswerBlue(true)
+        Answer.setAnswerGreen(false)
     }
     
     @IBAction func green(_ sender: Any) {
-        green = 1
+        Answer.setAnswerRed(false)
+        Answer.setAnswerBlue(false)
+        Answer.setAnswerGreen(true)
     }
     
     

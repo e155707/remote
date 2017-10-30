@@ -14,22 +14,52 @@ class QuizEventManager{
     
     let defaults = UserDefaults.standard
     
-    func setAnswerColor(_ answerColor:Bool){
-        
-        redAnswer = defaults.bool(forKey: "redKey")
-        blueAnswer = defaults.bool(forKey: "blueKey")
-        greenAnswer = defaults.bool(forKey: "greenKey")
+    func answerInitialization(){
+        redAnswer = false
+        blueAnswer = false
+        greenAnswer = false
         
         defaults.set(redAnswer, forKey: "redKey")
-        defaults.set(blueAnswer, forKey: "redKey")
-        defaults.set(greenAnswer, forKey: "redKey")
+        defaults.set(redAnswer, forKey: "blueKey")
+        defaults.set(redAnswer, forKey: "greenKey")
     }
     
-    func getAnswerColor() -> Bool{
+    func setAnswerRed(_ answerColorRed:Bool){
         redAnswer = defaults.bool(forKey: "redKey")
+        redAnswer = answerColorRed
+        defaults.set(redAnswer, forKey: "redKey")
+    }
+    
+    func setAnswerBlue(_ answerColorBlue:Bool){
         blueAnswer = defaults.bool(forKey: "blueKey")
+        blueAnswer = answerColorBlue
+        defaults.set(blueAnswer, forKey: "blueKey")
+    }
+    
+    func setAnswerGreen(_ answerColorGreen:Bool){
         greenAnswer = defaults.bool(forKey: "greenKey")
+        greenAnswer = answerColorGreen
+        defaults.set(greenAnswer, forKey: "greenKey")
+    }
+    
+    
+    
+    func getAnswerRed() -> Bool{
+        redAnswer = defaults.bool(forKey: "redKey")
         
         return redAnswer
     }
+    
+    func getAnswerBlue() -> Bool{
+        blueAnswer = defaults.bool(forKey: "blueKey")
+        
+        return blueAnswer
+    }
+    
+    func getAnswergreen() -> Bool{
+        greenAnswer = defaults.bool(forKey: "greenKey")
+        
+        return greenAnswer
+    }
+    
 }
