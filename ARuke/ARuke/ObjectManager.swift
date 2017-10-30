@@ -13,18 +13,18 @@ class ObjectManager{
     
     func managerObjectTresure(_ planeVector:SCNVector3,_ planeNode:SCNNode){
         
-        let scene = SCNScene(named: "art.scnassets/tresure/takarabako.dae")!
-        //let scene2 = SCNScene(named: "art.scnassets/tresure/takarabako.dae")!
-        //let scene3 = SCNScene(named: "art.scnassets/tresure/takarabako.dae")!
+        let scene = SCNScene(named: "art.scnassets/tresure/treasureboxRED.dae")!
+        let scene2 = SCNScene(named: "art.scnassets/tresure/treasureboxBLUE.dae")!
+        let scene3 = SCNScene(named: "art.scnassets/tresure/treasureboxGREEN.dae")!
         
         guard
-            let Node = scene.rootNode.childNode(withName: "takarabako", recursively: true)
-            //let Node2 = scene2.rootNode.childNode(withName: "takarabako", recursively: true),
-            //let Node3 = scene3.rootNode.childNode(withName: "takarabako", recursively: true)
+            let Node = scene.rootNode.childNode(withName: "treasureboxRED", recursively: true),
+            let Node2 = scene2.rootNode.childNode(withName: "treasureboxBLUE", recursively: true),
+            let Node3 = scene3.rootNode.childNode(withName: "treasureboxGREEN", recursively: true)
             else{return}
         
-        let Node2 = Node.clone()
-        let Node3 = Node.clone()
+        //let Node2 = Node.clone()
+        //let Node3 = Node.clone()
         
         Node.scale = SCNVector3(0.005, 0.005, 0.005)
         Node2.scale = SCNVector3(0.005, 0.005, 0.005)
@@ -54,7 +54,7 @@ class ObjectManager{
     
     func managerObjectItem(_ planeVector:SCNVector3,_ planeNode:SCNNode){
         
-        let scene4 = SCNScene(named: "art.scnassets/itemx2.dae")!
+        let scene4 = SCNScene(named: "art.scnassets/item_x2.dae")!
         
         guard
             let Node4 = scene4.rootNode.childNode(withName: "Text", recursively: true)
