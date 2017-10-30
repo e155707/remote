@@ -30,6 +30,9 @@ extension EventController{
                     
                     planeNode.childNode(withName: name, recursively: false)?.runAction(SCNAction.removeFromParentNode())
                     
+                    let score:ScoreManager = ScoreManager()
+                    score.getTimesEffect(2.0)
+                    
                     let object:ObjectManager = ObjectManager()
                     object.managerObjectItem(planeVector,planeNode)
                     

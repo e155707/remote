@@ -11,14 +11,25 @@ import Foundation
 class ScoreManager{
     let defaults = UserDefaults.standard
     var score:Double = 0
+    var timesEffect:Double = 1
     
     func setScore(_ scorePoint:Double){
    
         score = defaults.double(forKey: "score")
-        score = score + 1
+        timesEffect = defaults.double(forKey: "times")
+        score = score + (scorePoint)*timesEffect
         print(score, scorePoint)
         
+        
         defaults.set(score, forKey: "score")
+    }
+    
+    func getTimesEffect(_ times:Double){
+        
+        timesEffect = defaults.double(forKey: "times")
+        timesEffect = timesEffect * times
+        
+        defaults.set(timesEffect, forKey: "times")
     }
     
     func getScore() -> String {
@@ -37,7 +48,7 @@ class DistanceManager{
     func setdistance(_ distancePoint:Double){
         
         distance = defaults.double(forKey: "distance")
-        distance = distance + 1
+        distance = distance + distancePoint
         
         defaults.set(distance, forKey: "distance")
     }

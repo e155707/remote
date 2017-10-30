@@ -23,6 +23,9 @@
 		F00B58171FA45C970018C429 /* TapEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00B58161FA45C970018C429 /* TapEvent.swift */; };
 		F00B58191FA4612A0018C429 /* ObjectManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00B58181FA4612A0018C429 /* ObjectManager.swift */; };
 		F09AF1451FA235B100E1FE13 /* EventAnime.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09AF1441FA235B100E1FE13 /* EventAnime.swift */; };
+		F0DA5DCF1FA627CB00407B89 /* QuizController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DA5DCE1FA627CB00407B89 /* QuizController.swift */; };
+		F0DA5DD11FA627F500407B89 /* QuizController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0DA5DD01FA627F500407B89 /* QuizController.storyboard */; };
+		F0DA5DD31FA6DC7900407B89 /* QuizEventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DA5DD21FA6DC7900407B89 /* QuizEventManager.swift */; };
 		F0DD10FE1FA0233C006048AD /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DD10FD1FA0233C006048AD /* Score.swift */; };
 		F0E1F9B91F9BCADA00555BC0 /* yurumoji.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F0E1F9B81F9BC1BD00555BC0 /* yurumoji.ttf */; };
 		F0E1F9BC1F9C552D00555BC0 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E1F9BB1F9C552D00555BC0 /* MapController.swift */; };
@@ -84,6 +87,9 @@
 		F00B58161FA45C970018C429 /* TapEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapEvent.swift; sourceTree = "<group>"; };
 		F00B58181FA4612A0018C429 /* ObjectManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectManager.swift; sourceTree = "<group>"; };
 		F09AF1441FA235B100E1FE13 /* EventAnime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAnime.swift; sourceTree = "<group>"; };
+		F0DA5DCE1FA627CB00407B89 /* QuizController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizController.swift; sourceTree = "<group>"; };
+		F0DA5DD01FA627F500407B89 /* QuizController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QuizController.storyboard; sourceTree = "<group>"; };
+		F0DA5DD21FA6DC7900407B89 /* QuizEventManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizEventManager.swift; sourceTree = "<group>"; };
 		F0DD10FD1FA0233C006048AD /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		F0E1F9B81F9BC1BD00555BC0 /* yurumoji.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = yurumoji.ttf; sourceTree = "<group>"; };
 		F0E1F9BA1F9C551E00555BC0 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
@@ -92,7 +98,6 @@
 		F0E1F9C11F9C6DEB00555BC0 /* Keys.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Keys.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0E1F9C31F9C6DEF00555BC0 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0E1F9C71F9E3E9100555BC0 /* Plane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plane.swift; sourceTree = "<group>"; };
-		F0E1F9C91F9ED16200555BC0 /* Result.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Result.storyboard; sourceTree = "<group>"; };
 		F0E1F9CB1F9ED89200555BC0 /* ResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultController.swift; sourceTree = "<group>"; };
 		F0E1F9CD1F9EDCAA00555BC0 /* Result.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Result.storyboard; sourceTree = "<group>"; };
 		F0E794C11F98EF9C006CA3A1 /* EventController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventController.swift; sourceTree = "<group>"; };
@@ -175,6 +180,9 @@
 				B0C3EA5B1F96FC7600385081 /* ViewController.swift */,
 				F0DD10FD1FA0233C006048AD /* Score.swift */,
 				B0C3EA5D1F96FC7600385081 /* Main.storyboard */,
+				F0E1F9BB1F9C552D00555BC0 /* MapController.swift */,
+				B09D26EE1FA5BECB005F7904 /* MapErrorController.swift */,
+				B09D26F01FA5BECC005F7904 /* MapRouteManager.swift */,
 				F0E1F9BA1F9C551E00555BC0 /* Map.storyboard */,
 				F0E794C11F98EF9C006CA3A1 /* EventController.swift */,
 				F00B58181FA4612A0018C429 /* ObjectManager.swift */,
@@ -182,12 +190,11 @@
 				F00B58161FA45C970018C429 /* TapEvent.swift */,
 				F0E1F9C71F9E3E9100555BC0 /* Plane.swift */,
 				F00B58141FA45AA60018C429 /* PlaneEvent.swift */,
-				F0E1F9BB1F9C552D00555BC0 /* MapController.swift */,
-				B09D26EE1FA5BECB005F7904 /* MapErrorController.swift */,
-				B09D26F01FA5BECC005F7904 /* MapRouteManager.swift */,
 				F0E794C31F98F710006CA3A1 /* EventControlle.storyboard */,
+				F0DA5DCE1FA627CB00407B89 /* QuizController.swift */,
+				F0DA5DD21FA6DC7900407B89 /* QuizEventManager.swift */,
+				F0DA5DD01FA627F500407B89 /* QuizController.storyboard */,
 				F0E1F9CB1F9ED89200555BC0 /* ResultController.swift */,
-				F0E1F9C91F9ED16200555BC0 /* Result.storyboard */,
 				F0E1F9CD1F9EDCAA00555BC0 /* Result.storyboard */,
 				B0C3EA601F96FC7600385081 /* Assets.xcassets */,
 				B0C3EA621F96FC7600385081 /* LaunchScreen.storyboard */,
@@ -348,6 +355,7 @@
 				F0E1F9B91F9BCADA00555BC0 /* yurumoji.ttf in Resources */,
 				B0C3EA5A1F96FC7600385081 /* art.scnassets in Resources */,
 				B0C3EA641F96FC7600385081 /* LaunchScreen.storyboard in Resources */,
+				F0DA5DD11FA627F500407B89 /* QuizController.storyboard in Resources */,
 				B0C3EA611F96FC7600385081 /* Assets.xcassets in Resources */,
 				F0E794C41F98F710006CA3A1 /* EventControlle.storyboard in Resources */,
 				B0C3EA5F1F96FC7600385081 /* Main.storyboard in Resources */,
@@ -533,6 +541,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0DA5DCF1FA627CB00407B89 /* QuizController.swift in Sources */,
 				F0DD10FE1FA0233C006048AD /* Score.swift in Sources */,
 				F0E1F9BC1F9C552D00555BC0 /* MapController.swift in Sources */,
 				B0C3EA5C1F96FC7600385081 /* ViewController.swift in Sources */,
@@ -542,6 +551,7 @@
 				F0E1F9C81F9E3E9100555BC0 /* Plane.swift in Sources */,
 				B0C3EA581F96FC7600385081 /* AppDelegate.swift in Sources */,
 				B09D26F11FA5BECC005F7904 /* MapErrorController.swift in Sources */,
+				F0DA5DD31FA6DC7900407B89 /* QuizEventManager.swift in Sources */,
 				F0E794C21F98EF9C006CA3A1 /* EventController.swift in Sources */,
 				F09AF1451FA235B100E1FE13 /* EventAnime.swift in Sources */,
 				F00B58171FA45C970018C429 /* TapEvent.swift in Sources */,
