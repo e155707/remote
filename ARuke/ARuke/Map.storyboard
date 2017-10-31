@@ -45,10 +45,10 @@
             </objects>
             <point key="canvasLocation" x="-31.199999999999999" y="58.920539730134934"/>
         </scene>
-        <!--QuizController-->
+        <!--EventController-->
         <scene sceneID="nq4-h9-lKV">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="EventControlle" storyboardName="QuizController" referencedIdentifier="QuizController" id="Iye-v7-oay" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="EventControlle" storyboardName="EventController" referencedIdentifier="EventController" id="Iye-v7-oay" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YuL-Z6-FEa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="608" y="58"/>

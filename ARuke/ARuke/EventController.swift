@@ -46,8 +46,8 @@ class EventController: UIViewController, ARSCNViewDelegate {
         planeFlag = 0
         
         
-        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
-        timer.fire()
+        //timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
+        //timer.fire()
     }
     
     override func viewWillAppear(_ animated: Bool) {

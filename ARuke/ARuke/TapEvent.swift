@@ -27,7 +27,7 @@ extension EventController{
             if let res = results.first, let name = res.node.name {
                 print(name)
                 
-                if(name == "hit" && answer.getAnswerBlue() == true){
+                if(name == "hit"){
                     
                     print(answer.getAnswerBlue())
                     planeNode.childNode(withName: name, recursively: false)?.runAction(SCNAction.removeFromParentNode())
@@ -39,7 +39,7 @@ extension EventController{
                     object.managerObjectItem(planeVector,planeNode)
                     
                     
-                }else if(name == "miss1" && answer.getAnswerRed() == true){
+                }else if(name == "miss1"){
                     
                     print(answer.getAnswerRed())
                     planeNode.childNode(withName: name, recursively: false)?.runAction(SCNAction.removeFromParentNode())
@@ -49,7 +49,7 @@ extension EventController{
                     present(next as UIViewController, animated: true,completion: nil)
                     print("Map")
                 
-                }else if(name == "miss2" && answer.getAnswerGreen() == true){
+                }else if(name == "miss2"){
                     
                     print(answer.getAnswerGreen())
                     planeNode.childNode(withName: name, recursively: false)?.runAction(SCNAction.removeFromParentNode())
