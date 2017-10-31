@@ -26,6 +26,7 @@
 		F0DA5DCF1FA627CB00407B89 /* QuizController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DA5DCE1FA627CB00407B89 /* QuizController.swift */; };
 		F0DA5DD11FA627F500407B89 /* QuizController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0DA5DD01FA627F500407B89 /* QuizController.storyboard */; };
 		F0DA5DD31FA6DC7900407B89 /* QuizEventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DA5DD21FA6DC7900407B89 /* QuizEventManager.swift */; };
+		F0DA5DD51FA76AB100407B89 /* LocateEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DA5DD41FA76AB100407B89 /* LocateEvent.swift */; };
 		F0DD10FE1FA0233C006048AD /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DD10FD1FA0233C006048AD /* Score.swift */; };
 		F0E1F9B91F9BCADA00555BC0 /* yurumoji.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F0E1F9B81F9BC1BD00555BC0 /* yurumoji.ttf */; };
 		F0E1F9BC1F9C552D00555BC0 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E1F9BB1F9C552D00555BC0 /* MapController.swift */; };
@@ -90,6 +91,7 @@
 		F0DA5DCE1FA627CB00407B89 /* QuizController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizController.swift; sourceTree = "<group>"; };
 		F0DA5DD01FA627F500407B89 /* QuizController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QuizController.storyboard; sourceTree = "<group>"; };
 		F0DA5DD21FA6DC7900407B89 /* QuizEventManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizEventManager.swift; sourceTree = "<group>"; };
+		F0DA5DD41FA76AB100407B89 /* LocateEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocateEvent.swift; sourceTree = "<group>"; };
 		F0DD10FD1FA0233C006048AD /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		F0E1F9B81F9BC1BD00555BC0 /* yurumoji.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = yurumoji.ttf; sourceTree = "<group>"; };
 		F0E1F9BA1F9C551E00555BC0 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 				F00B58161FA45C970018C429 /* TapEvent.swift */,
 				F0E1F9C71F9E3E9100555BC0 /* Plane.swift */,
 				F00B58141FA45AA60018C429 /* PlaneEvent.swift */,
+				F0DA5DD41FA76AB100407B89 /* LocateEvent.swift */,
 				F0E794C31F98F710006CA3A1 /* EventController.storyboard */,
 				F0DA5DCE1FA627CB00407B89 /* QuizController.swift */,
 				F0DA5DD21FA6DC7900407B89 /* QuizEventManager.swift */,
@@ -547,6 +550,7 @@
 				B0C3EA5C1F96FC7600385081 /* ViewController.swift in Sources */,
 				F0E1F9CC1F9ED89200555BC0 /* ResultController.swift in Sources */,
 				F00B58191FA4612A0018C429 /* ObjectManager.swift in Sources */,
+				F0DA5DD51FA76AB100407B89 /* LocateEvent.swift in Sources */,
 				B09D26F31FA5BECC005F7904 /* MapRouteManager.swift in Sources */,
 				F0E1F9C81F9E3E9100555BC0 /* Plane.swift in Sources */,
 				B0C3EA581F96FC7600385081 /* AppDelegate.swift in Sources */,

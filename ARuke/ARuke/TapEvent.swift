@@ -22,10 +22,11 @@ extension EventController{
             
             //３Dオブジェクトに対するヒットテスト（どのgeometryをタップしたか？）
             let results = view.hitTest(loc)
-            
+        
             //結果は配列で返る．一つ以上ヒットしており，かつヒットしたgeometryのノードに名前があれば実行する
             if let res = results.first, let name = res.node.name {
                 print(name)
+                
                 if(name == "hit" && answer.getAnswerBlue() == true){
                     
                     print(answer.getAnswerBlue())
@@ -70,3 +71,4 @@ extension EventController{
         }
     }
 }
+

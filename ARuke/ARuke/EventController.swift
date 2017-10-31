@@ -19,6 +19,9 @@ class EventController: UIViewController, ARSCNViewDelegate {
     var planeNode:SCNNode = SCNNode()
     var planeVector:SCNVector3 = SCNVector3()
     var planes:[Plane] = []
+    var timer: Timer!
+    
+    var planeFlag:Int = 0
     
     let answer:QuizEventManager = QuizEventManager()
     
@@ -40,6 +43,11 @@ class EventController: UIViewController, ARSCNViewDelegate {
         let tapGesture = UITapGestureRecognizer(target:self, action: #selector(self.handleTap(sender:)))
         sceneView.addGestureRecognizer(tapGesture)
         
+        planeFlag = 0
+        
+        
+        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
+        timer.fire()
     }
     
     override func viewWillAppear(_ animated: Bool) {

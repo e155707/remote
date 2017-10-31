@@ -15,21 +15,26 @@ extension EventController{
         
         guard let planeAnchor = anchor as? ARPlaneAnchor else { return }
         
-        // 平面を生成
-        let plane = Plane(anchor: planeAnchor)
+        if(planeFlag == 0){
         
-        planeNode = node
-        planeVector = SCNVector3(planeAnchor.center)
+            planeFlag = 1
+            
+            // 平面を生成
+            let plane = Plane(anchor: planeAnchor)
         
-        // ノードを追加
-        planeNode.addChildNode(plane)
+            planeNode = node
+            planeVector = SCNVector3(planeAnchor.center)
         
-        //宝箱
-        let object:ObjectManager = ObjectManager()
-        object.managerObjectTresure(planeVector,planeNode)
+            // ノードを追加
+            planeNode.addChildNode(plane)
         
+            //宝箱
+            let object:ObjectManager = ObjectManager()
+            object.managerObjectTresure(planeVector,planeNode)
+        
+        }
         // 管理用配列に追加
-        planes.append(plane)
+        //planes.append(plane)
         
     }
 }
