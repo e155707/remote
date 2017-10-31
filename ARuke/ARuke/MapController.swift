@@ -147,7 +147,7 @@ class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelega
         let locationDistance = location.distance(from: oldLocation)
         //notification()
         if (mapRouteManager.isDummyCheckpointArrive(location)){
-            
+            notification()
             // 遷移
             let storyboard: UIStoryboard = UIStoryboard(name: "EventControlle", bundle: nil)
             let next: UIViewController = storyboard.instantiateInitialViewController() as! UIViewController
