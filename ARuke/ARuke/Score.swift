@@ -13,20 +13,28 @@ class ScoreManager{
     var score:Double = 0
     var timesEffect:Double = 1
     
+ 
     func setScore(_ scorePoint:Double){
    
         score = defaults.double(forKey: "score")
         timesEffect = defaults.double(forKey: "times")
-        score = score + (scorePoint)*timesEffect
-        print(score, scorePoint)
+        
+        // 絆創膏
+        if timesEffect < 1 {
+            timesEffect = 1
+        }
+        
+        
+        score = score + (scorePoint*timesEffect)
+        print("score = \(score), scorePoint = \(scorePoint)")
+        print("timesEffect = \(timesEffect)")
         
         
         defaults.set(score, forKey: "score")
     }
     
     func getTimesEffect(_ times:Double){
-        
-        timesEffect = defaults.double(forKey: "times")
+
         timesEffect = timesEffect * times
         
         defaults.set(timesEffect, forKey: "times")
