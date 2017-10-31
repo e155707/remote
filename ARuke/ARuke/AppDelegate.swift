@@ -9,9 +9,10 @@
 import UIKit
 import GoogleMaps
 import Keys
+import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDelegate {
 
     var window: UIWindow?
     var totalScore: Int64 = 0
@@ -20,10 +21,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
 
         // add googleMapAPIKey
-        
         let cGoogleMapsAPIKey = ARukeKeys().googleMapAPIKey
         GMSServices.provideAPIKey(cGoogleMapsAPIKey)
+        
+        // notification center (singleton)
+        
+        let center = UNUserNotificationCenter.current()
+        
+        // request to notify for user
+        center.requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
+            if granted {
+                print("Allowed")
+            } else {
+                print("Didn't allowed")
+            }
+        }
+
+        center.delegate = self
+        
         return true
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        // アプリ起動中でもアラート&音で通知
+        completionHandler([.alert, .sound])
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

@@ -8,8 +8,7 @@
 
 import Foundation
 import GoogleMaps
-import Alamofire
-import SwiftyJSON
+import UserNotifications
 
 class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelegate {
     let locationManager = CLLocationManager()
@@ -28,9 +27,10 @@ class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelega
      */
     override func viewDidLoad() {
         super.viewDidLoad()
-        //goalLocation = CLLocation(latitude: ryukyuLatitude, longitude: ryukyuLongitude)
+        
         initMapView()
         initManager()
+        // notification()
         setLocateManager()
         
     }
@@ -145,8 +145,10 @@ class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelega
             mapRouteManager.getInitDummyRoutes(location)
         }
         let locationDistance = location.distance(from: oldLocation)
-        
+        //notification()
         if (mapRouteManager.isDummyCheckpointArrive(location)){
+            
+            // 遷移
             let storyboard: UIStoryboard = UIStoryboard(name: "EventControlle", bundle: nil)
             let next: UIViewController = storyboard.instantiateInitialViewController() as! UIViewController
             present(next, animated: true, completion: nil)
@@ -158,6 +160,44 @@ class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelega
             addWalk(locationDistance)
             oldLocation = location
         }
+    }
+    
+    func notification() {
+        
+        print("scheduled notification")
+        /*
+        //let coordinate = mapRouteManager.dummyCheckpoint.coordinate
+        let coordinate = CLLocationCoordinate2D(latitude: 37.332331,longitude: -122.031219)
+        let radius = 100.0
+        let identifier = "arrived"
+        
+        let content = UNMutableNotificationContent()
+        content.title = "ARukeより通知"
+        content.body = "イベントが発生!!"
+        content.sound = UNNotificationSound.default()
+        
+        let region = CLCircularRegion(center: coordinate, radius: radius, identifier: identifier)
+
+        let locationTrigger = UNLocationNotificationTrigger(region: region, repeats: false)
+        let locationRequest = UNNotificationRequest(identifier: identifier,
+                                                    content: content,
+                                                    trigger: locationTrigger)
+        UNUserNotificationCenter.current().add(locationRequest, withCompletionHandler: nil)
+        */
+        let content = UNMutableNotificationContent()
+        content.title = "ARukeより通知"
+        content.body = "イベントが発生!!"
+        content.sound = UNNotificationSound.default()
+        
+        // 1秒後に発火
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+        let request = UNNotificationRequest(identifier: "oneSecond",
+                                            content: content,
+                                            trigger: trigger)
+        
+        // ローカル通知予約
+        UNUserNotificationCenter.current().add(request, withCompletionHandler:nil)
+        
     }
     
     func addScore(_ distanceInMeters: CLLocationDistance){
