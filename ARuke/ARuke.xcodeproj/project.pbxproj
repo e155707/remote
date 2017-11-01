@@ -22,6 +22,7 @@
 		F00B58151FA45AA60018C429 /* PlaneEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00B58141FA45AA60018C429 /* PlaneEvent.swift */; };
 		F00B58171FA45C970018C429 /* TapEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00B58161FA45C970018C429 /* TapEvent.swift */; };
 		F00B58191FA4612A0018C429 /* ObjectManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00B58181FA4612A0018C429 /* ObjectManager.swift */; };
+		F0154F3D1FAA215F00D2B11C /* ScreenTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0154F3C1FAA215F00D2B11C /* ScreenTransition.swift */; };
 		F09AF1451FA235B100E1FE13 /* EventAnime.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09AF1441FA235B100E1FE13 /* EventAnime.swift */; };
 		F0DA5DCF1FA627CB00407B89 /* QuizController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DA5DCE1FA627CB00407B89 /* QuizController.swift */; };
 		F0DA5DD11FA627F500407B89 /* QuizController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0DA5DD01FA627F500407B89 /* QuizController.storyboard */; };
@@ -87,6 +88,7 @@
 		F00B58141FA45AA60018C429 /* PlaneEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaneEvent.swift; sourceTree = "<group>"; };
 		F00B58161FA45C970018C429 /* TapEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapEvent.swift; sourceTree = "<group>"; };
 		F00B58181FA4612A0018C429 /* ObjectManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectManager.swift; sourceTree = "<group>"; };
+		F0154F3C1FAA215F00D2B11C /* ScreenTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTransition.swift; sourceTree = "<group>"; };
 		F09AF1441FA235B100E1FE13 /* EventAnime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAnime.swift; sourceTree = "<group>"; };
 		F0DA5DCE1FA627CB00407B89 /* QuizController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizController.swift; sourceTree = "<group>"; };
 		F0DA5DD01FA627F500407B89 /* QuizController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QuizController.storyboard; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 				B0C3EA571F96FC7600385081 /* AppDelegate.swift */,
 				B0C3EA591F96FC7600385081 /* art.scnassets */,
 				B0C3EA5B1F96FC7600385081 /* ViewController.swift */,
+				F0154F3C1FAA215F00D2B11C /* ScreenTransition.swift */,
 				F0DD10FD1FA0233C006048AD /* Score.swift */,
 				B0C3EA5D1F96FC7600385081 /* Main.storyboard */,
 				F0E1F9BB1F9C552D00555BC0 /* MapController.swift */,
@@ -550,6 +553,7 @@
 				B0C3EA5C1F96FC7600385081 /* ViewController.swift in Sources */,
 				F0E1F9CC1F9ED89200555BC0 /* ResultController.swift in Sources */,
 				F00B58191FA4612A0018C429 /* ObjectManager.swift in Sources */,
+				F0154F3D1FAA215F00D2B11C /* ScreenTransition.swift in Sources */,
 				F0DA5DD51FA76AB100407B89 /* LocateEvent.swift in Sources */,
 				B09D26F31FA5BECC005F7904 /* MapRouteManager.swift in Sources */,
 				F0E1F9C81F9E3E9100555BC0 /* Plane.swift in Sources */,

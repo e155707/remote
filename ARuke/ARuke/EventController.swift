@@ -24,6 +24,7 @@ class EventController: UIViewController, ARSCNViewDelegate {
     var planeFlag:Int = 0
     
     let answer:QuizEventManager = QuizEventManager()
+    let transition:ScreenTransition = ScreenTransition()
     
     override func viewDidLoad() {
         super.viewDidLoad()

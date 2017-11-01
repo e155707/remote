@@ -44,27 +44,18 @@ extension EventController{
                     print(answer.getAnswerRed())
                     planeNode.childNode(withName: name, recursively: false)?.runAction(SCNAction.removeFromParentNode())
                     
-                    let storyboard: UIStoryboard = UIStoryboard(name:"Map",bundle: nil)
-                    let next = storyboard.instantiateViewController(withIdentifier: "Map") as! MapConroller
-                    present(next as UIViewController, animated: true,completion: nil)
-                    print("Map")
+                    transition.fromEventCotrollerToMap()
                 
                 }else if(name == "miss2" && answer.getAnswerGreen()){
                     
                     print(answer.getAnswerGreen())
                     planeNode.childNode(withName: name, recursively: false)?.runAction(SCNAction.removeFromParentNode())
                     
-                    let storyboard: UIStoryboard = UIStoryboard(name:"Map",bundle: nil)
-                    let next = storyboard.instantiateViewController(withIdentifier: "Map") as! MapConroller
-                    present(next as UIViewController, animated: true,completion: nil)
-                    print("Map")
+                    transition.fromEventCotrollerToMap()
                     
                 }else if(name == "x2"){
                     
-                    let storyboard: UIStoryboard = UIStoryboard(name:"Map",bundle: nil)
-                    let next = storyboard.instantiateViewController(withIdentifier: "Map") as! MapConroller
-                    present(next as UIViewController, animated: true,completion: nil)
-                    print("Map")
+                    transition.fromEventCotrollerToMap()
                     
                 }else{}
             }
