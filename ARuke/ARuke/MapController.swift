@@ -13,7 +13,6 @@ import UserNotifications
 class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelegate {
     let locationManager = CLLocationManager()
     let scoreManager = ScoreManager()
-    let distanceManager = DistanceManager()
     let mapRouteManager = MapRouteManager()
     
     @IBOutlet var mapView: GMSMapView!
@@ -157,7 +156,6 @@ class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelega
 
             mapRouteManager.updateRoute(myLocation: location)
             addScore(locationDistance)
-            addWalk(locationDistance)
             oldLocation = location
         }
     }
@@ -202,10 +200,6 @@ class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelega
     
     func addScore(_ distanceInMeters: CLLocationDistance){
         scoreManager.setScore(distanceInMeters)
-    }
-    
-    func addWalk(_ distanceInMeters: CLLocationDistance){
-        distanceManager.setdistance(distanceInMeters)
     }
     
     // Handle location manager errors.

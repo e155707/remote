@@ -36,10 +36,12 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         //クラスのインスタンス
         let score = ScoreManager()
-        let distance = DistanceManager()
         
-        scoreLabel.text = score.getScore()
-        distanceLabel.text = distance.getDistance()
+        score.scoreInitialization()
+        score.getTimesEffect(1)
+        
+        scoreLabel.text = score.getTotalScore()
+        distanceLabel.text = score.getTotalDistance()
         
         //Answerの初期化
         let Answer:QuizEventManager = QuizEventManager()

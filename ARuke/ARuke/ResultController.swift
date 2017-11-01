@@ -31,18 +31,20 @@ class ResultController: UIViewController{
         //Map.adjustsFontSizeToFitWidth = true;
         //クラスのインスタンス
         let score = ScoreManager()
-        let distance = DistanceManager()
+        
+        score.setTotalScore()
         
         ThisScore.text = score.getScore()
-        ThisKiro.text = distance.getDistance()
+        ThisKiro.text = score.getDistance()
         
         
         Result.layer.borderColor = UIColor.white.cgColor
         Result.layer.borderWidth = 2.0
         Result.layer.masksToBounds = true
         
-        Kiro.text = "101"
-        Score.text = "10100"
+        
+        Kiro.text = score.getTotalDistance()
+        Score.text = score.getTotalScore()
     }
     
     override func viewWillAppear(_ animated: Bool) {
