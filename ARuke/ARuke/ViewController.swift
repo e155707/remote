@@ -38,6 +38,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         let score = ScoreManager()
         
         score.scoreInitialization()
+        //score.scoreTotalInitialization()
         score.getTimesEffect(1)
         
         scoreLabel.text = score.getTotalScore()

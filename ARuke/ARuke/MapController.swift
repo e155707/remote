@@ -14,7 +14,6 @@ class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelega
     let locationManager = CLLocationManager()
     let scoreManager = ScoreManager()
     let mapRouteManager = MapRouteManager()
-    let transition = ScreenTransition()
     
     @IBOutlet var mapView: GMSMapView!
     
@@ -149,7 +148,7 @@ class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelega
         if (mapRouteManager.isDummyCheckpointArrive(location)){
             notification()
             // 遷移
-            transition.fromMaptoEventCotroller()
+            self.fromMaptoEventCotroller()
             
         }else{
 

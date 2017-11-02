@@ -44,18 +44,18 @@ extension EventController{
                     print(answer.getAnswerRed())
                     planeNode.childNode(withName: name, recursively: false)?.runAction(SCNAction.removeFromParentNode())
                     
-                    transition.fromEventCotrollerToMap()
+                    self.fromEventCotrollerToMap()
                 
                 }else if(name == "miss2" && answer.getAnswerGreen()){
                     
                     print(answer.getAnswerGreen())
                     planeNode.childNode(withName: name, recursively: false)?.runAction(SCNAction.removeFromParentNode())
                     
-                    transition.fromEventCotrollerToMap()
+                    self.fromEventCotrollerToMap()
                     
                 }else if(name == "x2"){
                     
-                    transition.fromEventCotrollerToMap()
+                    self.fromEventCotrollerToMap()
                     
                 }else{}
             }

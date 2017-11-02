@@ -18,6 +18,18 @@ class ScoreManager{
     var distance:Double = Double()
     var totalDistance:Double = Double()
     
+    //通算初期化
+    func scoreTotalInitialization(){
+        totalScore = defaults.double(forKey: "totalScore")
+        totalDistance = defaults.double(forKey: "totalDistance")
+        
+        totalScore = 0
+        totalDistance = 0
+        
+        defaults.set(totalScore, forKey: "totalScore")
+        defaults.set(totalDistance, forKey: "totalDistance")
+    }
+    
     //初期化
     func scoreInitialization(){
         score = defaults.double(forKey: "score")
@@ -40,10 +52,10 @@ class ScoreManager{
         distance = defaults.double(forKey: "distance")
         
         score = score + (scorePoint*timesEffect)
-        print("score = \(score), scorePoint = \(scorePoint)")
+        //print("score = \(score), scorePoint = \(scorePoint)")
         print("timesEffect = \(timesEffect)")
         distance = distance + scorePoint
-        print("distance = \(distance)")
+        //print("distance = \(distance)")
         
         defaults.set(score, forKey: "score")
         defaults.set(distance , forKey: "distance")
@@ -51,6 +63,8 @@ class ScoreManager{
     
     
     func getTimesEffect(_ times:Double){
+        timesEffect = defaults.double(forKey: "times")
+        
         timesEffect = timesEffect * times
         
         defaults.set(timesEffect, forKey: "times")

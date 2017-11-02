@@ -41,6 +41,10 @@ class ObjectManager{
         Node2.position  = planeVector
         Node2.position.y = 0
         
+        print("x" , Node2.position.x)
+        print("y" , Node2.position.y)
+        print("z" , Node2.position.z)
+        
         Node3.position  = planeVector
         Node3.position.x = Node3.position.x + 0.5
         Node3.position.y = 0

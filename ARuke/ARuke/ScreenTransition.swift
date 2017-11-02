@@ -9,23 +9,23 @@ import UIKit
 import SceneKit
 import ARKit
 
-class ScreenTransition{
+extension EventController{
     
     func fromEventCotrollerToMap(){
-        let map:UIViewController = MapConroller()
         let storyboard: UIStoryboard = UIStoryboard(name:"Map",bundle: nil)
         let next = storyboard.instantiateViewController(withIdentifier: "Map") as! MapConroller
-        map.present(next as UIViewController, animated: true,completion: nil)
+        present(next as UIViewController, animated: true,completion: nil)
         print("Map")
     }
+}
+
+extension MapConroller{
     
     func fromMaptoEventCotroller(){
-        let event:UIViewController = EventController()
         let storyboard: UIStoryboard = UIStoryboard(name:"EventController",bundle: nil)
         let next = storyboard.instantiateViewController(withIdentifier: "EventController") as! EventController
-        event.present(next as UIViewController, animated: true,completion: nil)
+        present(next as UIViewController, animated: true,completion: nil)
         print("Event")
     }
-    
     
 }
