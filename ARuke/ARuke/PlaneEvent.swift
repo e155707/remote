@@ -31,10 +31,6 @@ extension EventController{
             //宝箱
             let object:ObjectManager = ObjectManager()
             object.managerObjectTresure(planeVector,planeNode)
-        
-            print("x" , sceneView.pointOfView?.position.x)
-            print("y" , sceneView.pointOfView?.position.y)
-            print("z" , sceneView.pointOfView?.position.z)
         }
         // 管理用配列に追加
         //planes.append(plane)

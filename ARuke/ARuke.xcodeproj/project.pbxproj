@@ -19,11 +19,14 @@
 		B0C3EA641F96FC7600385081 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0C3EA621F96FC7600385081 /* LaunchScreen.storyboard */; };
 		B0C3EA6F1F96FC7700385081 /* ARukeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C3EA6E1F96FC7700385081 /* ARukeTests.swift */; };
 		B0C3EA7A1F96FC7700385081 /* ARukeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C3EA791F96FC7700385081 /* ARukeUITests.swift */; };
+		F00695E71FACBF5600699F07 /* Alarm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F00695E61FACBF5600699F07 /* Alarm.storyboard */; };
+		F00695E91FACBFC400699F07 /* AlarmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00695E81FACBFC400699F07 /* AlarmController.swift */; };
 		F00B58151FA45AA60018C429 /* PlaneEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00B58141FA45AA60018C429 /* PlaneEvent.swift */; };
 		F00B58171FA45C970018C429 /* TapEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00B58161FA45C970018C429 /* TapEvent.swift */; };
 		F00B58191FA4612A0018C429 /* ObjectManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00B58181FA4612A0018C429 /* ObjectManager.swift */; };
 		F0154F3D1FAA215F00D2B11C /* ScreenTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0154F3C1FAA215F00D2B11C /* ScreenTransition.swift */; };
 		F09AF1451FA235B100E1FE13 /* EventAnime.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09AF1441FA235B100E1FE13 /* EventAnime.swift */; };
+		F09B9FAD1FADFF320023BA9B /* TimeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09B9FAC1FADFF320023BA9B /* TimeController.swift */; };
 		F0DA5DCF1FA627CB00407B89 /* QuizController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DA5DCE1FA627CB00407B89 /* QuizController.swift */; };
 		F0DA5DD11FA627F500407B89 /* QuizController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0DA5DD01FA627F500407B89 /* QuizController.storyboard */; };
 		F0DA5DD31FA6DC7900407B89 /* QuizEventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DA5DD21FA6DC7900407B89 /* QuizEventManager.swift */; };
@@ -85,11 +88,14 @@
 		B7E9598C201EC3520D2AC1DB /* Pods-ARukeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARukeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ARukeUITests/Pods-ARukeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		BF306D50BC08F376AFBDCED9 /* Pods-ARukeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARukeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ARukeUITests/Pods-ARukeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E8BEF0CB163B9958E217B93E /* Pods_ARuke.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ARuke.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F00695E61FACBF5600699F07 /* Alarm.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Alarm.storyboard; sourceTree = "<group>"; };
+		F00695E81FACBFC400699F07 /* AlarmController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmController.swift; sourceTree = "<group>"; };
 		F00B58141FA45AA60018C429 /* PlaneEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaneEvent.swift; sourceTree = "<group>"; };
 		F00B58161FA45C970018C429 /* TapEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapEvent.swift; sourceTree = "<group>"; };
 		F00B58181FA4612A0018C429 /* ObjectManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectManager.swift; sourceTree = "<group>"; };
 		F0154F3C1FAA215F00D2B11C /* ScreenTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTransition.swift; sourceTree = "<group>"; };
 		F09AF1441FA235B100E1FE13 /* EventAnime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAnime.swift; sourceTree = "<group>"; };
+		F09B9FAC1FADFF320023BA9B /* TimeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeController.swift; sourceTree = "<group>"; };
 		F0DA5DCE1FA627CB00407B89 /* QuizController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizController.swift; sourceTree = "<group>"; };
 		F0DA5DD01FA627F500407B89 /* QuizController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QuizController.storyboard; sourceTree = "<group>"; };
 		F0DA5DD21FA6DC7900407B89 /* QuizEventManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizEventManager.swift; sourceTree = "<group>"; };
@@ -185,6 +191,9 @@
 				F0154F3C1FAA215F00D2B11C /* ScreenTransition.swift */,
 				F0DD10FD1FA0233C006048AD /* Score.swift */,
 				B0C3EA5D1F96FC7600385081 /* Main.storyboard */,
+				F00695E81FACBFC400699F07 /* AlarmController.swift */,
+				F09B9FAC1FADFF320023BA9B /* TimeController.swift */,
+				F00695E61FACBF5600699F07 /* Alarm.storyboard */,
 				F0E1F9BB1F9C552D00555BC0 /* MapController.swift */,
 				B09D26EE1FA5BECB005F7904 /* MapErrorController.swift */,
 				B09D26F01FA5BECC005F7904 /* MapRouteManager.swift */,
@@ -364,6 +373,7 @@
 				F0DA5DD11FA627F500407B89 /* QuizController.storyboard in Resources */,
 				B0C3EA611F96FC7600385081 /* Assets.xcassets in Resources */,
 				F0E794C41F98F710006CA3A1 /* EventController.storyboard in Resources */,
+				F00695E71FACBF5600699F07 /* Alarm.storyboard in Resources */,
 				B0C3EA5F1F96FC7600385081 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -554,8 +564,10 @@
 				F0E1F9CC1F9ED89200555BC0 /* ResultController.swift in Sources */,
 				F00B58191FA4612A0018C429 /* ObjectManager.swift in Sources */,
 				F0154F3D1FAA215F00D2B11C /* ScreenTransition.swift in Sources */,
+				F00695E91FACBFC400699F07 /* AlarmController.swift in Sources */,
 				F0DA5DD51FA76AB100407B89 /* LocateEvent.swift in Sources */,
 				B09D26F31FA5BECC005F7904 /* MapRouteManager.swift in Sources */,
+				F09B9FAD1FADFF320023BA9B /* TimeController.swift in Sources */,
 				F0E1F9C81F9E3E9100555BC0 /* Plane.swift in Sources */,
 				B0C3EA581F96FC7600385081 /* AppDelegate.swift in Sources */,
 				B09D26F11FA5BECC005F7904 /* MapErrorController.swift in Sources */,

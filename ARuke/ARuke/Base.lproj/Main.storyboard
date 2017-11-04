@@ -17,7 +17,7 @@
         <!--View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="ViewController" customModule="ARuke" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Main" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BV1-FR-VrT" customClass="ViewController" customModule="ARuke" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gdT-NY-kmq">
                         <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
@@ -34,21 +34,21 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="通算　スコア" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qnP-Qd-7RY">
-                                        <rect key="frame" x="7" y="133" width="599" height="97.5"/>
+                                        <rect key="frame" x="7" y="133" width="599" height="98"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Yurumoji" family="Yurumoji" pointSize="50"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1Q-6L-eWM">
-                                        <rect key="frame" x="178" y="77" width="567" height="82.5"/>
+                                        <rect key="frame" x="178" y="77" width="567" height="83"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Yurumoji" family="Yurumoji" pointSize="50"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqp-wy-qiM">
-                                        <rect key="frame" x="179" y="172" width="567" height="145.5"/>
+                                        <rect key="frame" x="179" y="172" width="567" height="146"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Yurumoji" family="Yurumoji" pointSize="50"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -58,7 +58,7 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zAs-P6-upt">
-                                <rect key="frame" x="75" y="444" width="684" height="225.5"/>
+                                <rect key="frame" x="75" y="444" width="684" height="226"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <attributedString key="attributedText">
@@ -85,11 +85,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jd2-DX-jQs" customClass="StartView">
-                                <rect key="frame" x="88.5" y="731.5" width="657" height="349.5"/>
+                                <rect key="frame" x="89" y="732" width="657" height="214"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uHf-L5-bey">
-                                        <rect key="frame" x="61" y="95" width="536" height="159.5"/>
+                                        <rect key="frame" x="61" y="73" width="536" height="65"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <state key="normal">
                                             <attributedString key="attributedTitle">
@@ -109,6 +109,17 @@
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="av7-XJ-4RC">
+                                <rect key="frame" x="200" y="954" width="434" height="93"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Yurumoji" family="Yurumoji" pointSize="50"/>
+                                <state key="normal" title="alarm">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="bUT-j3-dWD" kind="show" id="K7Y-BF-DeF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <viewLayoutGuide key="safeArea" id="sLV-RM-E13"/>
@@ -124,7 +135,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="141.59999999999999" y="133.5832083958021"/>
+            <point key="canvasLocation" x="141.00719424460434" y="133.27338129496403"/>
         </scene>
         <!--Map-->
         <scene sceneID="Jos-S2-if8">
@@ -133,6 +144,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3TU-CH-5hy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="642" y="138"/>
+        </scene>
+        <!--Alarm-->
+        <scene sceneID="RlS-BC-JEy">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Alarm" referencedIdentifier="Alarm" id="bUT-j3-dWD" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t0k-Uo-4vi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="482" y="534"/>
         </scene>
     </scenes>
 </document>
