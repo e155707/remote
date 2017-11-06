@@ -137,10 +137,10 @@
             </objects>
             <point key="canvasLocation" x="141.00719424460434" y="133.27338129496403"/>
         </scene>
-        <!--Map-->
+        <!--EventDecision-->
         <scene sceneID="Jos-S2-if8">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="Map" storyboardName="Map" referencedIdentifier="Map" id="TuF-dH-70Z" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="EventDecision" storyboardName="EventDecision" referencedIdentifier="EventDecision" id="TuF-dH-70Z" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3TU-CH-5hy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="642" y="138"/>

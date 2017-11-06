@@ -19,10 +19,12 @@ class AlarmController: UIViewController{
     
     var tempTime: String = "00:00"
     var setTime: String = "00:00"
+    var setAlarm: String = "日曜日:00:00"
     let content = UNMutableNotificationContent()
     var timer: Timer!
     var timerFlag: Int! = 1
     
+    let timeManage:TimeManager = TimeManager()
     let timeController:TimeController = TimeController()
     
     @IBAction func selectTimeButton(_ sender: Any) {
@@ -40,6 +42,9 @@ class AlarmController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        selectTime.setValue(UIColor.white, forKey: "textColor")
+        selectTime.setValue(false, forKey: "highlightsToday")
         
         timeDisplayLabel.text = "00:00"
         
