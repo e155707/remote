@@ -42,7 +42,6 @@ class AlarmController: UIViewController{
         super.viewDidLoad()
         
         timeDisplayLabel.text = "00:00"
-        _ = Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(update), userInfo: nil, repeats: true)
         
         timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(update), userInfo: nil, repeats: true)
         timer.fire()
