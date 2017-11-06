@@ -17,9 +17,12 @@ class ResultController: UIViewController{
     
     @IBOutlet weak var ThisKiro: UILabel!
     @IBOutlet weak var ThisScore: UILabel!
+    @IBOutlet weak var ThisKcal: UILabel!
     
     @IBOutlet weak var Kiro: UILabel!
     @IBOutlet weak var Score: UILabel!
+    
+    
     
     //@IBOutlet weak var Map: UIButton!
     
@@ -36,6 +39,7 @@ class ResultController: UIViewController{
         
         ThisScore.text = score.getScore()
         ThisKiro.text = score.getDistance()
+        ThisKcal.text = score.getKcal()
         
         
         Result.layer.borderColor = UIColor.white.cgColor

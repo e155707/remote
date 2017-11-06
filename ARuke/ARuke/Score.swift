@@ -18,6 +18,8 @@ class ScoreManager{
     var distance:Double = Double()
     var totalDistance:Double = Double()
     
+    var Kcal:Double = Double()
+    
     //通算初期化
     func scoreTotalInitialization(){
         totalScore = defaults.double(forKey: "totalScore")
@@ -82,6 +84,19 @@ class ScoreManager{
         distance = defaults.double(forKey: "distance")
         
         return String(Int(distance)) + "m"
+    }
+    
+    func getKcal() -> String {
+        distance = defaults.double(forKey: "distance")
+        let METs:Double = distance / 30
+        let time:Double = 0.5
+        let weight:Double = 70
+        
+        Kcal = METs * time * weight * 1.05
+        
+        //消費カロリー(kcal) = METS x 運動時間(時間) x 体重(kg) x 1.05
+        
+        return String(Int(Kcal)) + "Kcal"
     }
     
     
