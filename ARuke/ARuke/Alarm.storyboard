@@ -68,10 +68,10 @@
             </objects>
             <point key="canvasLocation" x="173.3812949640288" y="159.71223021582733"/>
         </scene>
-        <!--Main-->
+        <!--Start-->
         <scene sceneID="XkK-VZ-CTh">
             <objects>
-                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="Main" id="6Kv-Lm-txb" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Start" referencedIdentifier="Start" id="6Kv-Lm-txb" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uIR-Vm-0ox" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="211" y="609"/>

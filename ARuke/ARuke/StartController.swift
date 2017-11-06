@@ -10,7 +10,7 @@ import UIKit
 import SceneKit
 import ARKit
 
-class ViewController: UIViewController, ARSCNViewDelegate {
+class StartController: UIViewController, ARSCNViewDelegate {
     
     @IBOutlet weak var scoreView: UIView!
     @IBOutlet weak var startView: UIView!
