@@ -44,6 +44,8 @@
 		F06FA9D11FB09FC70001D4A4 /* ResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06FA9CF1FB09FC70001D4A4 /* ResultController.swift */; };
 		F06FA9D41FB09FCB0001D4A4 /* StartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06FA9D31FB09FCB0001D4A4 /* StartController.swift */; };
 		F0C39CC21FB13C3300AC837B /* AlarmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C39CC11FB13C3300AC837B /* AlarmManager.swift */; };
+		F0C39CC51FB16E9500AC837B /* LoadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C39CC41FB16E9500AC837B /* LoadViewController.swift */; };
+		F0C39CC71FB16EA600AC837B /* Load.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0C39CC61FB16EA600AC837B /* Load.storyboard */; };
 		F0E1F9B91F9BCADA00555BC0 /* yurumoji.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F0E1F9B81F9BC1BD00555BC0 /* yurumoji.ttf */; };
 		F0E1F9BE1F9C6DE800555BC0 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0E1F9BF1F9C6DE800555BC0 /* Alamofire.framework */; };
 		F0E1F9C01F9C6DEB00555BC0 /* Keys.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0E1F9C11F9C6DEB00555BC0 /* Keys.framework */; };
@@ -119,6 +121,8 @@
 		F06FA9CF1FB09FC70001D4A4 /* ResultController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultController.swift; sourceTree = "<group>"; };
 		F06FA9D31FB09FCB0001D4A4 /* StartController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartController.swift; sourceTree = "<group>"; };
 		F0C39CC11FB13C3300AC837B /* AlarmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmManager.swift; sourceTree = "<group>"; };
+		F0C39CC41FB16E9500AC837B /* LoadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadViewController.swift; sourceTree = "<group>"; };
+		F0C39CC61FB16EA600AC837B /* Load.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Load.storyboard; sourceTree = "<group>"; };
 		F0E1F9B81F9BC1BD00555BC0 /* yurumoji.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = yurumoji.ttf; sourceTree = "<group>"; };
 		F0E1F9BF1F9C6DE800555BC0 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0E1F9C11F9C6DEB00555BC0 /* Keys.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Keys.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -202,6 +206,7 @@
 				B0C3EA5D1F96FC7600385081 /* Start.storyboard */,
 				F06FA9D31FB09FCB0001D4A4 /* StartController.swift */,
 				F06FA9991FB09F910001D4A4 /* Alarm */,
+				F0C39CC31FB16E6D00AC837B /* Load */,
 				F06FA9B11FB09FA90001D4A4 /* EventDecision */,
 				F06FA9A01FB09FA50001D4A4 /* Event */,
 				F06FA9B61FB09FB50001D4A4 /* Map */,
@@ -262,8 +267,8 @@
 		F06FA9A01FB09FA50001D4A4 /* Event */ = {
 			isa = PBXGroup;
 			children = (
-				F06FA9A11FB09FA50001D4A4 /* EventAnime.swift */,
 				F06FA9A21FB09FA50001D4A4 /* EventController.storyboard */,
+				F06FA9A11FB09FA50001D4A4 /* EventAnime.swift */,
 				F06FA9A31FB09FA50001D4A4 /* EventController.swift */,
 				F06FA9A41FB09FA50001D4A4 /* LocateEvent.swift */,
 				F06FA9A51FB09FA50001D4A4 /* ObjectManager.swift */,
@@ -321,6 +326,15 @@
 				F06FA9CF1FB09FC70001D4A4 /* ResultController.swift */,
 			);
 			path = Result;
+			sourceTree = "<group>";
+		};
+		F0C39CC31FB16E6D00AC837B /* Load */ = {
+			isa = PBXGroup;
+			children = (
+				F0C39CC41FB16E9500AC837B /* LoadViewController.swift */,
+				F0C39CC61FB16EA600AC837B /* Load.storyboard */,
+			);
+			path = Load;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -445,6 +459,7 @@
 				F06FA9D01FB09FC70001D4A4 /* Result.storyboard in Resources */,
 				B0C3EA5A1F96FC7600385081 /* art.scnassets in Resources */,
 				B0C3EA641F96FC7600385081 /* LaunchScreen.storyboard in Resources */,
+				F0C39CC71FB16EA600AC837B /* Load.storyboard in Resources */,
 				B0C3EA611F96FC7600385081 /* Assets.xcassets in Resources */,
 				F06FA9AA1FB09FA60001D4A4 /* EventController.storyboard in Resources */,
 				B0C3EA5F1F96FC7600385081 /* Start.storyboard in Resources */,
@@ -642,6 +657,7 @@
 				F00D419A1FB0BA0300701782 /* WeekSelectController.swift in Sources */,
 				F06FA9D41FB09FCB0001D4A4 /* StartController.swift in Sources */,
 				F06FA9C31FB09FBE0001D4A4 /* LabelFlame.swift in Sources */,
+				F0C39CC51FB16E9500AC837B /* LoadViewController.swift in Sources */,
 				F06FA9BD1FB09FB50001D4A4 /* MapErrorController.swift in Sources */,
 				F06FA9C51FB09FBE0001D4A4 /* ScreenTransition.swift in Sources */,
 				F06FA9B51FB09FA90001D4A4 /* EventDecisionController.swift in Sources */,
