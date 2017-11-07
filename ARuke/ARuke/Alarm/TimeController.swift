@@ -23,4 +23,10 @@ class TimeController{
         // 成形した時刻を文字列として返す
         return nowTimeStr
     }
+    
+    func getNowDayOfTheWeek() -> Int{
+        let comp = Calendar.Component.weekday
+        let weekday = NSCalendar.current.component(comp, from: NSDate() as Date)
+        return weekday-1
+    }
 }

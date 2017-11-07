@@ -43,6 +43,7 @@
 		F06FA9D01FB09FC70001D4A4 /* Result.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F06FA9CE1FB09FC70001D4A4 /* Result.storyboard */; };
 		F06FA9D11FB09FC70001D4A4 /* ResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06FA9CF1FB09FC70001D4A4 /* ResultController.swift */; };
 		F06FA9D41FB09FCB0001D4A4 /* StartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06FA9D31FB09FCB0001D4A4 /* StartController.swift */; };
+		F0C39CC21FB13C3300AC837B /* AlarmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C39CC11FB13C3300AC837B /* AlarmManager.swift */; };
 		F0E1F9B91F9BCADA00555BC0 /* yurumoji.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F0E1F9B81F9BC1BD00555BC0 /* yurumoji.ttf */; };
 		F0E1F9BE1F9C6DE800555BC0 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0E1F9BF1F9C6DE800555BC0 /* Alamofire.framework */; };
 		F0E1F9C01F9C6DEB00555BC0 /* Keys.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0E1F9C11F9C6DEB00555BC0 /* Keys.framework */; };
@@ -117,6 +118,7 @@
 		F06FA9CE1FB09FC70001D4A4 /* Result.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Result.storyboard; sourceTree = "<group>"; };
 		F06FA9CF1FB09FC70001D4A4 /* ResultController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultController.swift; sourceTree = "<group>"; };
 		F06FA9D31FB09FCB0001D4A4 /* StartController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartController.swift; sourceTree = "<group>"; };
+		F0C39CC11FB13C3300AC837B /* AlarmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmManager.swift; sourceTree = "<group>"; };
 		F0E1F9B81F9BC1BD00555BC0 /* yurumoji.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = yurumoji.ttf; sourceTree = "<group>"; };
 		F0E1F9BF1F9C6DE800555BC0 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0E1F9C11F9C6DEB00555BC0 /* Keys.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Keys.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -249,6 +251,7 @@
 			children = (
 				F06FA99A1FB09F910001D4A4 /* Alarm.storyboard */,
 				F06FA99B1FB09F910001D4A4 /* AlarmController.swift */,
+				F0C39CC11FB13C3300AC837B /* AlarmManager.swift */,
 				F06FA99C1FB09F910001D4A4 /* TimeController.swift */,
 				F00D41991FB0BA0300701782 /* WeekSelectController.swift */,
 				F0E6F1E11FB0CB1E00546A26 /* TimeManager.swift */,
@@ -634,6 +637,7 @@
 				B0C3EA581F96FC7600385081 /* AppDelegate.swift in Sources */,
 				F06FA9CB1FB09FC30001D4A4 /* QuizController.swift in Sources */,
 				F06FA9C41FB09FBE0001D4A4 /* Score.swift in Sources */,
+				F0C39CC21FB13C3300AC837B /* AlarmManager.swift in Sources */,
 				F06FA99E1FB09F910001D4A4 /* AlarmController.swift in Sources */,
 				F00D419A1FB0BA0300701782 /* WeekSelectController.swift in Sources */,
 				F06FA9D41FB09FCB0001D4A4 /* StartController.swift in Sources */,

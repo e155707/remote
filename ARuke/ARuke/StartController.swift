@@ -47,6 +47,9 @@ class StartController: UIViewController, ARSCNViewDelegate {
         //Answerの初期化
         let Answer:QuizEventManager = QuizEventManager()
         Answer.answerInitialization()
+        
+        let timeManage:TimeManager = TimeManager()
+        timeManage.timeInit()
     
     }
     

@@ -16,10 +16,11 @@ class AlarmController: UIViewController{
     
     @IBOutlet weak var timeDisplayLabel: UILabel!
     @IBOutlet weak var selectTime: UIDatePicker!
+    @IBOutlet weak var dayOfTheWeekLabel: UILabel!
     
     var tempTime: String = "00:00"
     var setTime: String = "00:00"
-    var setAlarm: String = "日曜日:00:00"
+    var setDayOfTheWeek: String = "なし"
     let content = UNMutableNotificationContent()
     var timer: Timer!
     var timerFlag: Int! = 1
@@ -37,7 +38,8 @@ class AlarmController: UIViewController{
     @IBAction func decideTimeButton(_ sender: Any) {
         setTime = tempTime
         timeDisplayLabel.text = setTime
-        print(setTime)
+        setDayOfTheWeek = timeManage.getTrueDayOfTheWeek()
+        dayOfTheWeekLabel.text = setDayOfTheWeek
     }
     
     override func viewDidLoad() {
@@ -47,6 +49,7 @@ class AlarmController: UIViewController{
         selectTime.setValue(false, forKey: "highlightsToday")
         
         timeDisplayLabel.text = "00:00"
+        dayOfTheWeekLabel.text = "なし"
         
         timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(update), userInfo: nil, repeats: true)
         timer.fire()
@@ -62,51 +65,6 @@ class AlarmController: UIViewController{
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-    }
-    
-    @objc func update(tm: Timer) {
-        // 現在時刻を取得
-        let str = timeController.getNowTime()
-        // アラーム鳴らすか判断
-        myAlarm(str)
-    }
-    
-    func myAlarm(_ str:String) {
-        if timerFlag == 1 {
-            // 現在時刻が設定時刻と一緒なら
-            if str == setTime{
-                alert()
-                timerFlag = 0
-            }
-        }
-    }
-    
-    func alert() {
-        let myAlert = UIAlertController(title: "alert", message: "ring ding", preferredStyle: .alert)
-        let myAction = UIAlertAction(title: "dong", style: .default) {
-            action in print("foo!!")
-        }
-        self.notification()
-        myAlert.addAction(myAction)
-        present(myAlert, animated: true, completion: nil)
-    }
-    
-    
-    func notification() {
-        
-        print("scheduled notification")
-        content.title = "ARukeより通知"
-        content.body = "イベントが発生!!"
-        content.sound = UNNotificationSound.default()
-        
-        // 1秒後に発火
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.1, repeats: false)
-        let request = UNNotificationRequest(identifier: "oneSecond",
-                                            content: content,
-                                            trigger: trigger)
-        
-        // ローカル通知予約
-        UNUserNotificationCenter.current().add(request, withCompletionHandler:nil)
     }
     
     // MARK: - ARSCNViewDelegate
