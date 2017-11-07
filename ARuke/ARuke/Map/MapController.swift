@@ -36,7 +36,7 @@ class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelega
     
     func initManager(){
         mapRouteManager.mapView = mapView
-        mapRouteManager.getDummyCheckpoint()
+        mapRouteManager.getRandomDummyCheckpoint()
     }
     
     // mapViewの初期化. 最初は琉球大学を写すよう指定
