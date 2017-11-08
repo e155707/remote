@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		6AAEC452598364D3A317CFA5 /* Pods_ARukeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 743EF61749857DACD641D0ED /* Pods_ARukeTests.framework */; };
 		6D99BB4BFE87E7FCD80209BB /* Pods_ARukeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADEFC53DE2B645E4A9E56D44 /* Pods_ARukeUITests.framework */; };
+		B06D640B1FB1EF12003E4B80 /* MapCheckpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06D640A1FB1EF12003E4B80 /* MapCheckpoint.swift */; };
+		B06D640D1FB2083F003E4B80 /* MapDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06D640C1FB2083F003E4B80 /* MapDelegate.swift */; };
 		B0C3EA581F96FC7600385081 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C3EA571F96FC7600385081 /* AppDelegate.swift */; };
 		B0C3EA5A1F96FC7600385081 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = B0C3EA591F96FC7600385081 /* art.scnassets */; };
 		B0C3EA5F1F96FC7600385081 /* Start.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0C3EA5D1F96FC7600385081 /* Start.storyboard */; };
@@ -16,7 +18,6 @@
 		B0C3EA641F96FC7600385081 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0C3EA621F96FC7600385081 /* LaunchScreen.storyboard */; };
 		B0C3EA6F1F96FC7700385081 /* ARukeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C3EA6E1F96FC7700385081 /* ARukeTests.swift */; };
 		B0C3EA7A1F96FC7700385081 /* ARukeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C3EA791F96FC7700385081 /* ARukeUITests.swift */; };
-		F00D419A1FB0BA0300701782 /* WeekSelectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00D41991FB0BA0300701782 /* WeekSelectController.swift */; };
 		F06FA99D1FB09F910001D4A4 /* Alarm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F06FA99A1FB09F910001D4A4 /* Alarm.storyboard */; };
 		F06FA99E1FB09F910001D4A4 /* AlarmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06FA99B1FB09F910001D4A4 /* AlarmController.swift */; };
 		F06FA99F1FB09F910001D4A4 /* TimeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06FA99C1FB09F910001D4A4 /* TimeController.swift */; };
@@ -75,6 +76,8 @@
 		5E00FF6AD8B43D4A0769262F /* Pods-ARukeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARukeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ARukeTests/Pods-ARukeTests.release.xcconfig"; sourceTree = "<group>"; };
 		743EF61749857DACD641D0ED /* Pods_ARukeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ARukeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADEFC53DE2B645E4A9E56D44 /* Pods_ARukeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ARukeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B06D640A1FB1EF12003E4B80 /* MapCheckpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCheckpoint.swift; sourceTree = "<group>"; };
+		B06D640C1FB2083F003E4B80 /* MapDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDelegate.swift; sourceTree = "<group>"; };
 		B0C3EA541F96FC7600385081 /* ARuke.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARuke.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0C3EA571F96FC7600385081 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0C3EA591F96FC7600385081 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -91,7 +94,6 @@
 		B7E9598C201EC3520D2AC1DB /* Pods-ARukeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARukeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ARukeUITests/Pods-ARukeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		BF306D50BC08F376AFBDCED9 /* Pods-ARukeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARukeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ARukeUITests/Pods-ARukeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E8BEF0CB163B9958E217B93E /* Pods_ARuke.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ARuke.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F00D41991FB0BA0300701782 /* WeekSelectController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WeekSelectController.swift; path = /Users/e155707/Desktop/remote/remote/ARuke/ARuke/Alarm/WeekSelectController.swift; sourceTree = "<absolute>"; };
 		F06FA99A1FB09F910001D4A4 /* Alarm.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Alarm.storyboard; sourceTree = "<group>"; };
 		F06FA99B1FB09F910001D4A4 /* AlarmController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmController.swift; sourceTree = "<group>"; };
 		F06FA99C1FB09F910001D4A4 /* TimeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeController.swift; sourceTree = "<group>"; };
@@ -253,7 +255,6 @@
 				F06FA99B1FB09F910001D4A4 /* AlarmController.swift */,
 				F0C39CC11FB13C3300AC837B /* AlarmManager.swift */,
 				F06FA99C1FB09F910001D4A4 /* TimeController.swift */,
-				F00D41991FB0BA0300701782 /* WeekSelectController.swift */,
 				F0E6F1E11FB0CB1E00546A26 /* TimeManager.swift */,
 			);
 			path = Alarm;
@@ -262,12 +263,12 @@
 		F06FA9A01FB09FA50001D4A4 /* Event */ = {
 			isa = PBXGroup;
 			children = (
-				F06FA9A11FB09FA50001D4A4 /* EventAnime.swift */,
 				F06FA9A21FB09FA50001D4A4 /* EventController.storyboard */,
+				F06FA9A11FB09FA50001D4A4 /* EventAnime.swift */,
 				F06FA9A31FB09FA50001D4A4 /* EventController.swift */,
-				F06FA9A41FB09FA50001D4A4 /* LocateEvent.swift */,
 				F06FA9A51FB09FA50001D4A4 /* ObjectManager.swift */,
 				F06FA9A61FB09FA50001D4A4 /* Plane.swift */,
+				F06FA9A41FB09FA50001D4A4 /* LocateEvent.swift */,
 				F06FA9A71FB09FA50001D4A4 /* PlaneEvent.swift */,
 				F06FA9A81FB09FA50001D4A4 /* TapEvent.swift */,
 			);
@@ -290,6 +291,8 @@
 				F06FA9B81FB09FB50001D4A4 /* MapController.swift */,
 				F06FA9B91FB09FB50001D4A4 /* MapErrorController.swift */,
 				F06FA9BA1FB09FB50001D4A4 /* MapRouteManager.swift */,
+				B06D640A1FB1EF12003E4B80 /* MapCheckpoint.swift */,
+				B06D640C1FB2083F003E4B80 /* MapDelegate.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -636,10 +639,10 @@
 				F06FA9AC1FB09FA60001D4A4 /* LocateEvent.swift in Sources */,
 				B0C3EA581F96FC7600385081 /* AppDelegate.swift in Sources */,
 				F06FA9CB1FB09FC30001D4A4 /* QuizController.swift in Sources */,
+				B06D640B1FB1EF12003E4B80 /* MapCheckpoint.swift in Sources */,
 				F06FA9C41FB09FBE0001D4A4 /* Score.swift in Sources */,
 				F0C39CC21FB13C3300AC837B /* AlarmManager.swift in Sources */,
 				F06FA99E1FB09F910001D4A4 /* AlarmController.swift in Sources */,
-				F00D419A1FB0BA0300701782 /* WeekSelectController.swift in Sources */,
 				F06FA9D41FB09FCB0001D4A4 /* StartController.swift in Sources */,
 				F06FA9C31FB09FBE0001D4A4 /* LabelFlame.swift in Sources */,
 				F06FA9BD1FB09FB50001D4A4 /* MapErrorController.swift in Sources */,
@@ -650,6 +653,7 @@
 				F06FA9CC1FB09FC30001D4A4 /* QuizEventManager.swift in Sources */,
 				F06FA9D11FB09FC70001D4A4 /* ResultController.swift in Sources */,
 				F06FA9AB1FB09FA60001D4A4 /* EventController.swift in Sources */,
+				B06D640D1FB2083F003E4B80 /* MapDelegate.swift in Sources */,
 				F06FA99F1FB09F910001D4A4 /* TimeController.swift in Sources */,
 				F06FA9AD1FB09FA60001D4A4 /* ObjectManager.swift in Sources */,
 				F06FA9AE1FB09FA60001D4A4 /* Plane.swift in Sources */,
