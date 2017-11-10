@@ -15,30 +15,35 @@ import Keys
 class MapCheckpoint {
     var mapView = GMSMapView()
     var checkpoints:[CLLocation] = []
+    
+    // ランダムなチェックポイントを作る関数. 自分を中心に, randomCoordinateの長さの円を描き, その中からcheckpointNumの数の点を選ぶような感じ.
+    func createRandomChekpoint(_ myLocation:CLLocation, _ randomCoordinate: Double = 0.003) -> CLLocation{
+        let _max = randomCoordinate
+        let _min = -1 * _max
+        let z = _max
+        
+        let x = Double(arc4random_uniform(UINT32_MAX)) / Double(UINT32_MAX) * (_max - _min) + _min
+        var y = sqrt((z * z) - (x * x))
+        
+        // yは正の値しか取らないため, 0がでたら-1を掛ける
+        if arc4random_uniform(2) == 0 {
+            y = -1*y
+        }
+        
+        let randomLatitude = Double(myLocation.coordinate.latitude) + x
+        let randomLongitude = Double(myLocation.coordinate.longitude) + y
+        return CLLocation(latitude: randomLatitude, longitude: randomLongitude)
+    }
+    
+    
 
     // ランダムなチェックポイントの配列を取得する関数
     func getRandomCheckpoints(_ myLocation:CLLocation, _ checkpointNum: Int = 1, _ randomCoordinate: Double = 0.003) -> [CLLocation]{
         
-        // 自分を中心に, randomCoordinateの長さの円を描き, その中からcheckpointNumの数の点を選ぶような感じ.
+        
         var randomCheckpoints:[CLLocation] = []
-        let _max = randomCoordinate
-        let _min = -1 * _max
-        let z = _max
-        var x:Double = 0
-        var y:Double = 0
         for _ in 1 ... checkpointNum {
-            
-            x = Double(arc4random_uniform(UINT32_MAX)) / Double(UINT32_MAX) * (_max - _min) + _min
-            y = sqrt((z * z) - (x * x))
-            
-            // yは正の値しか取らないため, 0がでたら-1を掛ける
-            if arc4random_uniform(2) == 0 {
-                y = -1*y
-            }
-            
-            let randomLatitude = Double(myLocation.coordinate.latitude) + x
-            let randomLongitude = Double(myLocation.coordinate.longitude) + y
-            randomCheckpoints.append(CLLocation(latitude: randomLatitude, longitude: randomLongitude))
+            randomCheckpoints.append(self.createRandomChekpoint(myLocation, randomCoordinate))
             
         }
         
