@@ -11,33 +11,40 @@ import GoogleMaps
 import UserNotifications
 
 class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelegate {
+    
     let locationManager = CLLocationManager()
     let scoreManager = ScoreManager()
-    let distanceManager = DistanceManager()
     let mapRouteManager = MapRouteManager()
+    let mapCheckpoint = MapCheckpoint()
+    
+    var checkpoints:[CLLocation] = []
     
     @IBOutlet var mapView: GMSMapView!
     
     var oldLocation:CLLocation!
 
-    let zoomLevel:Float = 17
+    let cameraZoomLevel:Float = 17
     
     /** override vieDidLoad()
      * Viewの初期化,locationManagerの初期化. GoogleMapをMap.storyboardに表示する.
      */
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         initMapView()
         initManager()
         // notification()
         setLocateManager()
         
+        
     }
     
     func initManager(){
         mapRouteManager.mapView = mapView
-        mapRouteManager.getDummyCheckpoint()
+        mapCheckpoint.mapView = mapView
+        
+        checkpoints = mapCheckpoint.getRandomDummyCheckpoint()
+        mapCheckpoint.drawCheckpointMarker(checkpoints)
+        
     }
     
     // mapViewの初期化. 最初は琉球大学を写すよう指定
@@ -59,7 +66,7 @@ class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelega
         // WGS84の座標系での琉球大学の位置(緯度, 経度)
         let ryukyuLatitude = 26.253726
         let ryukyuLongitude = 127.766949
-        let camera = GMSCameraPosition.camera(withLatitude: ryukyuLatitude, longitude: ryukyuLongitude, zoom: zoomLevel)
+        let camera = GMSCameraPosition.camera(withLatitude: ryukyuLatitude, longitude: ryukyuLongitude, zoom: cameraZoomLevel)
         self.mapView.camera = camera
     }
     
@@ -137,27 +144,31 @@ class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelega
         
         let camera = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude,
                                               longitude: location.coordinate.longitude,
-                                              zoom: zoomLevel)
+                                              zoom: cameraZoomLevel)
         self.mapView.camera = camera
+        
+        guard
+            let goal = checkpoints.first else {
+                checkpoints = mapCheckpoint.getRandomDummyCheckpoint()
+                return
+            }
+        
         
         if oldLocation == nil {
             oldLocation = location
-            mapRouteManager.getInitDummyRoutes(location)
+            mapRouteManager.getRoutes(location, goal)
         }
         let locationDistance = location.distance(from: oldLocation)
         //notification()
-        if (mapRouteManager.isDummyCheckpointArrive(location)){
+        if mapRouteManager.isCheckpointArrive(location, goal){
             notification()
             // 遷移
-            let storyboard: UIStoryboard = UIStoryboard(name: "EventControlle", bundle: nil)
-            let next: UIViewController = storyboard.instantiateInitialViewController() as! UIViewController
-            present(next, animated: true, completion: nil)
+            self.fromMaptoEventCotroller()
             
         }else{
 
             mapRouteManager.updateRoute(myLocation: location)
-            addScore(locationDistance)
-            addWalk(locationDistance)
+            scoreManager.setScore(locationDistance)
             oldLocation = location
         }
     }
@@ -198,14 +209,6 @@ class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelega
         // ローカル通知予約
         UNUserNotificationCenter.current().add(request, withCompletionHandler:nil)
         
-    }
-    
-    func addScore(_ distanceInMeters: CLLocationDistance){
-        scoreManager.setScore(distanceInMeters)
-    }
-    
-    func addWalk(_ distanceInMeters: CLLocationDistance){
-        distanceManager.setdistance(distanceInMeters)
     }
     
     // Handle location manager errors.
