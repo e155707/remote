@@ -150,17 +150,32 @@ class MapCheckpoint {
         }
     }
     
+    // チェックポイントについたかどうかの判定
+    func isCheckpointArrive(_ myLocation:CLLocation, _ checkPointLocation:CLLocation) -> Bool{
+        let errorRange:Double = 10 // error 10m
+        let distanceInMeters = myLocation.distance(from: checkPointLocation)
+        if distanceInMeters <= errorRange{
+            return true
+        }
+        return false
+        
+    }
+    
     // ---- ここから, ダミーの値を返す関数群 ---- //
     
     // ダミーの琉球大学のチェックポイント
     // latitude: 緯度, longitude: 経度
     
     let ryukyuCenter = CLLocation(latitude: 26.249834, longitude: 127.765789)
-    
+    // latitude: 緯度, longitude: 経度
+    let dummyCheckpoint = CLLocation(latitude: 26.253726, longitude: 127.766949)
     // 琉球大学の場所にmarkerを設置できる関数
     func getRandomDummyCheckpoint() -> [CLLocation] {
         return getRandomCheckpoints(ryukyuCenter)
     }
-    
+    // チェックポイントについたかどうかの判定
+    func isDummyCheckpointArrive(_ myLocation:CLLocation) -> Bool{
+        return isCheckpointArrive(myLocation, dummyCheckpoint)
+    }
     
 }
