@@ -120,7 +120,7 @@ class MapRouteManager{
     
     // ---- ここから, ダミーの値を返す関数群 ---- //
     
-    
+    let dummyCheckpoint = CLLocation(latitude: 26.253726, longitude: 127.766949)
     func getInitDummyRoutes(_ myLocation:CLLocation){
         let goalLocation = dummyCheckpoint
         getRoutes(myLocation, goalLocation)
