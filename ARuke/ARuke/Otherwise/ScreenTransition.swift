@@ -9,6 +9,33 @@ import UIKit
 import SceneKit
 import ARKit
 
+extension TitleController{
+    func fromTitleToMake(){
+        let storyboard: UIStoryboard = UIStoryboard(name:"Make",bundle: nil)
+        let next = storyboard.instantiateViewController(withIdentifier: "Make") as! MakeController
+        present(next as UIViewController, animated: true,completion: nil)
+        print("Make")
+    }
+}
+
+extension MainMenuHomeController{
+    func fromHomeToQuest(){
+        let storyboard: UIStoryboard = UIStoryboard(name:"MainMenuQuest",bundle: nil)
+        let next = storyboard.instantiateViewController(withIdentifier: "MainMenuQuest") as! MainMenuQuestController
+        present(next as UIViewController, animated: true,completion: nil)
+        print("MainMenuQuest")
+    }
+}
+
+extension MainMenuQuestController{
+    func fromQuestToHome(){
+        let storyboard: UIStoryboard = UIStoryboard(name:"MainMenuHome",bundle: nil)
+        let next = storyboard.instantiateViewController(withIdentifier: "MainMenuHome") as! MainMenuHomeController
+        present(next as UIViewController, animated: true,completion: nil)
+        print("MainMenuHome")
+    }
+}
+
 extension EventController{
     
     func fromEventCotrollerToMap(){
