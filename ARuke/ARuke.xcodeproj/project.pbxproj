@@ -33,6 +33,8 @@
 		F01C60491FC1EB5D00274ABD /* ManageEnemyCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01C60461FC1EB5D00274ABD /* ManageEnemyCharacter.swift */; };
 		F01C604A1FC1EB5D00274ABD /* Start.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F01C60471FC1EB5D00274ABD /* Start.storyboard */; };
 		F01C604B1FC1EB5D00274ABD /* StartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01C60481FC1EB5D00274ABD /* StartController.swift */; };
+		F0428CD01FC261BA0021D5B1 /* Walking.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0428CCF1FC261BA0021D5B1 /* Walking.storyboard */; };
+		F0428CD21FC261DA0021D5B1 /* WalkingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0428CD11FC261DA0021D5B1 /* WalkingController.swift */; };
 		F06FA99D1FB09F910001D4A4 /* Alarm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F06FA99A1FB09F910001D4A4 /* Alarm.storyboard */; };
 		F06FA99E1FB09F910001D4A4 /* AlarmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06FA99B1FB09F910001D4A4 /* AlarmController.swift */; };
 		F06FA99F1FB09F910001D4A4 /* TimeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06FA99C1FB09F910001D4A4 /* TimeController.swift */; };
@@ -125,6 +127,8 @@
 		F01C60461FC1EB5D00274ABD /* ManageEnemyCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageEnemyCharacter.swift; sourceTree = "<group>"; };
 		F01C60471FC1EB5D00274ABD /* Start.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Start.storyboard; sourceTree = "<group>"; };
 		F01C60481FC1EB5D00274ABD /* StartController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartController.swift; sourceTree = "<group>"; };
+		F0428CCF1FC261BA0021D5B1 /* Walking.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Walking.storyboard; sourceTree = "<group>"; };
+		F0428CD11FC261DA0021D5B1 /* WalkingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingController.swift; sourceTree = "<group>"; };
 		F06FA99A1FB09F910001D4A4 /* Alarm.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Alarm.storyboard; sourceTree = "<group>"; };
 		F06FA99B1FB09F910001D4A4 /* AlarmController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmController.swift; sourceTree = "<group>"; };
 		F06FA99C1FB09F910001D4A4 /* TimeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeController.swift; sourceTree = "<group>"; };
@@ -238,6 +242,7 @@
 				F01C602B1FC1EB4E00274ABD /* Make */,
 				F01C60341FC1EB5700274ABD /* MainMenu */,
 				F01C60451FC1EB5D00274ABD /* Start */,
+				F0428CCE1FC261A40021D5B1 /* Walking */,
 				F06FA9991FB09F910001D4A4 /* Alarm */,
 				F0C39CC31FB16E6D00AC837B /* Load */,
 				F06FA9B11FB09FA90001D4A4 /* EventDecision */,
@@ -333,6 +338,15 @@
 				F01C60481FC1EB5D00274ABD /* StartController.swift */,
 			);
 			path = Start;
+			sourceTree = "<group>";
+		};
+		F0428CCE1FC261A40021D5B1 /* Walking */ = {
+			isa = PBXGroup;
+			children = (
+				F0428CCF1FC261BA0021D5B1 /* Walking.storyboard */,
+				F0428CD11FC261DA0021D5B1 /* WalkingController.swift */,
+			);
+			path = Walking;
 			sourceTree = "<group>";
 		};
 		F06FA9991FB09F910001D4A4 /* Alarm */ = {
@@ -548,6 +562,7 @@
 				B0C3EA641F96FC7600385081 /* LaunchScreen.storyboard in Resources */,
 				F0C39CC71FB16EA600AC837B /* Load.storyboard in Resources */,
 				F01C603E1FC1EB5700274ABD /* MainMenu.storyboard in Resources */,
+				F0428CD01FC261BA0021D5B1 /* Walking.storyboard in Resources */,
 				B0C3EA611F96FC7600385081 /* Assets.xcassets in Resources */,
 				F01C60431FC1EB5700274ABD /* MainMenuQuest.storyboard in Resources */,
 				F01C604A1FC1EB5D00274ABD /* Start.storyboard in Resources */,
@@ -744,6 +759,7 @@
 				F06FA9CB1FB09FC30001D4A4 /* QuizController.swift in Sources */,
 				B06D640B1FB1EF12003E4B80 /* MapCheckpoint.swift in Sources */,
 				F06FA9C41FB09FBE0001D4A4 /* Score.swift in Sources */,
+				F0428CD21FC261DA0021D5B1 /* WalkingController.swift in Sources */,
 				F01C60421FC1EB5700274ABD /* ManageCharacter.swift in Sources */,
 				F0C39CC21FB13C3300AC837B /* AlarmManager.swift in Sources */,
 				F06FA99E1FB09F910001D4A4 /* AlarmController.swift in Sources */,

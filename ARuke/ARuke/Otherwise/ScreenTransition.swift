@@ -36,6 +36,15 @@ extension MainMenuQuestController{
     }
 }
 
+extension StartController{
+    @objc func fromStartToMap(){
+        let storyboard: UIStoryboard = UIStoryboard(name:"Map",bundle: nil)
+        let next = storyboard.instantiateViewController(withIdentifier: "Map") as! MapConroller
+        present(next as UIViewController, animated: true,completion: nil)
+        print("Map")
+    }
+}
+
 extension EventController{
     
     func fromEventCotrollerToMap(){

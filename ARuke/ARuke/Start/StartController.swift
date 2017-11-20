@@ -20,12 +20,18 @@ class StartController: UIViewController, ARSCNViewDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         characterEnemyScene = characterEnemy.managerCamera()
         
         characterEnemy.initEnemy()
         
         characterEnemy.managerEnemyCharacter(characterEnemyScene)
         enemyCharacterDisplay.scene = characterEnemyScene
+        
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(self.fromStartToMap))
+        
+        startDescriptionLabel.isUserInteractionEnabled = true
+        startDescriptionLabel.addGestureRecognizer(gesture)
         
         startDescriptionLabel.text = "ドラゴン　が　あらわれたやで！！\nチェックポイントで　こうげきできるやで！！"
         startDescriptionLabel.numberOfLines = 0
