@@ -15,30 +15,35 @@ import Keys
 class MapCheckpoint {
     var mapView = GMSMapView()
     var checkpoints:[CLLocation] = []
+    
+    // ランダムなチェックポイントを作る関数. 自分を中心に, randomCoordinateの長さの円を描き, その中からcheckpointNumの数の点を選ぶような感じ.
+    func createRandomChekpoint(_ myLocation:CLLocation, _ randomCoordinate: Double = 0.003) -> CLLocation{
+        let _max = randomCoordinate
+        let _min = -1 * _max
+        let z = _max
+        
+        let x = Double(arc4random_uniform(UINT32_MAX)) / Double(UINT32_MAX) * (_max - _min) + _min
+        var y = sqrt((z * z) - (x * x))
+        
+        // yは正の値しか取らないため, 0がでたら-1を掛ける
+        if arc4random_uniform(2) == 0 {
+            y = -1*y
+        }
+        
+        let randomLatitude = Double(myLocation.coordinate.latitude) + x
+        let randomLongitude = Double(myLocation.coordinate.longitude) + y
+        return CLLocation(latitude: randomLatitude, longitude: randomLongitude)
+    }
+    
+    
 
     // ランダムなチェックポイントの配列を取得する関数
     func getRandomCheckpoints(_ myLocation:CLLocation, _ checkpointNum: Int = 1, _ randomCoordinate: Double = 0.003) -> [CLLocation]{
         
-        // 自分を中心に, randomCoordinateの長さの円を描き, その中からcheckpointNumの数の点を選ぶような感じ.
+        
         var randomCheckpoints:[CLLocation] = []
-        let _max = randomCoordinate
-        let _min = -1 * _max
-        let z = _max
-        var x:Double = 0
-        var y:Double = 0
         for _ in 1 ... checkpointNum {
-            
-            x = Double(arc4random_uniform(UINT32_MAX)) / Double(UINT32_MAX) * (_max - _min) + _min
-            y = sqrt((z * z) - (x * x))
-            
-            // yは正の値しか取らないため, 0がでたら-1を掛ける
-            if arc4random_uniform(2) == 0 {
-                y = -1*y
-            }
-            
-            let randomLatitude = Double(myLocation.coordinate.latitude) + x
-            let randomLongitude = Double(myLocation.coordinate.longitude) + y
-            randomCheckpoints.append(CLLocation(latitude: randomLatitude, longitude: randomLongitude))
+            randomCheckpoints.append(self.createRandomChekpoint(myLocation, randomCoordinate))
             
         }
         
@@ -136,13 +141,24 @@ class MapCheckpoint {
             let marker = GMSMarker()
             // マーカーの場所を表示. WGS84の座標系. latitude: 緯度, longitude: 経度
             marker.position = checkpointLocation.coordinate
-            marker.title = "checkpoint\(i)"
-            marker.snippet = "Okinawa"
+            marker.title = "Element\(i)"
+            marker.snippet = "火のエレメント"
             marker.map = mapView
             
             i = i+1
             
         }
+    }
+    
+    // チェックポイントについたかどうかの判定
+    func isCheckpointArrive(_ myLocation:CLLocation, _ checkPointLocation:CLLocation) -> Bool{
+        let errorRange:Double = 10 // error 10m
+        let distanceInMeters = myLocation.distance(from: checkPointLocation)
+        if distanceInMeters <= errorRange{
+            return true
+        }
+        return false
+        
     }
     
     // ---- ここから, ダミーの値を返す関数群 ---- //
@@ -151,11 +167,15 @@ class MapCheckpoint {
     // latitude: 緯度, longitude: 経度
     
     let ryukyuCenter = CLLocation(latitude: 26.249834, longitude: 127.765789)
-    
+    // latitude: 緯度, longitude: 経度
+    let dummyCheckpoint = CLLocation(latitude: 26.253726, longitude: 127.766949)
     // 琉球大学の場所にmarkerを設置できる関数
     func getRandomDummyCheckpoint() -> [CLLocation] {
         return getRandomCheckpoints(ryukyuCenter)
     }
-    
+    // チェックポイントについたかどうかの判定
+    func isDummyCheckpointArrive(_ myLocation:CLLocation) -> Bool{
+        return isCheckpointArrive(myLocation, dummyCheckpoint)
+    }
     
 }
