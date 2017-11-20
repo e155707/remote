@@ -49,6 +49,7 @@ extension MapController{
     func fromMaptoWalking(){
         let storyboard: UIStoryboard = UIStoryboard(name:"Walking",bundle: nil)
         let next = storyboard.instantiateViewController(withIdentifier: "Walking") as! WalkingController
+        next.selectElementLocation = selectElementLocation
         present(next as UIViewController, animated: true,completion: nil)
         print("Walking")
     }

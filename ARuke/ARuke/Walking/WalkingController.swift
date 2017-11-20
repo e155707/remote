@@ -15,11 +15,12 @@ class WalkingController: UIViewController, ARSCNViewDelegate, CLLocationManagerD
     
     @IBOutlet weak var WalkingDescriptionLabel: UILabel!
     @IBOutlet weak var characterDisplay: SCNView!
-    let selectElementLocation: CLLocation! = nil
+    var selectElementLocation: CLLocation!
     var errorDistance = 0.0
     let locationManager = CLLocationManager()
     
     @IBAction func battleButton(_ sender: Any) {
+        locationManager.delegate = self
         locationManager.startUpdatingLocation()
     }
     let character:ManageCharacter = ManageCharacter()
