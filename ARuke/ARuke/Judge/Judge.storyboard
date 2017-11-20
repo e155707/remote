@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0bc-MV-ToX">
+    <device id="ipad10_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="yurumoji.ttf">
+            <string>Yurumoji</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Judge Controller-->
+        <scene sceneID="Iu1-bZ-K6e">
+            <objects>
+                <viewController storyboardIdentifier="Judge" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0bc-MV-ToX" customClass="JudgeController" customModule="ARuke" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MSt-hd-41j">
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bwe-HM-ovk">
+                                <rect key="frame" x="53" y="20" width="729" height="737"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="737" id="xy6-Fa-eC1"/>
+                                </constraints>
+                            </sceneKitView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TGX-YH-NqV">
+                                <rect key="frame" x="53" y="821" width="740" height="240"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="タイトル" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q5A-vq-dBg">
+                                        <rect key="frame" x="89" y="33" width="562" height="174"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Yurumoji" family="Yurumoji" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="Kog-bg-weC"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="Mpw-hE-fWp">
+                                <rect key="frame" x="53" y="765" width="729" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="fKT-9t-bTe"/>
+                                </constraints>
+                            </progressView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Bwe-HM-ovk" firstAttribute="leading" secondItem="TGX-YH-NqV" secondAttribute="leading" id="7un-sK-eVj"/>
+                            <constraint firstItem="Bwe-HM-ovk" firstAttribute="centerX" secondItem="MSt-hd-41j" secondAttribute="centerX" id="Jhf-zM-XQ5"/>
+                            <constraint firstItem="Mpw-hE-fWp" firstAttribute="leading" secondItem="TGX-YH-NqV" secondAttribute="leading" id="KSq-RP-GW7"/>
+                            <constraint firstItem="Bwe-HM-ovk" firstAttribute="leading" secondItem="C6d-cU-JvG" secondAttribute="leading" constant="53" id="Onr-CP-VxD"/>
+                            <constraint firstItem="Mpw-hE-fWp" firstAttribute="top" secondItem="Bwe-HM-ovk" secondAttribute="bottom" constant="8" symbolic="YES" id="PZN-1U-Ezf"/>
+                            <constraint firstItem="C6d-cU-JvG" firstAttribute="trailing" secondItem="TGX-YH-NqV" secondAttribute="trailing" constant="41" id="Qqf-yf-nWq"/>
+                            <constraint firstItem="Mpw-hE-fWp" firstAttribute="trailing" secondItem="Bwe-HM-ovk" secondAttribute="trailing" id="RKu-aZ-3J7"/>
+                            <constraint firstItem="TGX-YH-NqV" firstAttribute="top" secondItem="Bwe-HM-ovk" secondAttribute="bottom" constant="64" id="SKt-D5-wrU"/>
+                            <constraint firstItem="Bwe-HM-ovk" firstAttribute="top" secondItem="C6d-cU-JvG" secondAttribute="top" id="X6u-f5-Kdv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="C6d-cU-JvG"/>
+                    </view>
+                    <connections>
+                        <outlet property="JudgeDescriptionLabel" destination="q5A-vq-dBg" id="85E-bz-5gr"/>
+                        <outlet property="enemyCharacterDisplay" destination="Bwe-HM-ovk" id="Y77-mz-Utw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ias-r3-Gxk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1186" y="226"/>
+        </scene>
+    </scenes>
+</document>

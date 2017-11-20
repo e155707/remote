@@ -52,6 +52,7 @@
                             <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bd4-Nm-D3G">
                                 <rect key="frame" x="47" y="354" width="740" height="427"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </sceneKitView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fjV-tF-wXp">
                                 <rect key="frame" x="170" y="858" width="495" height="190"/>
@@ -61,6 +62,9 @@
                                 <state key="normal" title="ここで戦う！！">
                                     <color key="titleColor" red="1" green="0.9979675496" blue="0.97518901089999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="7TI-Ya-mkn" kind="show" id="7Y9-lH-LEi"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -79,6 +83,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="phY-yl-gpO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="100" y="225"/>
+        </scene>
+        <!--Judge-->
+        <scene sceneID="dlv-VH-OpT">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="Judge" storyboardName="Judge" referencedIdentifier="Judge" id="7TI-Ya-mkn" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yy3-o8-NK6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="693" y="257"/>
         </scene>
     </scenes>
 </document>

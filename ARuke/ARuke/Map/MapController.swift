@@ -10,7 +10,7 @@ import Foundation
 import GoogleMaps
 import UserNotifications
 
-class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelegate {
+class MapController: UIViewController, CLLocationManagerDelegate,GMSMapViewDelegate {
     
     let locationManager = CLLocationManager()
     let scoreManager = ScoreManager()
@@ -166,6 +166,7 @@ class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelega
 
             // 画面遷移
             print("画面遷移!")
+            self.fromMaptoWalking()
         }
         
         timer = Timer.scheduledTimer(timeInterval: TimeInterval(intervalTime),
