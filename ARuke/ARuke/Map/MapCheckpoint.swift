@@ -141,8 +141,8 @@ class MapCheckpoint {
             let marker = GMSMarker()
             // マーカーの場所を表示. WGS84の座標系. latitude: 緯度, longitude: 経度
             marker.position = checkpointLocation.coordinate
-            marker.title = "checkpoint\(i)"
-            marker.snippet = "Okinawa"
+            marker.title = "Element\(i)"
+            marker.snippet = "火のエレメント"
             marker.map = mapView
             
             i = i+1
