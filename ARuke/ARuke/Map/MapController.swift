@@ -26,6 +26,7 @@ class MapController: UIViewController, CLLocationManagerDelegate,GMSMapViewDeleg
     var waitTime = 0.0;
     var waitTimeLabel = UILabel()
     
+    var selectElementLocation = CLLocation()
     
     var checkpoints:[CLLocation] = []
     
@@ -136,6 +137,8 @@ class MapController: UIViewController, CLLocationManagerDelegate,GMSMapViewDeleg
         selectElementButton.addTarget(self, action: #selector(self.onClickSelectElementButton), for: .touchUpInside)
         self.selectElementWindow.addSubview(selectElementButton)
         
+        selectElementLocation = CLLocation.init(latitude: marker.position.latitude, longitude: marker.position.longitude)
+        
     }
     
     // selectElementWindowで, ボタン以外の場所をタップしたら元の画面に戻る.
@@ -166,6 +169,7 @@ class MapController: UIViewController, CLLocationManagerDelegate,GMSMapViewDeleg
 
             // 画面遷移
             print("画面遷移!")
+            self.locationManager.stopUpdatingLocation()
             self.fromMaptoWalking()
         }
         
@@ -180,7 +184,7 @@ class MapController: UIViewController, CLLocationManagerDelegate,GMSMapViewDeleg
     @objc func changeWaitTimeLabel(_ timer: Timer!){
         
         waitTime -= timer.timeInterval
-        waitTimeLabel.text = "あと\(waitTime + 1)秒で行先を覚えてね."
+        waitTimeLabel.text = "あと\(waitTime)秒で行先を覚えてね."
         waitTimeLabel.sizeToFit()
         waitTimeLabel.center = self.view.center
         waitTimeLabel.textColor = UIColor.black

@@ -63,7 +63,7 @@
                                     <color key="titleColor" red="1" green="0.9979675496" blue="0.97518901089999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="7TI-Ya-mkn" kind="show" id="7Y9-lH-LEi"/>
+                                    <action selector="battleButton:" destination="fhe-X2-go3" eventType="touchUpInside" id="RAd-J3-cIk"/>
                                 </connections>
                             </button>
                         </subviews>
