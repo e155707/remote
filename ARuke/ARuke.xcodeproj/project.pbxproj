@@ -37,6 +37,8 @@
 		F01C604B1FC1EB5D00274ABD /* StartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01C60481FC1EB5D00274ABD /* StartController.swift */; };
 		F0428CD01FC261BA0021D5B1 /* Walking.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0428CCF1FC261BA0021D5B1 /* Walking.storyboard */; };
 		F0428CD21FC261DA0021D5B1 /* WalkingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0428CD11FC261DA0021D5B1 /* WalkingController.swift */; };
+		F051C5751FC2D77C00CA967B /* MainMenuShop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F051C5741FC2D77C00CA967B /* MainMenuShop.storyboard */; };
+		F051C5771FC2D79900CA967B /* MainMenuShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = F051C5761FC2D79900CA967B /* MainMenuShop.swift */; };
 		F06FA99D1FB09F910001D4A4 /* Alarm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F06FA99A1FB09F910001D4A4 /* Alarm.storyboard */; };
 		F06FA99E1FB09F910001D4A4 /* AlarmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06FA99B1FB09F910001D4A4 /* AlarmController.swift */; };
 		F06FA99F1FB09F910001D4A4 /* TimeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06FA99C1FB09F910001D4A4 /* TimeController.swift */; };
@@ -133,6 +135,8 @@
 		F01C60481FC1EB5D00274ABD /* StartController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartController.swift; sourceTree = "<group>"; };
 		F0428CCF1FC261BA0021D5B1 /* Walking.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Walking.storyboard; sourceTree = "<group>"; };
 		F0428CD11FC261DA0021D5B1 /* WalkingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingController.swift; sourceTree = "<group>"; };
+		F051C5741FC2D77C00CA967B /* MainMenuShop.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainMenuShop.storyboard; sourceTree = "<group>"; };
+		F051C5761FC2D79900CA967B /* MainMenuShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuShop.swift; sourceTree = "<group>"; };
 		F06FA99A1FB09F910001D4A4 /* Alarm.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Alarm.storyboard; sourceTree = "<group>"; };
 		F06FA99B1FB09F910001D4A4 /* AlarmController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmController.swift; sourceTree = "<group>"; };
 		F06FA99C1FB09F910001D4A4 /* TimeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeController.swift; sourceTree = "<group>"; };
@@ -321,6 +325,7 @@
 				F01C60361FC1EB5700274ABD /* MainMenuController.swift */,
 				F01C60371FC1EB5700274ABD /* MainMenuHome */,
 				F01C603B1FC1EB5700274ABD /* MainMenuQuest */,
+				F051C5731FC2C85600CA967B /* MainMenuShop */,
 			);
 			path = MainMenu;
 			sourceTree = "<group>";
@@ -361,6 +366,15 @@
 				F0428CD11FC261DA0021D5B1 /* WalkingController.swift */,
 			);
 			path = Walking;
+			sourceTree = "<group>";
+		};
+		F051C5731FC2C85600CA967B /* MainMenuShop */ = {
+			isa = PBXGroup;
+			children = (
+				F051C5741FC2D77C00CA967B /* MainMenuShop.storyboard */,
+				F051C5761FC2D79900CA967B /* MainMenuShop.swift */,
+			);
+			path = MainMenuShop;
 			sourceTree = "<group>";
 		};
 		F06FA9991FB09F910001D4A4 /* Alarm */ = {
@@ -572,6 +586,7 @@
 				F01C60281FC1EB3100274ABD /* Title.storyboard in Resources */,
 				F06FA9D01FB09FC70001D4A4 /* Result.storyboard in Resources */,
 				B0C3EA5A1F96FC7600385081 /* art.scnassets in Resources */,
+				F051C5751FC2D77C00CA967B /* MainMenuShop.storyboard in Resources */,
 				F01C60401FC1EB5700274ABD /* MainMenuHome.storyboard in Resources */,
 				B0C3EA641F96FC7600385081 /* LaunchScreen.storyboard in Resources */,
 				F0C39CC71FB16EA600AC837B /* Load.storyboard in Resources */,
@@ -794,6 +809,7 @@
 				F01C60411FC1EB5700274ABD /* MainMenuHomeController.swift in Sources */,
 				F01C60311FC1EB4E00274ABD /* MakeController.swift in Sources */,
 				F06FA99F1FB09F910001D4A4 /* TimeController.swift in Sources */,
+				F051C5771FC2D79900CA967B /* MainMenuShop.swift in Sources */,
 				F01C60331FC1EB4E00274ABD /* ManageCharacterObject.swift in Sources */,
 				F06FA9AD1FB09FA60001D4A4 /* ObjectManager.swift in Sources */,
 				F06FA9AE1FB09FA60001D4A4 /* Plane.swift in Sources */,
