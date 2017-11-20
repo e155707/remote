@@ -14,10 +14,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Walking Controller-->
         <scene sceneID="fib-LE-fxZ">
             <objects>
-                <viewController id="fhe-X2-go3" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Walking" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fhe-X2-go3" customClass="WalkingController" customModule="ARuke" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zs0-rN-ipE">
                         <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -56,10 +56,14 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fjV-tF-wXp">
                                 <rect key="frame" x="170" y="858" width="495" height="190"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Yurumoji" family="Yurumoji" pointSize="100"/>
+                                <state key="normal" title="ここで戦う！！">
+                                    <color key="titleColor" red="1" green="0.9979675496" blue="0.97518901089999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="7PU-Eg-wXT" firstAttribute="top" secondItem="EH9-b9-YPf" secondAttribute="top" constant="56" id="B6R-AE-3Hh"/>
                             <constraint firstItem="7PU-Eg-wXT" firstAttribute="leading" secondItem="EH9-b9-YPf" secondAttribute="leading" constant="47" id="gvI-GL-Vrj"/>
@@ -67,6 +71,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EH9-b9-YPf"/>
                     </view>
+                    <connections>
+                        <outlet property="WalkingDescriptionLabel" destination="J0p-lx-7qK" id="Nco-Ht-oly"/>
+                        <outlet property="characterDisplay" destination="bd4-Nm-D3G" id="dHp-92-wqt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="phY-yl-gpO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
