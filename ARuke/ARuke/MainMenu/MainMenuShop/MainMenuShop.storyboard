@@ -14,10 +14,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Main Menu Shop Controller-->
         <scene sceneID="nCR-VF-8Wu">
             <objects>
-                <viewController id="4MR-UP-Jbh" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainMenuShop" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4MR-UP-Jbh" customClass="MainMenuShopController" customModule="ARuke" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0mF-Ez-36g">
                         <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -84,13 +84,5 @@
             </objects>
             <point key="canvasLocation" x="100" y="225"/>
         </scene>
-        <!--Judge-->
-        <scene sceneID="dlv-VH-OpT">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="Judge" storyboardName="Judge" referencedIdentifier="Judge" id="7TI-Ya-mkn" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Yy3-o8-NK6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="693" y="257"/>
-        </scene>
     </scenes>
 </document>

@@ -41,6 +41,7 @@ class WalkingController: UIViewController, ARSCNViewDelegate, CLLocationManagerD
     
     // 自分の位置を呼び出すメソッド.
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print("push")
         guard let location: CLLocation = locations.last else { return }
         
         errorDistance = location.distance(from: selectElementLocation)
@@ -49,7 +50,6 @@ class WalkingController: UIViewController, ARSCNViewDelegate, CLLocationManagerD
         let next = storyboard.instantiateViewController(withIdentifier: "Judge") as! JudgeController
         next.errorDistance = errorDistance
         present(next as UIViewController, animated: true,completion: nil)
-        print("Walking")
     }
     
     
