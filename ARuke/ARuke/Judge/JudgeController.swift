@@ -17,6 +17,8 @@ class JudgeController: UIViewController, ARSCNViewDelegate{
     let characterEnemy:ManageEnemyCharacter = ManageEnemyCharacter()
     var characterEnemyScene:SCNScene = SCNScene()
     
+    var errorDistance: Double!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,7 +35,7 @@ class JudgeController: UIViewController, ARSCNViewDelegate{
         JudgeDescriptionLabel.isUserInteractionEnabled = true
         JudgeDescriptionLabel.addGestureRecognizer(gesture)
         
-        JudgeDescriptionLabel.text = "チェックポイント　との　ごさ　2m...\n\nタローマルは　こうげきは　クリティカルヒット　5820ダメージを　あたえた！！"
+        JudgeDescriptionLabel.text = "チェックポイント　との　ごさ　\(String(format:"%.1f", errorDistance))m...\n\nタローマルは　こうげきは　クリティカルヒット　5820ダメージを　あたえた！！"
         JudgeDescriptionLabel.numberOfLines = 0
     }
     override func viewWillAppear(_ animated: Bool) {
