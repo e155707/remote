@@ -54,6 +54,15 @@ extension MapController{
     }
 }
 
+extension JudgeController{
+    @objc func fromJudgeToMap(){
+        let storyboard: UIStoryboard = UIStoryboard(name:"Map",bundle: nil)
+        let next = storyboard.instantiateViewController(withIdentifier: "Map") as! MapController
+        present(next as UIViewController, animated: true,completion: nil)
+        print("Map")
+    }
+}
+
 extension EventController{
     
     func fromEventCotrollerToMap(){

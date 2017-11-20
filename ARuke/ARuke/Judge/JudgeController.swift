@@ -28,6 +28,11 @@ class JudgeController: UIViewController, ARSCNViewDelegate{
         characterEnemy.managerEnemyCharacter(characterEnemyScene)
         enemyCharacterDisplay.scene = characterEnemyScene
         
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(self.fromJudgeToMap))
+        
+        JudgeDescriptionLabel.isUserInteractionEnabled = true
+        JudgeDescriptionLabel.addGestureRecognizer(gesture)
+        
         JudgeDescriptionLabel.text = "チェックポイント　との　ごさ　2m...\n\nタローマルは　こうげきは　クリティカルヒット　5820ダメージを　あたえた！！"
         JudgeDescriptionLabel.numberOfLines = 0
     }
