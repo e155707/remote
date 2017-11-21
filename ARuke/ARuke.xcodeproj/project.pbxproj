@@ -40,6 +40,8 @@
 		F051C5751FC2D77C00CA967B /* MainMenuShop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F051C5741FC2D77C00CA967B /* MainMenuShop.storyboard */; };
 		F051C5771FC2D79900CA967B /* MainMenuShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = F051C5761FC2D79900CA967B /* MainMenuShop.swift */; };
 		F06CC6F61FC30F97002880B9 /* ManageUserInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06CC6F51FC30F97002880B9 /* ManageUserInformation.swift */; };
+		F06CC6FA1FC3BB27002880B9 /* ManageTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06CC6F91FC3BB27002880B9 /* ManageTime.swift */; };
+		F06CC6FC1FC3D318002880B9 /* ARukeTimeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06CC6FB1FC3D318002880B9 /* ARukeTimeController.swift */; };
 		F06FA99D1FB09F910001D4A4 /* Alarm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F06FA99A1FB09F910001D4A4 /* Alarm.storyboard */; };
 		F06FA99E1FB09F910001D4A4 /* AlarmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06FA99B1FB09F910001D4A4 /* AlarmController.swift */; };
 		F06FA99F1FB09F910001D4A4 /* TimeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06FA99C1FB09F910001D4A4 /* TimeController.swift */; };
@@ -139,6 +141,8 @@
 		F051C5741FC2D77C00CA967B /* MainMenuShop.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainMenuShop.storyboard; sourceTree = "<group>"; };
 		F051C5761FC2D79900CA967B /* MainMenuShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuShop.swift; sourceTree = "<group>"; };
 		F06CC6F51FC30F97002880B9 /* ManageUserInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageUserInformation.swift; sourceTree = "<group>"; };
+		F06CC6F91FC3BB27002880B9 /* ManageTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageTime.swift; sourceTree = "<group>"; };
+		F06CC6FB1FC3D318002880B9 /* ARukeTimeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARukeTimeController.swift; sourceTree = "<group>"; };
 		F06FA99A1FB09F910001D4A4 /* Alarm.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Alarm.storyboard; sourceTree = "<group>"; };
 		F06FA99B1FB09F910001D4A4 /* AlarmController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmController.swift; sourceTree = "<group>"; };
 		F06FA99C1FB09F910001D4A4 /* TimeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeController.swift; sourceTree = "<group>"; };
@@ -254,6 +258,9 @@
 				F01C60451FC1EB5D00274ABD /* Start */,
 				F0428CCE1FC261A40021D5B1 /* Walking */,
 				F015D7A81FC275370032B7C3 /* Judge */,
+				F06CC6F71FC3B574002880B9 /* Enemy */,
+				F06CC6F81FC3BAF1002880B9 /* Time */,
+				F06FA9BF1FB09FBE0001D4A4 /* Otherwise */,
 				F06FA9991FB09F910001D4A4 /* Alarm */,
 				F0C39CC31FB16E6D00AC837B /* Load */,
 				F06FA9B11FB09FA90001D4A4 /* EventDecision */,
@@ -261,7 +268,6 @@
 				F06FA9B61FB09FB50001D4A4 /* Map */,
 				F06FA9C61FB09FC30001D4A4 /* Quiz */,
 				F06FA9CD1FB09FC70001D4A4 /* Result */,
-				F06FA9BF1FB09FBE0001D4A4 /* Otherwise */,
 				B0C3EA601F96FC7600385081 /* Assets.xcassets */,
 				B0C3EA621F96FC7600385081 /* LaunchScreen.storyboard */,
 				B0C3EA651F96FC7600385081 /* Info.plist */,
@@ -355,7 +361,6 @@
 		F01C60451FC1EB5D00274ABD /* Start */ = {
 			isa = PBXGroup;
 			children = (
-				F01C60461FC1EB5D00274ABD /* ManageEnemyCharacter.swift */,
 				F01C60471FC1EB5D00274ABD /* Start.storyboard */,
 				F01C60481FC1EB5D00274ABD /* StartController.swift */,
 			);
@@ -378,6 +383,23 @@
 				F051C5761FC2D79900CA967B /* MainMenuShop.swift */,
 			);
 			path = MainMenuShop;
+			sourceTree = "<group>";
+		};
+		F06CC6F71FC3B574002880B9 /* Enemy */ = {
+			isa = PBXGroup;
+			children = (
+				F01C60461FC1EB5D00274ABD /* ManageEnemyCharacter.swift */,
+			);
+			path = Enemy;
+			sourceTree = "<group>";
+		};
+		F06CC6F81FC3BAF1002880B9 /* Time */ = {
+			isa = PBXGroup;
+			children = (
+				F06CC6F91FC3BB27002880B9 /* ManageTime.swift */,
+				F06CC6FB1FC3D318002880B9 /* ARukeTimeController.swift */,
+			);
+			path = Time;
 			sourceTree = "<group>";
 		};
 		F06FA9991FB09F910001D4A4 /* Alarm */ = {
@@ -791,6 +813,7 @@
 				B0C3EA581F96FC7600385081 /* AppDelegate.swift in Sources */,
 				F06FA9CB1FB09FC30001D4A4 /* QuizController.swift in Sources */,
 				B06D640B1FB1EF12003E4B80 /* MapCheckpoint.swift in Sources */,
+				F06CC6FC1FC3D318002880B9 /* ARukeTimeController.swift in Sources */,
 				F06FA9C41FB09FBE0001D4A4 /* Score.swift in Sources */,
 				F0428CD21FC261DA0021D5B1 /* WalkingController.swift in Sources */,
 				F01C60421FC1EB5700274ABD /* ManageCharacter.swift in Sources */,
@@ -820,6 +843,7 @@
 				F01C602A1FC1EB4300274ABD /* TitleController.swift in Sources */,
 				F06FA9A91FB09FA60001D4A4 /* EventAnime.swift in Sources */,
 				F06FA9B01FB09FA60001D4A4 /* TapEvent.swift in Sources */,
+				F06CC6FA1FC3BB27002880B9 /* ManageTime.swift in Sources */,
 				F01C60321FC1EB4E00274ABD /* ManageCharacterInformation.swift in Sources */,
 				F06FA9AF1FB09FA60001D4A4 /* PlaneEvent.swift in Sources */,
 				F01C603F1FC1EB5700274ABD /* MainMenuController.swift in Sources */,
