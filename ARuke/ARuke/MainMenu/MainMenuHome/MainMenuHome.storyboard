@@ -37,7 +37,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ta-NG-3qs">
-                                        <rect key="frame" x="237" y="0.0" width="211" height="60"/>
+                                        <rect key="frame" x="237" y="0.0" width="370" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Yurumoji" family="Yurumoji" pointSize="40"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -89,7 +89,10 @@
                     </view>
                     <connections>
                         <outlet property="characterDisplay" destination="rnZ-WI-9bn" id="Yl4-c7-zH0"/>
+                        <outlet property="characterLevelLabel" destination="qn2-vN-fxD" id="6ZF-XD-0fb"/>
                         <outlet property="characterNameLabel" destination="2ta-NG-3qs" id="9TW-DC-dPc"/>
+                        <outlet property="userFatLabel" destination="amd-kR-a3k" id="E2e-eI-qoM"/>
+                        <outlet property="userGoldLabel" destination="YvO-K8-cbN" id="CDz-9j-C9s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZMw-9F-IiU" userLabel="First Responder" sceneMemberID="firstResponder"/>

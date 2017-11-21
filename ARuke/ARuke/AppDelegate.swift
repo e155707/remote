@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
 
     var window: UIWindow?
     var totalScore: Int64 = 0
+    var MakeController:Bool = false
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -38,6 +39,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
         }
 
         center.delegate = self
+        
+        let userDefault = UserDefaults.standard
+        let dict = ["firstLaunch": true]
+        userDefault.register(defaults: dict)
+        if userDefault.bool(forKey: "firstLaunch") {
+            userDefault.set(false, forKey: "firstLaunch")
+            MakeController = true
+            let user:ManageUserInformation = ManageUserInformation()
+            user.initUserInformation()
+        }
         
         return true
     }

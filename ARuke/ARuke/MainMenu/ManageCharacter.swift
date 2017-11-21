@@ -11,13 +11,16 @@ import SceneKit
 import ARKit
 
 class ManageCharacter{
-    
     let defaults = UserDefaults.standard
     
     var gender:String = String()
     var color:String = String()
     var name:String = String()
     var obejectName:String = String()
+    var level:Int = Int()
+    var experiencePoint:Int = Int()
+    var maxExperiencePoint:Int = Int()
+    var HP:Int = Int()
     
     let characterScene:SCNScene = SCNScene()
     
@@ -54,8 +57,53 @@ class ManageCharacter{
     
     func getCharacterName() -> String{
         name = defaults.string(forKey: "name")!
-        
         return name
+    }
+    
+    func getCharacterLevel() -> Int{
+        level = defaults.integer(forKey: "level")
+        return level
+    }
+    
+    func setCharacterLevel(_ setLevel:Int){
+        level = defaults.integer(forKey: "level")
+        level = setLevel
+        defaults.set(level, forKey: "level")
+    }
+    
+    
+    func getCharacterExperiencePoint() -> Int{
+        experiencePoint = defaults.integer(forKey: "experiencePoint")
+        return experiencePoint
+    }
+    
+    func setCharacterExperiencePoint(_ setExperiencePoint:Int){
+        experiencePoint = defaults.integer(forKey: "experiencePoint")
+        experiencePoint = setExperiencePoint
+        defaults.set(setExperiencePoint, forKey:"experiencePoint")
+    }
+    
+    
+    func getCharacterMaxExperiencePoint() -> Int{
+        maxExperiencePoint = defaults.integer(forKey: "maxExperiencePoint")
+        return maxExperiencePoint
+    }
+    
+    func setCharacterMaxExperiencePoint(_ setMaxExperiencePoint:Int){
+        maxExperiencePoint = defaults.integer(forKey: "maxExperiencePoint")
+        maxExperiencePoint = setMaxExperiencePoint
+        defaults.set(maxExperiencePoint, forKey:"maxExperiencePoint")
+    }
+    
+    func getCharacterHP() -> Int{
+        HP = defaults.integer(forKey: "HP")
+        return HP
+    }
+    
+    func setCharacterHp(_ setHP:Int){
+        HP = defaults.integer(forKey:"HP")
+        HP = setHP
+        defaults.set(HP, forKey:"HP")
     }
 }
 

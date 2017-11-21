@@ -16,6 +16,13 @@ extension TitleController{
         present(next as UIViewController, animated: true,completion: nil)
         print("Make")
     }
+    
+    func fromTitleToMainMenu(){
+        let storyboard: UIStoryboard = UIStoryboard(name:"MainMenu",bundle: nil)
+        let next = storyboard.instantiateViewController(withIdentifier: "MainMenu") as! MainMenuController
+        present(next as UIViewController, animated: true,completion: nil)
+        print("MainMenu")
+    }
 }
 
 extension MainMenuHomeController{

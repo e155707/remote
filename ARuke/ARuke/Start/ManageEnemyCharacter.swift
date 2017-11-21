@@ -17,6 +17,8 @@ class ManageEnemyCharacter{
     var enemyColor:String = String()
     var enemyName:String = String()
     var enemyObejectName:String = String()
+    var enemyLevel:Int = Int()
+    var enemyHP:Int = Int()
     
     let characterEnemyScene:SCNScene = SCNScene()
     
@@ -37,11 +39,13 @@ class ManageEnemyCharacter{
         enemyColor = "brown"
         enemyName = "宝箱"
         enemyObejectName = "takarabako"
+        enemyHP = 10000
         
         defaults.set(enemyGender,forKey:"enemyGender")
         defaults.set(enemyColor,forKey:"enemyColor")
         defaults.set(enemyName,forKey:"enemyName")
         defaults.set(enemyObejectName,forKey:"enemyObejectName")
+        defaults.set(enemyHP,forKey:"enemyHP")
     }
     
     
@@ -65,8 +69,12 @@ class ManageEnemyCharacter{
     
     func getCharacterName() -> String{
         enemyName = defaults.string(forKey: "enemyName")!
-        
         return enemyName
+    }
+    
+    func getEnemyCharacterHP() -> Int{
+        enemyHP = defaults.integer(forKey: "enemyHP")
+        return enemyHP
     }
 }
 

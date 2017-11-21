@@ -29,7 +29,12 @@ class TitleController: UIViewController, ARSCNViewDelegate {
     }
     
     @IBAction func startButton(_ sender: Any) {
-        self.fromTitleToMake()
+        let myAp = UIApplication.shared.delegate as! AppDelegate
+        if(myAp.MakeController){
+            self.fromTitleToMake()
+        }else{
+            self.fromTitleToMainMenu()
+        }
     }
     
     

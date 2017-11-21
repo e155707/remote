@@ -17,17 +17,29 @@ class ManageCharacterInformation{
     var color:String = String()
     var name:String = String()
     var obejectName:String = String()
+    var level:Int = Int()
+    var experiencePoint:Int = Int()
+    var maxExperiencePoint:Int = Int()
+    var HP:Int = Int()
     
     func initCharacterInformation(){
-        gender = "male"
+        gender = "♂"
         color = "red"
         name = "S"
         obejectName = "treasureboxRED"
+        level = 1
+        experiencePoint = 0
+        maxExperiencePoint = 100
+        HP = 1000
         
         defaults.set(gender, forKey: "gender")
         defaults.set(color, forKey:"color")
         defaults.set(name, forKey:"name")
         defaults.set(obejectName, forKey:"ObjectName")
+        defaults.set(level,forKey:"level")
+        defaults.set(experiencePoint,forKey:"experiencePoint")
+        defaults.set(HP,forKey:"HP")
+        defaults.set(maxExperiencePoint,forKey:"maxExperiencePoint")
     }
     
     func setObejectName(_ name:String){

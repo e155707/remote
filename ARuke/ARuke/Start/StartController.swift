@@ -13,6 +13,8 @@ import ARKit
 class StartController: UIViewController, ARSCNViewDelegate{
     @IBOutlet weak var startDescriptionLabel: UILabel!
     @IBOutlet weak var enemyCharacterDisplay: SCNView!
+    @IBOutlet weak var enemyHPProgress: UIProgressView!
+    @IBOutlet weak var HPProgress: UIProgressView!
     
     let characterEnemy:ManageEnemyCharacter = ManageEnemyCharacter()
     var characterEnemyScene:SCNScene = SCNScene()
@@ -32,6 +34,9 @@ class StartController: UIViewController, ARSCNViewDelegate{
         
         startDescriptionLabel.isUserInteractionEnabled = true
         startDescriptionLabel.addGestureRecognizer(gesture)
+        
+        enemyHPProgress.progress = 1.0
+        HPProgress.progress = 1.0
         
         startDescriptionLabel.text = "ドラゴン　が　あらわれたやで！！\nチェックポイントで　こうげきできるやで！！"
         startDescriptionLabel.numberOfLines = 0

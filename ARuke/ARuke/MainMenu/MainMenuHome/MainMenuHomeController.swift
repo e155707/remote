@@ -19,10 +19,14 @@ import SceneKit
 import ARKit
 
 class MainMenuHomeController: UIViewController, ARSCNViewDelegate{
+    @IBOutlet weak var characterLevelLabel: UILabel!
     @IBOutlet weak var characterNameLabel: UILabel!
+    @IBOutlet weak var userGoldLabel: UILabel!
+    @IBOutlet weak var userFatLabel: UILabel!
     @IBOutlet weak var characterDisplay: SCNView!
     
     let character:ManageCharacter = ManageCharacter()
+    let user:ManageUserInformation = ManageUserInformation()
     var characterScene:SCNScene = SCNScene()
     
     override func viewDidLoad() {
@@ -33,7 +37,10 @@ class MainMenuHomeController: UIViewController, ARSCNViewDelegate{
         character.managerCharacter(characterScene)
         characterDisplay.scene = characterScene
         
+        characterLevelLabel.text = "Lv." + String(character.getCharacterLevel())
         characterNameLabel.text = character.getCharacterName()
+        userGoldLabel.text = "所　持　金：" + String(user.getUserGold()) + "G"
+        userFatLabel.text = "シボウリツ：" + String(user.getUserFat()) + "%"
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

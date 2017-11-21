@@ -173,8 +173,11 @@
                         <viewLayoutGuide key="safeArea" id="pO0-jb-yWs"/>
                     </view>
                     <connections>
+                        <outlet property="characterLevelLabel" destination="LXK-Af-qBw" id="e3B-6h-yak"/>
                         <outlet property="characterNameLabel" destination="8Xr-hv-l01" id="SU2-pk-fSd"/>
                         <outlet property="questDescriptionLabel" destination="dw1-zb-PqI" id="JOF-Ew-zSq"/>
+                        <outlet property="userFatLabel" destination="9bZ-vT-DIq" id="scH-W0-8gk"/>
+                        <outlet property="userGoldLabel" destination="XcQ-7o-6hZ" id="z0V-gh-dYb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jbd-ca-tYH" userLabel="First Responder" sceneMemberID="firstResponder"/>

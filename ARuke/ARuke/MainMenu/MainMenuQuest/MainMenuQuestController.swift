@@ -11,16 +11,24 @@ import SceneKit
 import ARKit
 
 class MainMenuQuestController: UIViewController, ARSCNViewDelegate{
+    @IBOutlet weak var characterLevelLabel: UILabel!
     @IBOutlet weak var characterNameLabel: UILabel!
+    @IBOutlet weak var userGoldLabel: UILabel!
+    @IBOutlet weak var userFatLabel: UILabel!
     @IBOutlet weak var questDescriptionLabel: UILabel!
     
     let character:ManageCharacter = ManageCharacter()
+    let user:ManageUserInformation = ManageUserInformation()
     var characterScene:SCNScene = SCNScene()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        characterLevelLabel.text = "Lv." + String(character.getCharacterLevel())
         characterNameLabel.text = character.getCharacterName()
+        userGoldLabel.text = "所　持　金" + String(user.getUserGold()) + "G"
+        userFatLabel.text = "シボウリツ" + String(user.getUserFat()) + "%"
+        
         questDescriptionLabel.text = "レベルを　選ぶやで！！\nしんちょうに　選ぶやで！！"
         questDescriptionLabel.numberOfLines = 0
     }
