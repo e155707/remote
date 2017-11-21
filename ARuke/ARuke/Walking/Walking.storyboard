@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fhe-X2-go3">
+    <device id="ipad10_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="yurumoji.ttf">
+            <string>Yurumoji</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Walking Controller-->
+        <scene sceneID="fib-LE-fxZ">
+            <objects>
+                <viewController storyboardIdentifier="Walking" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fhe-X2-go3" customClass="WalkingController" customModule="ARuke" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Zs0-rN-ipE">
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7PU-Eg-wXT">
+                                <rect key="frame" x="47" y="76" width="740" height="240"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="タイトル" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J0p-lx-7qK">
+                                        <rect key="frame" x="89" y="33" width="562" height="174"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Yurumoji" family="Yurumoji" pointSize="40"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="uuk-1x-QQS"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bd4-Nm-D3G">
+                                <rect key="frame" x="47" y="354" width="740" height="427"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </sceneKitView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fjV-tF-wXp">
+                                <rect key="frame" x="170" y="858" width="495" height="190"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Yurumoji" family="Yurumoji" pointSize="100"/>
+                                <state key="normal" title="ここで戦う！！">
+                                    <color key="titleColor" red="1" green="0.9979675496" blue="0.97518901089999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="battleButton:" destination="fhe-X2-go3" eventType="touchUpInside" id="RAd-J3-cIk"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7PU-Eg-wXT" firstAttribute="top" secondItem="EH9-b9-YPf" secondAttribute="top" constant="56" id="B6R-AE-3Hh"/>
+                            <constraint firstItem="7PU-Eg-wXT" firstAttribute="leading" secondItem="EH9-b9-YPf" secondAttribute="leading" constant="47" id="gvI-GL-Vrj"/>
+                            <constraint firstItem="7PU-Eg-wXT" firstAttribute="centerX" secondItem="Zs0-rN-ipE" secondAttribute="centerX" id="r6g-cj-mPl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="EH9-b9-YPf"/>
+                    </view>
+                    <connections>
+                        <outlet property="WalkingDescriptionLabel" destination="J0p-lx-7qK" id="Nco-Ht-oly"/>
+                        <outlet property="characterDisplay" destination="bd4-Nm-D3G" id="dHp-92-wqt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="phY-yl-gpO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="100" y="225"/>
+        </scene>
+    </scenes>
+</document>

@@ -10,18 +10,30 @@ import Foundation
 import GoogleMaps
 import UserNotifications
 
-class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelegate {
+class MapController: UIViewController, CLLocationManagerDelegate,GMSMapViewDelegate {
     
     let locationManager = CLLocationManager()
     let scoreManager = ScoreManager()
-    let mapRouteManager = MapRouteManager()
     let mapCheckpoint = MapCheckpoint()
+    
+    // エレメントの数
+    let elmentNum = 10
+    
+    // エレメントを選択した時に必要な変数群
+    var selectElementWindow: UIWindow!
+    var selectElementButton = UIButton()
+    let initWaitTime = 5.0 + 1.0;
+    var waitTime = 0.0;
+    var waitTimeLabel = UILabel()
+    
+    var selectElementLocation = CLLocation()
     
     var checkpoints:[CLLocation] = []
     
     @IBOutlet var mapView: GMSMapView!
     
-    var oldLocation:CLLocation!
+    var selectElementPos = CLLocation()
+    var isGetCheckpoint = false
 
     let cameraZoomLevel:Float = 17
     
@@ -32,26 +44,20 @@ class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelega
         super.viewDidLoad()
         initMapView()
         initManager()
-        // notification()
         setLocateManager()
-        
-        
+        //let arukeTimeController = ARukeTimeController()
+        //arukeTimeController.startAttackTimer(1)
     }
     
     func initManager(){
-        mapRouteManager.mapView = mapView
         mapCheckpoint.mapView = mapView
-        
-        checkpoints = mapCheckpoint.getRandomDummyCheckpoint()
-        mapCheckpoint.drawCheckpointMarker(checkpoints)
-        
     }
     
     // mapViewの初期化. 最初は琉球大学を写すよう指定
     func initMapView(){
 
         // GoogleMapの初期化
-        getInitDummyCamera()
+        //getInitDummyCamera()
         self.mapView.delegate = self
         self.mapView.settings.compassButton = true
         self.mapView.settings.myLocationButton = true
@@ -83,7 +89,7 @@ class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelega
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         
         // 現在位置からどれぐらい動いたら更新するか. 単位はm
-        locationManager.distanceFilter = 10
+        locationManager.distanceFilter = 1
         locationManager.delegate = self
         locationManager.startUpdatingLocation()
         
@@ -93,7 +99,99 @@ class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelega
     func myLocationMarker(_ flag: Bool){
         mapView.isMyLocationEnabled = flag
     }
+    
+    // マーカーをタップした時に呼び出される関数.
+    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        createSelectElementWindow(marker)
+        return true
+    }
+    
+    // マーカーをタップした時に, そのマーカーに行くのか選択できる.
+    func createSelectElementWindow(_ marker:GMSMarker){
+        selectElementWindow = UIWindow()
+        // 背景を黒に設定する.
+        selectElementWindow.backgroundColor = UIColor.black
+        
+        selectElementWindow.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height)
+        selectElementWindow.alpha = 0.8
+        
+        // myWindowをkeyWindowにする.
+        selectElementWindow.makeKey()
+        
+        // windowを表示する.
+        self.selectElementWindow.makeKeyAndVisible()
+        
+        let tapSelectElementWindowGesture = UITapGestureRecognizer(
+            target: self,
+            action: #selector(self.tapSelectElementWindow))
+        
+        selectElementWindow.addGestureRecognizer(tapSelectElementWindowGesture)
+        
+        // そのエレメントに行くか選択できるボタンを作成する.
+        selectElementButton.frame = CGRect(x: self.view.bounds.width/2-self.view.bounds.width/4, y: self.view.bounds.width/2-self.view.bounds.width/4, width: self.view.bounds.width/2, height: self.view.bounds.height/2)
+        selectElementButton.backgroundColor = UIColor.white
+        selectElementButton.setTitle("\(marker.snippet ?? "不明なエレメント")に行く.", for: .normal)
+        selectElementButton.setTitleColor(UIColor.black, for: .normal)
+        selectElementButton.layer.masksToBounds = true
+        selectElementButton.layer.cornerRadius = 20.0
+        selectElementButton.addTarget(self, action: #selector(self.onClickSelectElementButton), for: .touchUpInside)
+        self.selectElementWindow.addSubview(selectElementButton)
+        
+        selectElementLocation = CLLocation.init(latitude: marker.position.latitude, longitude: marker.position.longitude)
+        
+    }
+    
+    // selectElementWindowで, ボタン以外の場所をタップしたら元の画面に戻る.
+    @objc func tapSelectElementWindow(){
+        selectElementWindow = nil
+    
+    }
+    
+    // 行くelementが決まりボタンを押すと, 覚える時間が与えられる.
+    @objc func onClickSelectElementButton(){
+        selectElementWindow = nil
+        // 何秒でマップを覚えさせるか
+        waitTime = initWaitTime;
+        // 何秒ごとに通知するか.
+        let intervalTime = 1
+        
+        var timer = Timer()
+        
+        // waitTime秒後に実行したい処理
+        DispatchQueue.main.asyncAfter(deadline: .now() + waitTime) {
 
+            timer.invalidate()
+            
+            self.waitTime = self.initWaitTime;
+            
+            self.waitTimeLabel.removeFromSuperview()
+            self.waitTimeLabel = UILabel()
+
+            // 画面遷移
+            print("画面遷移!")
+            self.locationManager.stopUpdatingLocation()
+            self.fromMaptoWalking()
+        }
+        
+        timer = Timer.scheduledTimer(timeInterval: TimeInterval(intervalTime),
+                                     target: self,
+                                     selector:#selector(self.changeWaitTimeLabel(_:)),
+                                     userInfo: intervalTime,repeats: true)
+    
+    }
+    
+    // 後何秒覚える時間があるか表示
+    @objc func changeWaitTimeLabel(_ timer: Timer!){
+        
+        waitTime -= timer.timeInterval
+        waitTimeLabel.text = "あと\(waitTime)秒で行先を覚えてね."
+        waitTimeLabel.sizeToFit()
+        waitTimeLabel.center = self.view.center
+        waitTimeLabel.textColor = UIColor.black
+        self.view.addSubview(waitTimeLabel)
+    }
+    
+    
     
     //起動時と, 位置情報のアクセス許可が変更された場合に呼び出されるメソッド. ここで位置情報のアクセス許可をとる.
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
@@ -147,31 +245,36 @@ class MapConroller: UIViewController, CLLocationManagerDelegate,GMSMapViewDelega
                                               zoom: cameraZoomLevel)
         self.mapView.camera = camera
         
+        if !isGetCheckpoint {
+            checkpoints = mapCheckpoint.getRandomCheckpoints(location, 10, 0.005)
+            mapCheckpoint.drawCheckpointMarker(checkpoints)
+            isGetCheckpoint = true
+        }
+        
+        
+        
+        /*
         guard
             let goal = checkpoints.first else {
                 checkpoints = mapCheckpoint.getRandomDummyCheckpoint()
                 return
             }
-        
-        
-        if oldLocation == nil {
-            oldLocation = location
-            mapRouteManager.getRoutes(location, goal)
-        }
+ 
         let locationDistance = location.distance(from: oldLocation)
-        //notification()
-        if mapRouteManager.isCheckpointArrive(location, goal){
-            notification()
+        
+        if mapCheckpoint.isCheckpointArrive(location, goal){
+            // チェックポイントに着いたら通知をする.
+            //notification()
             // 遷移
             self.fromMaptoEventCotroller()
             
         }else{
 
-            mapRouteManager.updateRoute(myLocation: location)
             scoreManager.setScore(locationDistance)
             oldLocation = location
-        }
+        }*/
     }
+    
     
     func notification() {
         

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qea-Rd-mvX">
+    <device id="ipad10_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="yurumoji.ttf">
+            <string>Yurumoji</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Main Menu Home Controller-->
+        <scene sceneID="A5h-pB-Z9G">
+            <objects>
+                <viewController storyboardIdentifier="MainMenuHome" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qea-Rd-mvX" customClass="MainMenuHomeController" customModule="ARuke" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3HN-OC-60n">
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rnZ-WI-9bn">
+                                <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </sceneKitView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o7b-eW-mFG">
+                                <rect key="frame" x="47" y="20" width="740" height="240"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lv.1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qn2-vN-fxD">
+                                        <rect key="frame" x="109" y="0.0" width="120" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Yurumoji" family="Yurumoji" pointSize="40"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ta-NG-3qs">
+                                        <rect key="frame" x="237" y="0.0" width="370" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Yurumoji" family="Yurumoji" pointSize="40"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="所 持 金：10000G" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YvO-K8-cbN">
+                                        <rect key="frame" x="109" y="68" width="498" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Yurumoji" family="Yurumoji" pointSize="40"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="シボウリツ:0%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="amd-kR-a3k">
+                                        <rect key="frame" x="109" y="136" width="498" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Yurumoji" family="Yurumoji" pointSize="40"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="wCX-xd-cPC"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="o7b-eW-mFG" firstAttribute="centerX" secondItem="rnZ-WI-9bn" secondAttribute="centerX" id="1U8-ti-ylY"/>
+                            <constraint firstItem="o7b-eW-mFG" firstAttribute="top" secondItem="C6X-Jo-hY0" secondAttribute="top" id="3uL-Dr-G4Z"/>
+                            <constraint firstItem="o7b-eW-mFG" firstAttribute="leading" secondItem="C6X-Jo-hY0" secondAttribute="leading" constant="47" id="AU6-av-qN6"/>
+                            <constraint firstItem="rnZ-WI-9bn" firstAttribute="top" secondItem="3HN-OC-60n" secondAttribute="top" id="FoV-9u-aM6"/>
+                            <constraint firstAttribute="trailing" secondItem="rnZ-WI-9bn" secondAttribute="trailing" id="OKm-vM-n1t"/>
+                            <constraint firstItem="rnZ-WI-9bn" firstAttribute="bottom" secondItem="C6X-Jo-hY0" secondAttribute="bottom" id="XvG-YD-CWf"/>
+                            <constraint firstItem="rnZ-WI-9bn" firstAttribute="leading" secondItem="3HN-OC-60n" secondAttribute="leading" id="jEF-41-aMl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="C6X-Jo-hY0"/>
+                    </view>
+                    <connections>
+                        <outlet property="characterDisplay" destination="rnZ-WI-9bn" id="Yl4-c7-zH0"/>
+                        <outlet property="characterLevelLabel" destination="qn2-vN-fxD" id="6ZF-XD-0fb"/>
+                        <outlet property="characterNameLabel" destination="2ta-NG-3qs" id="9TW-DC-dPc"/>
+                        <outlet property="userFatLabel" destination="amd-kR-a3k" id="E2e-eI-qoM"/>
+                        <outlet property="userGoldLabel" destination="YvO-K8-cbN" id="CDz-9j-C9s"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZMw-9F-IiU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-162.58992805755398" y="152.69784172661872"/>
+        </scene>
+    </scenes>
+</document>

@@ -10,47 +10,10 @@ import UIKit
 import SceneKit
 import ARKit
 
-class StartController: UIViewController, ARSCNViewDelegate {
-    
-    @IBOutlet weak var scoreView: UIView!
-    @IBOutlet weak var startView: UIView!
-    
-    @IBOutlet weak var distanceLabel: UILabel!
-    @IBOutlet weak var scoreLabel: UILabel!
-    
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var goMap: UIButton!
+class TitleController: UIViewController, ARSCNViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //上のViewの枠作り
-        scoreView.layer.borderColor = UIColor.white.cgColor
-        scoreView.layer.borderWidth = 2.0
-        scoreView.layer.masksToBounds = true
-        
-        //下のViewの枠作り
-        startView.layer.borderColor = UIColor.white.cgColor
-        startView.layer.borderWidth = 2.0
-        startView.layer.masksToBounds = true
-        
-        //クラスのインスタンス
-        let score = ScoreManager()
-        
-        score.scoreInitialization()
-        //score.scoreTotalInitialization()
-        score.getTimesEffect(1)
-        
-        scoreLabel.text = score.getTotalScore()
-        distanceLabel.text = score.getTotalDistance()
-        
-        //Answerの初期化
-        let Answer:QuizEventManager = QuizEventManager()
-        Answer.answerInitialization()
-        
-        let timeManage:TimeManager = TimeManager()
-        timeManage.timeInit()
-    
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -64,6 +27,17 @@ class StartController: UIViewController, ARSCNViewDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    @IBAction func startButton(_ sender: Any) {
+        let myAp = UIApplication.shared.delegate as! AppDelegate
+        if(myAp.MakeController){
+            self.fromTitleToMake()
+        }else{
+            self.fromTitleToMainMenu()
+        }
+    }
+    
+    
 
     // MARK: - ARSCNViewDelegate
     

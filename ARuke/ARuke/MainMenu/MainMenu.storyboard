@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="k9R-iF-zCn">
+    <device id="ipad10_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main Menu Controller-->
+        <scene sceneID="iBX-qv-jPH">
+            <objects>
+                <viewController storyboardIdentifier="MainMenu" useStoryboardIdentifierAsRestorationIdentifier="YES" id="k9R-iF-zCn" customClass="MainMenuController" customModule="ARuke" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qlL-Ns-Hln">
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="FHD-eH-NfN">
+                                <rect key="frame" x="0.0" y="962" width="846" height="151"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="dkD-gu-ebL"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="ホーム"/>
+                                    <segment title="クエスト"/>
+                                    <segment title="ショップ"/>
+                                    <segment title="カスタム"/>
+                                </segments>
+                                <connections>
+                                    <action selector="selectMainMen:" destination="k9R-iF-zCn" eventType="valueChanged" id="RBJ-FH-ekm"/>
+                                </connections>
+                            </segmentedControl>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AGQ-ga-zBn">
+                                <rect key="frame" x="0.0" y="0.0" width="834" height="962"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="QuestView" translatesAutoresizingMaskIntoConstraints="NO" id="a9h-ZL-avB" customClass="QuestView" customModule="ARuke" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="834" height="962"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                        <connections>
+                                            <segue destination="6h3-Bg-3kF" kind="embed" id="33Z-hx-hYb"/>
+                                        </connections>
+                                    </containerView>
+                                    <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="HomeView" translatesAutoresizingMaskIntoConstraints="NO" id="AFc-f2-eNM" customClass="HomeView" customModule="ARuke" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="834" height="962"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <segue destination="Srh-ml-1r3" kind="embed" id="hEj-Zb-Ro3"/>
+                                        </connections>
+                                    </containerView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rBr-6h-0ES" firstAttribute="bottom" secondItem="FHD-eH-NfN" secondAttribute="bottom" id="BbJ-IC-iTQ"/>
+                            <constraint firstItem="FHD-eH-NfN" firstAttribute="leading" secondItem="qlL-Ns-Hln" secondAttribute="leading" id="ZtJ-pc-QQP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FHD-eH-NfN" secondAttribute="trailing" constant="-32" id="iKD-h4-hBO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="rBr-6h-0ES"/>
+                    </view>
+                    <connections>
+                        <outlet property="HomeView" destination="a9h-ZL-avB" id="nAz-rJ-rtp"/>
+                        <outlet property="QuestView" destination="AFc-f2-eNM" id="Yhb-cQ-UZp"/>
+                        <outlet property="mainMenuSegmentedControl" destination="FHD-eH-NfN" id="pnU-Ba-wQg"/>
+                        <outlet property="mainMenuView" destination="AGQ-ga-zBn" id="Uzn-Jx-s5l"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lpk-rq-RCR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-203.59712230215828" y="350.71942446043164"/>
+        </scene>
+        <!--MainMenuHome-->
+        <scene sceneID="S15-PK-E8t">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MainMenuHome" id="6h3-Bg-3kF" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E8N-k9-IfV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="737" y="354"/>
+        </scene>
+        <!--MainMenuQuest-->
+        <scene sceneID="i4B-vj-8ur">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MainMenuQuest" id="Srh-ml-1r3" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MPs-mA-oF2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="737" y="376"/>
+        </scene>
+    </scenes>
+</document>
