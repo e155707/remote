@@ -62,6 +62,16 @@ extension MapController{
     }
 }
 
+extension WalkingController{
+    func formWalkingToJudge(_ errorDistance:Double){
+        let storyboard: UIStoryboard = UIStoryboard(name:"Judge",bundle: nil)
+        let next = storyboard.instantiateViewController(withIdentifier: "Judge") as! JudgeController
+        next.errorDistance = errorDistance
+        present(next as UIViewController, animated: true,completion: nil)
+        print("Judge")
+    }
+}
+
 extension JudgeController{
     @objc func fromJudgeToMap(){
         let storyboard: UIStoryboard = UIStoryboard(name:"Map",bundle: nil)

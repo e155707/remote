@@ -41,6 +41,7 @@ class StartController: UIViewController, ARSCNViewDelegate{
         startDescriptionLabel.text = "ドラゴン　が　あらわれたやで！！\nチェックポイントで　こうげきできるやで！！"
         startDescriptionLabel.numberOfLines = 0
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }

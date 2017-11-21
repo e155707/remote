@@ -18,21 +18,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AoC-F1-29a" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="588"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lof-HR-qeZ">
-                                <rect key="frame" x="-1" y="598" width="375" height="71"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="39"/>
-                                <state key="normal" title="イベントに行けます">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="Iye-v7-oay" kind="show" id="Gh3-EE-1si"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="rvo-SB-Wjo"/>
@@ -44,14 +33,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aDF-cp-UpZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-31.199999999999999" y="58.920539730134934"/>
-        </scene>
-        <!--Walking-->
-        <scene sceneID="nq4-h9-lKV">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="Walking" storyboardName="Walking" referencedIdentifier="Walking" id="Iye-v7-oay" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YuL-Z6-FEa" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="608" y="58"/>
         </scene>
     </scenes>
 </document>

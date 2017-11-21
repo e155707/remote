@@ -16,7 +16,7 @@ class WalkingController: UIViewController, ARSCNViewDelegate, CLLocationManagerD
     @IBOutlet weak var WalkingDescriptionLabel: UILabel!
     @IBOutlet weak var characterDisplay: SCNView!
     var selectElementLocation: CLLocation!
-    var errorDistance = 0.0
+    var errorDistance:Double = 0.0
     let locationManager = CLLocationManager()
     
     @IBAction func battleButton(_ sender: Any) {
@@ -42,15 +42,11 @@ class WalkingController: UIViewController, ARSCNViewDelegate, CLLocationManagerD
     
     // 自分の位置を呼び出すメソッド.
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print("push")
         guard let location: CLLocation = locations.last else { return }
         
         errorDistance = location.distance(from: selectElementLocation)
+        self.formWalkingToJudge(errorDistance)
         
-        let storyboard: UIStoryboard = UIStoryboard(name:"Judge",bundle: nil)
-        let next = storyboard.instantiateViewController(withIdentifier: "Judge") as! JudgeController
-        next.errorDistance = errorDistance
-        present(next as UIViewController, animated: true,completion: nil)
     }
     
     

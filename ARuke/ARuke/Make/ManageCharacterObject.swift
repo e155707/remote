@@ -35,7 +35,7 @@ class ManageCharacterObject{
         nowObjectNode = scene.rootNode.childNode(withName: "treasureboxRED", recursively: true)!
         
         nowObjectNode.scale = SCNVector3(0.1, 0.1, 0.1)
-        nowObjectNode.name = "treasureboxRed"
+        nowObjectNode.name = "treasureboxRED"
         
         return nowObjectNode
     }
@@ -49,7 +49,7 @@ class ManageCharacterObject{
             else{return}
         
         Node.scale = SCNVector3(0.1, 0.1, 0.1)
-        Node.name = "treasureboxRed"
+        Node.name = "treasureboxRED"
         characterMakeScene.rootNode.replaceChildNode(nowObjectNode, with: Node)
         nowObjectNode = Node
         
