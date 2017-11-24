@@ -1,61 +1,22 @@
 //
 //  AppDelegate.swift
-//  ARuke
+//  Afuro
 //
-//  Created by 赤堀　貴一 on 2017/10/18.
+//  Created by 赤堀　貴一 on 2017/11/24.
 //  Copyright © 2017年 Ryukyu. All rights reserved.
 //
 
 import UIKit
-import GoogleMaps
-import Keys
-import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var totalScore: Int64 = 0
-    var MakeController:Bool = false
-    
+
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-
-        // add googleMapAPIKey
-        let cGoogleMapsAPIKey = ARukeKeys().googleMapAPIKey
-        GMSServices.provideAPIKey(cGoogleMapsAPIKey)
-        
-        // notification center (singleton)
-        
-        let center = UNUserNotificationCenter.current()
-        
-        // request to notify for user
-        center.requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
-            if granted {
-                print("Allowed")
-            } else {
-                print("Didn't allowed")
-            }
-        }
-
-        center.delegate = self
-        
-        let userDefault = UserDefaults.standard
-        let dict = ["firstLaunch": true]
-        userDefault.register(defaults: dict)
-        if userDefault.bool(forKey: "firstLaunch") {
-            userDefault.set(false, forKey: "firstLaunch")
-            MakeController = true
-            let user:ManageUserInformation = ManageUserInformation()
-            user.initUserInformation()
-        }
-        
         return true
-    }
-    
-    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        // アプリ起動中でもアラート&音で通知
-        completionHandler([.alert, .sound])
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
