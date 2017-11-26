@@ -7,64 +7,66 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B011C7C61FC7D925000286C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B011C7C51FC7D925000286C4 /* AppDelegate.swift */; };
-		B011C7C81FC7D925000286C4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B011C7C71FC7D925000286C4 /* ViewController.swift */; };
-		B011C7CB1FC7D925000286C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B011C7C91FC7D925000286C4 /* Main.storyboard */; };
-		B011C7CD1FC7D925000286C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B011C7CC1FC7D925000286C4 /* Assets.xcassets */; };
-		B011C7D01FC7D925000286C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B011C7CE1FC7D925000286C4 /* LaunchScreen.storyboard */; };
-		B011C7DB1FC7D926000286C4 /* AfuroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B011C7DA1FC7D926000286C4 /* AfuroTests.swift */; };
-		B011C7E61FC7D926000286C4 /* AfuroUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B011C7E51FC7D926000286C4 /* AfuroUITests.swift */; };
+		B0C2F92F1FCA1CF3004D879D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C2F92E1FCA1CF3004D879D /* AppDelegate.swift */; };
+		B0C2F9311FCA1CF3004D879D /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = B0C2F9301FCA1CF3004D879D /* art.scnassets */; };
+		B0C2F9331FCA1CF3004D879D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C2F9321FCA1CF3004D879D /* ViewController.swift */; };
+		B0C2F9361FCA1CF3004D879D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0C2F9341FCA1CF3004D879D /* Main.storyboard */; };
+		B0C2F9381FCA1CF3004D879D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0C2F9371FCA1CF3004D879D /* Assets.xcassets */; };
+		B0C2F93B1FCA1CF3004D879D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0C2F9391FCA1CF3004D879D /* LaunchScreen.storyboard */; };
+		B0C2F9461FCA1CF3004D879D /* AfuRoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C2F9451FCA1CF3004D879D /* AfuRoTests.swift */; };
+		B0C2F9511FCA1CF3004D879D /* AfuRoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C2F9501FCA1CF3004D879D /* AfuRoUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		B011C7D71FC7D926000286C4 /* PBXContainerItemProxy */ = {
+		B0C2F9421FCA1CF3004D879D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = B011C7BA1FC7D925000286C4 /* Project object */;
+			containerPortal = B0C2F9231FCA1CF3004D879D /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = B011C7C11FC7D925000286C4;
-			remoteInfo = Afuro;
+			remoteGlobalIDString = B0C2F92A1FCA1CF3004D879D;
+			remoteInfo = AfuRo;
 		};
-		B011C7E21FC7D926000286C4 /* PBXContainerItemProxy */ = {
+		B0C2F94D1FCA1CF3004D879D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = B011C7BA1FC7D925000286C4 /* Project object */;
+			containerPortal = B0C2F9231FCA1CF3004D879D /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = B011C7C11FC7D925000286C4;
-			remoteInfo = Afuro;
+			remoteGlobalIDString = B0C2F92A1FCA1CF3004D879D;
+			remoteInfo = AfuRo;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B011C7C21FC7D925000286C4 /* Afuro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Afuro.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B011C7C51FC7D925000286C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B011C7C71FC7D925000286C4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B011C7CA1FC7D925000286C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B011C7CC1FC7D925000286C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B011C7CF1FC7D925000286C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		B011C7D11FC7D925000286C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B011C7D61FC7D926000286C4 /* AfuroTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AfuroTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B011C7DA1FC7D926000286C4 /* AfuroTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfuroTests.swift; sourceTree = "<group>"; };
-		B011C7DC1FC7D926000286C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B011C7E11FC7D926000286C4 /* AfuroUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AfuroUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B011C7E51FC7D926000286C4 /* AfuroUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfuroUITests.swift; sourceTree = "<group>"; };
-		B011C7E71FC7D926000286C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0C2F92B1FCA1CF3004D879D /* AfuRo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AfuRo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0C2F92E1FCA1CF3004D879D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B0C2F9301FCA1CF3004D879D /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
+		B0C2F9321FCA1CF3004D879D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B0C2F9351FCA1CF3004D879D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B0C2F9371FCA1CF3004D879D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B0C2F93A1FCA1CF3004D879D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B0C2F93C1FCA1CF3004D879D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0C2F9411FCA1CF3004D879D /* AfuRoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AfuRoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0C2F9451FCA1CF3004D879D /* AfuRoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfuRoTests.swift; sourceTree = "<group>"; };
+		B0C2F9471FCA1CF3004D879D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0C2F94C1FCA1CF3004D879D /* AfuRoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AfuRoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0C2F9501FCA1CF3004D879D /* AfuRoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfuRoUITests.swift; sourceTree = "<group>"; };
+		B0C2F9521FCA1CF3004D879D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		B011C7BF1FC7D925000286C4 /* Frameworks */ = {
+		B0C2F9281FCA1CF3004D879D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B011C7D31FC7D926000286C4 /* Frameworks */ = {
+		B0C2F93E1FCA1CF3004D879D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B011C7DE1FC7D926000286C4 /* Frameworks */ = {
+		B0C2F9491FCA1CF3004D879D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -74,140 +76,149 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B011C7B91FC7D925000286C4 = {
+		B0C2F9221FCA1CF3004D879D = {
 			isa = PBXGroup;
 			children = (
-				B011C7C41FC7D925000286C4 /* Afuro */,
-				B011C7D91FC7D926000286C4 /* AfuroTests */,
-				B011C7E41FC7D926000286C4 /* AfuroUITests */,
-				B011C7C31FC7D925000286C4 /* Products */,
+				B0C2F92D1FCA1CF3004D879D /* AfuRo */,
+				B0C2F9441FCA1CF3004D879D /* AfuRoTests */,
+				B0C2F94F1FCA1CF3004D879D /* AfuRoUITests */,
+				B0C2F92C1FCA1CF3004D879D /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		B011C7C31FC7D925000286C4 /* Products */ = {
+		B0C2F92C1FCA1CF3004D879D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B011C7C21FC7D925000286C4 /* Afuro.app */,
-				B011C7D61FC7D926000286C4 /* AfuroTests.xctest */,
-				B011C7E11FC7D926000286C4 /* AfuroUITests.xctest */,
+				B0C2F92B1FCA1CF3004D879D /* AfuRo.app */,
+				B0C2F9411FCA1CF3004D879D /* AfuRoTests.xctest */,
+				B0C2F94C1FCA1CF3004D879D /* AfuRoUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B011C7C41FC7D925000286C4 /* Afuro */ = {
+		B0C2F92D1FCA1CF3004D879D /* AfuRo */ = {
 			isa = PBXGroup;
 			children = (
-				B011C7C51FC7D925000286C4 /* AppDelegate.swift */,
-				B011C7C71FC7D925000286C4 /* ViewController.swift */,
-				B011C7C91FC7D925000286C4 /* Main.storyboard */,
-				B011C7CC1FC7D925000286C4 /* Assets.xcassets */,
-				B011C7CE1FC7D925000286C4 /* LaunchScreen.storyboard */,
-				B011C7D11FC7D925000286C4 /* Info.plist */,
+				B0C2F92E1FCA1CF3004D879D /* AppDelegate.swift */,
+				B0C2F9301FCA1CF3004D879D /* art.scnassets */,
+				B0C2F95E1FCA1D23004D879D /* Main */,
+				B0C2F9371FCA1CF3004D879D /* Assets.xcassets */,
+				B0C2F9391FCA1CF3004D879D /* LaunchScreen.storyboard */,
+				B0C2F93C1FCA1CF3004D879D /* Info.plist */,
 			);
-			path = Afuro;
+			path = AfuRo;
 			sourceTree = "<group>";
 		};
-		B011C7D91FC7D926000286C4 /* AfuroTests */ = {
+		B0C2F9441FCA1CF3004D879D /* AfuRoTests */ = {
 			isa = PBXGroup;
 			children = (
-				B011C7DA1FC7D926000286C4 /* AfuroTests.swift */,
-				B011C7DC1FC7D926000286C4 /* Info.plist */,
+				B0C2F9451FCA1CF3004D879D /* AfuRoTests.swift */,
+				B0C2F9471FCA1CF3004D879D /* Info.plist */,
 			);
-			path = AfuroTests;
+			path = AfuRoTests;
 			sourceTree = "<group>";
 		};
-		B011C7E41FC7D926000286C4 /* AfuroUITests */ = {
+		B0C2F94F1FCA1CF3004D879D /* AfuRoUITests */ = {
 			isa = PBXGroup;
 			children = (
-				B011C7E51FC7D926000286C4 /* AfuroUITests.swift */,
-				B011C7E71FC7D926000286C4 /* Info.plist */,
+				B0C2F9501FCA1CF3004D879D /* AfuRoUITests.swift */,
+				B0C2F9521FCA1CF3004D879D /* Info.plist */,
 			);
-			path = AfuroUITests;
+			path = AfuRoUITests;
+			sourceTree = "<group>";
+		};
+		B0C2F95E1FCA1D23004D879D /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				B0C2F9321FCA1CF3004D879D /* ViewController.swift */,
+				B0C2F9341FCA1CF3004D879D /* Main.storyboard */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B011C7C11FC7D925000286C4 /* Afuro */ = {
+		B0C2F92A1FCA1CF3004D879D /* AfuRo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B011C7EA1FC7D926000286C4 /* Build configuration list for PBXNativeTarget "Afuro" */;
+			buildConfigurationList = B0C2F9551FCA1CF3004D879D /* Build configuration list for PBXNativeTarget "AfuRo" */;
 			buildPhases = (
-				B011C7BE1FC7D925000286C4 /* Sources */,
-				B011C7BF1FC7D925000286C4 /* Frameworks */,
-				B011C7C01FC7D925000286C4 /* Resources */,
+				B0C2F9271FCA1CF3004D879D /* Sources */,
+				B0C2F9281FCA1CF3004D879D /* Frameworks */,
+				B0C2F9291FCA1CF3004D879D /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Afuro;
-			productName = Afuro;
-			productReference = B011C7C21FC7D925000286C4 /* Afuro.app */;
+			name = AfuRo;
+			productName = AfuRo;
+			productReference = B0C2F92B1FCA1CF3004D879D /* AfuRo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B011C7D51FC7D926000286C4 /* AfuroTests */ = {
+		B0C2F9401FCA1CF3004D879D /* AfuRoTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B011C7ED1FC7D926000286C4 /* Build configuration list for PBXNativeTarget "AfuroTests" */;
+			buildConfigurationList = B0C2F9581FCA1CF3004D879D /* Build configuration list for PBXNativeTarget "AfuRoTests" */;
 			buildPhases = (
-				B011C7D21FC7D926000286C4 /* Sources */,
-				B011C7D31FC7D926000286C4 /* Frameworks */,
-				B011C7D41FC7D926000286C4 /* Resources */,
+				B0C2F93D1FCA1CF3004D879D /* Sources */,
+				B0C2F93E1FCA1CF3004D879D /* Frameworks */,
+				B0C2F93F1FCA1CF3004D879D /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				B011C7D81FC7D926000286C4 /* PBXTargetDependency */,
+				B0C2F9431FCA1CF3004D879D /* PBXTargetDependency */,
 			);
-			name = AfuroTests;
-			productName = AfuroTests;
-			productReference = B011C7D61FC7D926000286C4 /* AfuroTests.xctest */;
+			name = AfuRoTests;
+			productName = AfuRoTests;
+			productReference = B0C2F9411FCA1CF3004D879D /* AfuRoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		B011C7E01FC7D926000286C4 /* AfuroUITests */ = {
+		B0C2F94B1FCA1CF3004D879D /* AfuRoUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B011C7F01FC7D926000286C4 /* Build configuration list for PBXNativeTarget "AfuroUITests" */;
+			buildConfigurationList = B0C2F95B1FCA1CF3004D879D /* Build configuration list for PBXNativeTarget "AfuRoUITests" */;
 			buildPhases = (
-				B011C7DD1FC7D926000286C4 /* Sources */,
-				B011C7DE1FC7D926000286C4 /* Frameworks */,
-				B011C7DF1FC7D926000286C4 /* Resources */,
+				B0C2F9481FCA1CF3004D879D /* Sources */,
+				B0C2F9491FCA1CF3004D879D /* Frameworks */,
+				B0C2F94A1FCA1CF3004D879D /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				B011C7E31FC7D926000286C4 /* PBXTargetDependency */,
+				B0C2F94E1FCA1CF3004D879D /* PBXTargetDependency */,
 			);
-			name = AfuroUITests;
-			productName = AfuroUITests;
-			productReference = B011C7E11FC7D926000286C4 /* AfuroUITests.xctest */;
+			name = AfuRoUITests;
+			productName = AfuRoUITests;
+			productReference = B0C2F94C1FCA1CF3004D879D /* AfuRoUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		B011C7BA1FC7D925000286C4 /* Project object */ = {
+		B0C2F9231FCA1CF3004D879D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0910;
 				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = Ryukyu;
 				TargetAttributes = {
-					B011C7C11FC7D925000286C4 = {
+					B0C2F92A1FCA1CF3004D879D = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
 					};
-					B011C7D51FC7D926000286C4 = {
+					B0C2F9401FCA1CF3004D879D = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
-						TestTargetID = B011C7C11FC7D925000286C4;
+						TestTargetID = B0C2F92A1FCA1CF3004D879D;
 					};
-					B011C7E01FC7D926000286C4 = {
+					B0C2F94B1FCA1CF3004D879D = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
-						TestTargetID = B011C7C11FC7D925000286C4;
+						TestTargetID = B0C2F92A1FCA1CF3004D879D;
 					};
 				};
 			};
-			buildConfigurationList = B011C7BD1FC7D925000286C4 /* Build configuration list for PBXProject "Afuro" */;
+			buildConfigurationList = B0C2F9261FCA1CF3004D879D /* Build configuration list for PBXProject "AfuRo" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -215,37 +226,38 @@
 				en,
 				Base,
 			);
-			mainGroup = B011C7B91FC7D925000286C4;
-			productRefGroup = B011C7C31FC7D925000286C4 /* Products */;
+			mainGroup = B0C2F9221FCA1CF3004D879D;
+			productRefGroup = B0C2F92C1FCA1CF3004D879D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B011C7C11FC7D925000286C4 /* Afuro */,
-				B011C7D51FC7D926000286C4 /* AfuroTests */,
-				B011C7E01FC7D926000286C4 /* AfuroUITests */,
+				B0C2F92A1FCA1CF3004D879D /* AfuRo */,
+				B0C2F9401FCA1CF3004D879D /* AfuRoTests */,
+				B0C2F94B1FCA1CF3004D879D /* AfuRoUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		B011C7C01FC7D925000286C4 /* Resources */ = {
+		B0C2F9291FCA1CF3004D879D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B011C7D01FC7D925000286C4 /* LaunchScreen.storyboard in Resources */,
-				B011C7CD1FC7D925000286C4 /* Assets.xcassets in Resources */,
-				B011C7CB1FC7D925000286C4 /* Main.storyboard in Resources */,
+				B0C2F9311FCA1CF3004D879D /* art.scnassets in Resources */,
+				B0C2F93B1FCA1CF3004D879D /* LaunchScreen.storyboard in Resources */,
+				B0C2F9381FCA1CF3004D879D /* Assets.xcassets in Resources */,
+				B0C2F9361FCA1CF3004D879D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B011C7D41FC7D926000286C4 /* Resources */ = {
+		B0C2F93F1FCA1CF3004D879D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B011C7DF1FC7D926000286C4 /* Resources */ = {
+		B0C2F94A1FCA1CF3004D879D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -255,59 +267,59 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		B011C7BE1FC7D925000286C4 /* Sources */ = {
+		B0C2F9271FCA1CF3004D879D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B011C7C81FC7D925000286C4 /* ViewController.swift in Sources */,
-				B011C7C61FC7D925000286C4 /* AppDelegate.swift in Sources */,
+				B0C2F9331FCA1CF3004D879D /* ViewController.swift in Sources */,
+				B0C2F92F1FCA1CF3004D879D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B011C7D21FC7D926000286C4 /* Sources */ = {
+		B0C2F93D1FCA1CF3004D879D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B011C7DB1FC7D926000286C4 /* AfuroTests.swift in Sources */,
+				B0C2F9461FCA1CF3004D879D /* AfuRoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B011C7DD1FC7D926000286C4 /* Sources */ = {
+		B0C2F9481FCA1CF3004D879D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B011C7E61FC7D926000286C4 /* AfuroUITests.swift in Sources */,
+				B0C2F9511FCA1CF3004D879D /* AfuRoUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		B011C7D81FC7D926000286C4 /* PBXTargetDependency */ = {
+		B0C2F9431FCA1CF3004D879D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B011C7C11FC7D925000286C4 /* Afuro */;
-			targetProxy = B011C7D71FC7D926000286C4 /* PBXContainerItemProxy */;
+			target = B0C2F92A1FCA1CF3004D879D /* AfuRo */;
+			targetProxy = B0C2F9421FCA1CF3004D879D /* PBXContainerItemProxy */;
 		};
-		B011C7E31FC7D926000286C4 /* PBXTargetDependency */ = {
+		B0C2F94E1FCA1CF3004D879D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B011C7C11FC7D925000286C4 /* Afuro */;
-			targetProxy = B011C7E21FC7D926000286C4 /* PBXContainerItemProxy */;
+			target = B0C2F92A1FCA1CF3004D879D /* AfuRo */;
+			targetProxy = B0C2F94D1FCA1CF3004D879D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B011C7C91FC7D925000286C4 /* Main.storyboard */ = {
+		B0C2F9341FCA1CF3004D879D /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				B011C7CA1FC7D925000286C4 /* Base */,
+				B0C2F9351FCA1CF3004D879D /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		B011C7CE1FC7D925000286C4 /* LaunchScreen.storyboard */ = {
+		B0C2F9391FCA1CF3004D879D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				B011C7CF1FC7D925000286C4 /* Base */,
+				B0C2F93A1FCA1CF3004D879D /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -315,7 +327,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		B011C7E81FC7D926000286C4 /* Debug */ = {
+		B0C2F9531FCA1CF3004D879D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -372,7 +384,7 @@
 			};
 			name = Debug;
 		};
-		B011C7E91FC7D926000286C4 /* Release */ = {
+		B0C2F9541FCA1CF3004D879D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -422,142 +434,142 @@
 			};
 			name = Release;
 		};
-		B011C7EB1FC7D926000286C4 /* Debug */ = {
+		B0C2F9561FCA1CF3004D879D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UDN7C83R23;
-				INFOPLIST_FILE = Afuro/Info.plist;
+				INFOPLIST_FILE = AfuRo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Ryukyu.Afuro;
+				PRODUCT_BUNDLE_IDENTIFIER = Ryukyu.AfuRo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		B011C7EC1FC7D926000286C4 /* Release */ = {
+		B0C2F9571FCA1CF3004D879D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UDN7C83R23;
-				INFOPLIST_FILE = Afuro/Info.plist;
+				INFOPLIST_FILE = AfuRo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Ryukyu.Afuro;
+				PRODUCT_BUNDLE_IDENTIFIER = Ryukyu.AfuRo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
-		B011C7EE1FC7D926000286C4 /* Debug */ = {
+		B0C2F9591FCA1CF3004D879D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UDN7C83R23;
-				INFOPLIST_FILE = AfuroTests/Info.plist;
+				INFOPLIST_FILE = AfuRoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Ryukyu.AfuroTests;
+				PRODUCT_BUNDLE_IDENTIFIER = Ryukyu.AfuRoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Afuro.app/Afuro";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AfuRo.app/AfuRo";
 			};
 			name = Debug;
 		};
-		B011C7EF1FC7D926000286C4 /* Release */ = {
+		B0C2F95A1FCA1CF3004D879D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UDN7C83R23;
-				INFOPLIST_FILE = AfuroTests/Info.plist;
+				INFOPLIST_FILE = AfuRoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Ryukyu.AfuroTests;
+				PRODUCT_BUNDLE_IDENTIFIER = Ryukyu.AfuRoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Afuro.app/Afuro";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AfuRo.app/AfuRo";
 			};
 			name = Release;
 		};
-		B011C7F11FC7D926000286C4 /* Debug */ = {
+		B0C2F95C1FCA1CF3004D879D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UDN7C83R23;
-				INFOPLIST_FILE = AfuroUITests/Info.plist;
+				INFOPLIST_FILE = AfuRoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Ryukyu.AfuroUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = Ryukyu.AfuRoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Afuro;
+				TEST_TARGET_NAME = AfuRo;
 			};
 			name = Debug;
 		};
-		B011C7F21FC7D926000286C4 /* Release */ = {
+		B0C2F95D1FCA1CF3004D879D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UDN7C83R23;
-				INFOPLIST_FILE = AfuroUITests/Info.plist;
+				INFOPLIST_FILE = AfuRoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Ryukyu.AfuroUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = Ryukyu.AfuRoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Afuro;
+				TEST_TARGET_NAME = AfuRo;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B011C7BD1FC7D925000286C4 /* Build configuration list for PBXProject "Afuro" */ = {
+		B0C2F9261FCA1CF3004D879D /* Build configuration list for PBXProject "AfuRo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B011C7E81FC7D926000286C4 /* Debug */,
-				B011C7E91FC7D926000286C4 /* Release */,
+				B0C2F9531FCA1CF3004D879D /* Debug */,
+				B0C2F9541FCA1CF3004D879D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B011C7EA1FC7D926000286C4 /* Build configuration list for PBXNativeTarget "Afuro" */ = {
+		B0C2F9551FCA1CF3004D879D /* Build configuration list for PBXNativeTarget "AfuRo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B011C7EB1FC7D926000286C4 /* Debug */,
-				B011C7EC1FC7D926000286C4 /* Release */,
+				B0C2F9561FCA1CF3004D879D /* Debug */,
+				B0C2F9571FCA1CF3004D879D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B011C7ED1FC7D926000286C4 /* Build configuration list for PBXNativeTarget "AfuroTests" */ = {
+		B0C2F9581FCA1CF3004D879D /* Build configuration list for PBXNativeTarget "AfuRoTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B011C7EE1FC7D926000286C4 /* Debug */,
-				B011C7EF1FC7D926000286C4 /* Release */,
+				B0C2F9591FCA1CF3004D879D /* Debug */,
+				B0C2F95A1FCA1CF3004D879D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B011C7F01FC7D926000286C4 /* Build configuration list for PBXNativeTarget "AfuroUITests" */ = {
+		B0C2F95B1FCA1CF3004D879D /* Build configuration list for PBXNativeTarget "AfuRoUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B011C7F11FC7D926000286C4 /* Debug */,
-				B011C7F21FC7D926000286C4 /* Release */,
+				B0C2F95C1FCA1CF3004D879D /* Debug */,
+				B0C2F95D1FCA1CF3004D879D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = B011C7BA1FC7D925000286C4 /* Project object */;
+	rootObject = B0C2F9231FCA1CF3004D879D /* Project object */;
 }

@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  Afuro
+//  AfuRo
 //
-//  Created by 赤堀　貴一 on 2017/11/24.
+//  Created by 赤堀　貴一 on 2017/11/26.
 //  Copyright © 2017年 Ryukyu. All rights reserved.
 //
 

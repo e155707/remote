@@ -1,15 +1,15 @@
 //
-//  AfuroTests.swift
-//  AfuroTests
+//  AfuRoTests.swift
+//  AfuRoTests
 //
-//  Created by 赤堀　貴一 on 2017/11/24.
+//  Created by 赤堀　貴一 on 2017/11/26.
 //  Copyright © 2017年 Ryukyu. All rights reserved.
 //
 
 import XCTest
-@testable import Afuro
+@testable import AfuRo
 
-class AfuroTests: XCTestCase {
+class AfuRoTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
