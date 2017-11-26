@@ -14,6 +14,24 @@ class ViewController: UIViewController, ARSCNViewDelegate {
 
     
     @IBOutlet var ARView: ARSCNView!
+    //var ARView:ARSCNView?
+    // ボタンを追加
+    //@IBOutlet var afuroView: UIView!
+    @IBOutlet var rightButton: UIButton!
+    @IBOutlet var leftButton: UIButton!
+    @IBOutlet var upButton: UIButton!
+    @IBOutlet var downButton: UIButton!
+    
+    enum ButtonTag: Int {
+        case Right = 1
+        case Left = 2
+        case Up = 3
+        case Down = 4
+        
+    }
+    
+    let moveAmount:Float = 1;
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,7 +46,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         // Set the scene to the view
         ARView.scene = scene
-        
+        initMoveButton();
         guard
             let afuroScene = SCNScene(named: "art.scnassets/daefile/aforo.scn"),
             let afuroNode = afuroScene.rootNode.childNode(withName:"afuro" , recursively: true)
@@ -39,7 +57,75 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
     }
     
+
     
+    // アフロを移動させるボタンの設定.
+    func initMoveButton(){
+        /* ボタンのタグの意味 上のenumを参照
+         *  1 : 右のボタン.
+         *  2 : 左のボタン.
+         *  3 : 上のボタン.
+         *  4 : 下のボタン.
+         */
+    
+        // 右に移動させるボタンの設定.
+        // タグの設定.
+        rightButton.tag = ButtonTag.Right.rawValue;
+        // タップされている間, moveNodeを呼ぶよう設定.
+        rightButton.addTarget(self, action: #selector(self.touchButtonMoveNode), for: .touchDown)
+
+        // 左に移動させるボタンの設定.
+        // タグの設定.
+        leftButton.tag = ButtonTag.Left.rawValue;
+        // タップされている間, moveNodeを呼ぶよう設定.
+        leftButton.addTarget(self, action: #selector(self.touchButtonMoveNode), for: .touchDown)
+        
+        // 上に移動させるボタンの設定.
+        // タグの設定.
+        upButton.tag = ButtonTag.Up.rawValue;
+        // タップされている間, moveNodeを呼ぶよう設定.
+        upButton.addTarget(self, action: #selector(self.touchButtonMoveNode), for: .touchDown)
+        
+        // 下に移動させるボタンの設定.
+        // タグの設定.
+        downButton.tag = ButtonTag.Down.rawValue;
+        // タップされている間, moveNodeを呼ぶよう設定.
+        downButton.addTarget(self, action: #selector(self.touchButtonMoveNode), for: .touchDown)
+        
+        
+    }
+    
+    // ボタンがタップされた時に呼び出されるメソッド
+    @objc func touchButtonMoveNode(_ moveButton: UIButton){
+        guard
+            let afuroNode = ARView.scene.rootNode.childNode(withName: "afuro", recursively: true)
+            else{ print("afuroが...ない!"); return}
+        // afuroを移動させる.
+        switch moveButton.tag {
+        case ButtonTag.Right.rawValue:
+            
+            afuroNode.position.x += moveAmount * 1
+            print("right")
+            break
+        case ButtonTag.Left.rawValue:
+            afuroNode.position.x += moveAmount * -1
+            print("left")
+            break
+        case ButtonTag.Up.rawValue:
+            afuroNode.position.y += moveAmount * 1
+            print("up")
+            break
+        case ButtonTag.Down.rawValue:
+            afuroNode.position.y += moveAmount * -1
+            print("down")
+            break
+
+        default:
+            return
+        }
+        
+    }
+
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -73,6 +159,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         return node
     }
 */
+    
     
     func session(_ session: ARSession, didFailWithError error: Error) {
         // Present an error message to the user
