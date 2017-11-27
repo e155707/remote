@@ -1,5 +1,5 @@
 //
-//  FourTutorialController.swift
+//  TitleController.swift
 //  AfuRo
 //
 //  Created by e155707 on 2017/11/27.
@@ -9,10 +9,14 @@
 import UIKit
 import SceneKit
 
-class FourTutorialController: UIViewController{
+class TitleController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    @IBAction func pushMainButton(_ sender: Any) {
+        self.fromTitleToTutorial()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -27,4 +31,3 @@ class FourTutorialController: UIViewController{
         super.didReceiveMemoryWarning()
     }
 }
-

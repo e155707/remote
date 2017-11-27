@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mbI-HQ-4D3">
     <device id="ipad10_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -13,7 +13,7 @@
         <!--Three Tutorial Controller-->
         <scene sceneID="nQg-6X-1gJ">
             <objects>
-                <viewController storyboardIdentifier="ThreeTutorial" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mbI-HQ-4D3" customClass="ThreeTutorialController" customModule="AfuRo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ThreeTutorialController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mbI-HQ-4D3" customClass="ThreeTutorialController" customModule="AfuRo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vse-ru-aHD">
                         <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
