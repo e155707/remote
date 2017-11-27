@@ -27,7 +27,6 @@ class MainController: UIViewController, ARSCNViewDelegate {
         case Left = 2
         case Up = 3
         case Down = 4
-        
     }
     
     let moveAmount:Float = 1;
@@ -52,7 +51,7 @@ class MainController: UIViewController, ARSCNViewDelegate {
             let afuroNode = afuroScene.rootNode.childNode(withName:"afuro" , recursively: true)
         else{ return }
     
-        afuroNode.position = SCNVector3(0,0,-10)
+        afuroNode.position = SCNVector3(0,0,-1)
         ARView.scene.rootNode.addChildNode(afuroNode)
         
     }
