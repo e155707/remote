@@ -24,3 +24,12 @@ extension TitleController{
         print("Tutorial")
     }
 }
+
+extension FourTutorialController{
+    func fromFourTutorialControllerToMain(){
+        let storyboard: UIStoryboard = UIStoryboard(name:"Main",bundle: nil)
+        let next = storyboard.instantiateViewController(withIdentifier: "Main") as! MainController
+        present(next as UIViewController, animated: true,completion: nil)
+        print("Main")
+    }
+}

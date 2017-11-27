@@ -33,6 +33,9 @@
 		F03DC6E11FCC09B10076A845 /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F03DC6D01FCC09B10076A845 /* Tutorial.storyboard */; };
 		F03DC6E21FCC09B10076A845 /* TutorialController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03DC6D11FCC09B10076A845 /* TutorialController.swift */; };
 		F03DC6E51FCC09BF0076A845 /* ScreenTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03DC6E41FCC09BF0076A845 /* ScreenTransition.swift */; };
+		F03DC6E71FCC12130076A845 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03DC6E61FCC12130076A845 /* DataController.swift */; };
+		F03DC6E91FCC3FC10076A845 /* yurumoji.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F03DC6E81FCC3FC00076A845 /* yurumoji.ttf */; };
+		F03DC6EB1FCC565D0076A845 /* UIARSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03DC6EA1FCC565D0076A845 /* UIARSwitch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +88,9 @@
 		F03DC6D01FCC09B10076A845 /* Tutorial.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
 		F03DC6D11FCC09B10076A845 /* TutorialController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialController.swift; sourceTree = "<group>"; };
 		F03DC6E41FCC09BF0076A845 /* ScreenTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenTransition.swift; sourceTree = "<group>"; };
+		F03DC6E61FCC12130076A845 /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		F03DC6E81FCC3FC00076A845 /* yurumoji.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = yurumoji.ttf; sourceTree = "<group>"; };
+		F03DC6EA1FCC565D0076A845 /* UIARSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIARSwitch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				B0C2F92E1FCA1CF3004D879D /* AppDelegate.swift */,
+				F03DC6E81FCC3FC00076A845 /* yurumoji.ttf */,
 				B0C2F9301FCA1CF3004D879D /* art.scnassets */,
 				F03DC6BB1FCC09B00076A845 /* Title */,
 				B0C2F95E1FCA1D23004D879D /* Main */,
@@ -170,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				F03DC6B91FCC09770076A845 /* MainController.swift */,
+				F03DC6E61FCC12130076A845 /* DataController.swift */,
 				B0C2F9341FCA1CF3004D879D /* Main.storyboard */,
 			);
 			path = Main;
@@ -242,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				F03DC6E41FCC09BF0076A845 /* ScreenTransition.swift */,
+				F03DC6EA1FCC565D0076A845 /* UIARSwitch.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -365,6 +374,7 @@
 				F03DC6D81FCC09B10076A845 /* SecondTutorial.storyboard in Resources */,
 				F03DC6E11FCC09B10076A845 /* Tutorial.storyboard in Resources */,
 				F03DC6D71FCC09B10076A845 /* tutorial1.png in Resources */,
+				F03DC6E91FCC3FC10076A845 /* yurumoji.ttf in Resources */,
 				B0C2F9361FCA1CF3004D879D /* Main.storyboard in Resources */,
 				F03DC6DB1FCC09B10076A845 /* ThreeTutorial.storyboard in Resources */,
 				F03DC6D21FCC09B10076A845 /* title.png in Resources */,
@@ -397,7 +407,9 @@
 				F03DC6D41FCC09B10076A845 /* TitleController.swift in Sources */,
 				F03DC6E21FCC09B10076A845 /* TutorialController.swift in Sources */,
 				F03DC6DC1FCC09B10076A845 /* ThreeTutorialController.swift in Sources */,
+				F03DC6E71FCC12130076A845 /* DataController.swift in Sources */,
 				F03DC6BA1FCC09770076A845 /* MainController.swift in Sources */,
+				F03DC6EB1FCC565D0076A845 /* UIARSwitch.swift in Sources */,
 				F03DC6E51FCC09BF0076A845 /* ScreenTransition.swift in Sources */,
 				F03DC6D91FCC09B10076A845 /* SecondTutorialController.swift in Sources */,
 				B0C2F92F1FCA1CF3004D879D /* AppDelegate.swift in Sources */,

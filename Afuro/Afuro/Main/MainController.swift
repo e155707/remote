@@ -22,6 +22,10 @@ class MainController: UIViewController, ARSCNViewDelegate {
     @IBOutlet var upButton: UIButton!
     @IBOutlet var downButton: UIButton!
     
+    @IBOutlet weak var ARSwitch: UISwitch!
+    
+    @IBOutlet weak var AROnOffLabel: UILabel!
+    
     enum ButtonTag: Int {
         case Right = 1
         case Left = 2
@@ -53,6 +57,11 @@ class MainController: UIViewController, ARSCNViewDelegate {
     
         afuroNode.position = SCNVector3(0,0,-1)
         ARView.scene.rootNode.addChildNode(afuroNode)
+        
+        ARSwitch.addTarget(self, action: #selector(MainController.onClickARSwitch(sender:)), for: UIControlEvents.valueChanged)
+        
+        AROnOffLabel.text = "on"
+        AROnOffLabel.textColor = UIColor.red
         
     }
     
@@ -125,6 +134,16 @@ class MainController: UIViewController, ARSCNViewDelegate {
         
     }
 
+    
+    @objc func onClickARSwitch(sender: UISwitch){
+        if sender.isOn {
+            AROnOffLabel.text = "on"
+            AROnOffLabel.textColor = UIColor.red
+        }else {
+            AROnOffLabel.text = "off"
+            AROnOffLabel.textColor = UIColor.blue
+        }
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

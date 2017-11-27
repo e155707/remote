@@ -15,6 +15,10 @@ class FourTutorialController: UIViewController{
         super.viewDidLoad()
     }
     
+    @IBAction func pushToMain(_ sender: Any) {
+        self.fromFourTutorialControllerToMain()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
