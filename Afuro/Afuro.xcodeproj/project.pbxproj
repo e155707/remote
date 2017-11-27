@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B0C099321FCAB7FB00121A95 /* HealthDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C099311FCAB7FB00121A95 /* HealthDataController.swift */; };
+		B0C099331FCAB89900121A95 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0C099301FCAB7AC00121A95 /* HealthKit.framework */; };
+		B0C099361FCBD46000121A95 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C099351FCBD46000121A95 /* DataController.swift */; };
 		B0C2F92F1FCA1CF3004D879D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C2F92E1FCA1CF3004D879D /* AppDelegate.swift */; };
 		B0C2F9311FCA1CF3004D879D /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = B0C2F9301FCA1CF3004D879D /* art.scnassets */; };
 		B0C2F9331FCA1CF3004D879D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C2F9321FCA1CF3004D879D /* ViewController.swift */; };
@@ -35,6 +38,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B0C099301FCAB7AC00121A95 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		B0C099311FCAB7FB00121A95 /* HealthDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDataController.swift; sourceTree = "<group>"; };
+		B0C099341FCAB89900121A95 /* AfuRo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AfuRo.entitlements; sourceTree = "<group>"; };
+		B0C099351FCBD46000121A95 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		B0C2F92B1FCA1CF3004D879D /* AfuRo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AfuRo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0C2F92E1FCA1CF3004D879D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0C2F9301FCA1CF3004D879D /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -56,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0C099331FCAB89900121A95 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +84,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B0C0992F1FCAB7AC00121A95 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B0C099301FCAB7AC00121A95 /* HealthKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B0C2F9221FCA1CF3004D879D = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +99,7 @@
 				B0C2F9441FCA1CF3004D879D /* AfuRoTests */,
 				B0C2F94F1FCA1CF3004D879D /* AfuRoUITests */,
 				B0C2F92C1FCA1CF3004D879D /* Products */,
+				B0C0992F1FCAB7AC00121A95 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +116,7 @@
 		B0C2F92D1FCA1CF3004D879D /* AfuRo */ = {
 			isa = PBXGroup;
 			children = (
+				B0C099341FCAB89900121A95 /* AfuRo.entitlements */,
 				B0C2F92E1FCA1CF3004D879D /* AppDelegate.swift */,
 				B0C2F9301FCA1CF3004D879D /* art.scnassets */,
 				B0C2F95E1FCA1D23004D879D /* Main */,
@@ -131,7 +149,9 @@
 			isa = PBXGroup;
 			children = (
 				B0C2F9321FCA1CF3004D879D /* ViewController.swift */,
+				B0C099351FCBD46000121A95 /* DataController.swift */,
 				B0C2F9341FCA1CF3004D879D /* Main.storyboard */,
+				B0C099311FCAB7FB00121A95 /* HealthDataController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -205,6 +225,11 @@
 					B0C2F92A1FCA1CF3004D879D = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
 					};
 					B0C2F9401FCA1CF3004D879D = {
 						CreatedOnToolsVersion = 9.1;
@@ -271,6 +296,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0C099321FCAB7FB00121A95 /* HealthDataController.swift in Sources */,
+				B0C099361FCBD46000121A95 /* DataController.swift in Sources */,
 				B0C2F9331FCA1CF3004D879D /* ViewController.swift in Sources */,
 				B0C2F92F1FCA1CF3004D879D /* AppDelegate.swift in Sources */,
 			);
@@ -438,11 +465,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = AfuRo/AfuRo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UDN7C83R23;
 				INFOPLIST_FILE = AfuRo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Ryukyu.AfuRo;
+				PRODUCT_BUNDLE_IDENTIFIER = Ryukyu.AfuRo.ac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -453,11 +481,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = AfuRo/AfuRo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UDN7C83R23;
 				INFOPLIST_FILE = AfuRo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Ryukyu.AfuRo;
+				PRODUCT_BUNDLE_IDENTIFIER = Ryukyu.AfuRo.ac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
