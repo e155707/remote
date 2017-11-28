@@ -82,7 +82,7 @@ class MainController: UIViewController, ARSCNViewDelegate {
         totalStepsData = dataController.getTotalStepsData() + healthStepsData
         
         // アフロの位置
-        afuroNode.position = SCNVector3(0,0,-1)
+        afuroNode.position = SCNVector3(0,0,1)
         // アフロの大きさの調整
         afuroNode.scale.x = 1 + Float(totalStepsData) * afuroScaleCoeff
         afuroNode.scale.y = 1 + Float(totalStepsData) * afuroScaleCoeff
