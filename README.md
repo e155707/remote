@@ -1,20 +1,20 @@
-# ARuku
-## remote “ARuku”
+# AfuRo
+## remote “AfuRo”
 
 * Elevator Pitch:
 
 ```
-運動しなきゃと思うが, 動機がない 
+運動しなきゃと思うが, 動機がない
 20代男性, 成人向けの
-歩かなきゃという気持ちに動機を与える
-ARukeというアプリです.
-それは, 育成とバトルという歩く動機を与え
+習慣化したい気持ちに動機を与える
+AfuRoというアプリです.
+それは歩いた成果が, 育成キャラを通して見れ
 ポケモンgoと違って、
  「今日も歩かなきゃ」と感じさせます.
 ```
 
 * Product Backlog:
-https://trello.com/b/1rdwiUnx
+https://trello.com/b/LTfAZTUG
 
 
 * Members: github account name (real name), ...,
