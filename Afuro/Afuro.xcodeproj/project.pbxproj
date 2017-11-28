@@ -57,6 +57,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B0786F521FCD112600DA75AA /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		B0786F531FCD112E00DA75AA /* HealthKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKitUI.framework; path = System/Library/Frameworks/HealthKitUI.framework; sourceTree = SDKROOT; };
 		B0C099371FCD0BC900121A95 /* HealthDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthDataController.swift; sourceTree = "<group>"; };
 		B0C2F92B1FCA1CF3004D879D /* AfuRo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AfuRo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0C2F92E1FCA1CF3004D879D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -120,6 +122,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B0786F511FCD112500DA75AA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B0786F531FCD112E00DA75AA /* HealthKitUI.framework */,
+				B0786F521FCD112600DA75AA /* HealthKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B0C2F9221FCA1CF3004D879D = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +138,7 @@
 				B0C2F9441FCA1CF3004D879D /* AfuRoTests */,
 				B0C2F94F1FCA1CF3004D879D /* AfuRoUITests */,
 				B0C2F92C1FCA1CF3004D879D /* Products */,
+				B0786F511FCD112500DA75AA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
