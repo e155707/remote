@@ -10,7 +10,7 @@ import UIKit
 import SceneKit
 import ARKit
 
-class ViewController: UIViewController, ARSCNViewDelegate {
+class MainController: UIViewController, ARSCNViewDelegate {
 
     
     @IBOutlet var ARView: ARSCNView!
@@ -22,21 +22,18 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     @IBOutlet var upButton: UIButton!
     @IBOutlet var downButton: UIButton!
     
+    @IBOutlet weak var ARSwitch: UISwitch!
+    
+    @IBOutlet weak var AROnOffLabel: UILabel!
     
     enum ButtonTag: Int {
         case Right = 1
         case Left = 2
         case Up = 3
         case Down = 4
-        
     }
     
-    // ボタンを押した時に, 移動する量を調整する.
     let moveAmount:Float = 1;
-    // Afuroの増える大きさを調整する係数.
-    // 今の計算式 アフロの大きさ = 1 + 歩数(totalStepsData) * afuroScaleCoeff
-    let afuroScaleCoeff:Float = 0.1;
-    let dataController = DataController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,31 +49,19 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         // Set the scene to the view
         ARView.scene = scene
-        
-        // ボタンの設定する関数
         initMoveButton();
-        
-        // アフロの取得
         guard
             let afuroScene = SCNScene(named: "art.scnassets/daefile/aforo.scn"),
             let afuroNode = afuroScene.rootNode.childNode(withName:"afuro" , recursively: true)
-            
         else{ return }
-        
-        // アフロの位置
-        afuroNode.position = SCNVector3(0,0,-10)
-        
-        // 歩数の取得
-        let totalStepsData = dataController.getTotalStepsData()
-        
-        // アフロの大きさの調整
-        afuroNode.scale.x = 1 + Float(totalStepsData) * afuroScaleCoeff
-        afuroNode.scale.y = 1 + Float(totalStepsData) * afuroScaleCoeff
-        afuroNode.scale.z = 1 + Float(totalStepsData) * afuroScaleCoeff
-        
-        
-        
+    
+        afuroNode.position = SCNVector3(0,0,-1)
         ARView.scene.rootNode.addChildNode(afuroNode)
+        
+        ARSwitch.addTarget(self, action: #selector(MainController.onClickARSwitch(sender:)), for: UIControlEvents.valueChanged)
+        
+        AROnOffLabel.text = "on"
+        AROnOffLabel.textColor = UIColor.red
         
     }
     
@@ -148,19 +133,17 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         }
         
     }
-    
-    /*
-    func getSteps(sender: UIButton) {
-        healthDataController.recentStepsOfDay(dtpDate.date, completion: {steps, error in
-            // Autolayoutを使っているとき、データの変更がAutolayoutの監視対象にはいるようで、
-            // データの反映がかなり遅れる（体感で30秒くらい時間がかかる）ので、
-            // ここの反映に関してはAutolayoutの非同期処理を実装する
-            dispatch_async(dispatch_get_main_queue(), {
-                self.lblSteps.text = steps.description
-            })
-        })
-    }*/
 
+    
+    @objc func onClickARSwitch(sender: UISwitch){
+        if sender.isOn {
+            AROnOffLabel.text = "on"
+            AROnOffLabel.textColor = UIColor.red
+        }else {
+            AROnOffLabel.text = "off"
+            AROnOffLabel.textColor = UIColor.blue
+        }
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
