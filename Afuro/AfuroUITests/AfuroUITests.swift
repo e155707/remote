@@ -1,14 +1,14 @@
 //
-//  ARukeUITests.swift
-//  ARukeUITests
+//  AfuRoUITests.swift
+//  AfuRoUITests
 //
-//  Created by 赤堀　貴一 on 2017/10/18.
+//  Created by 赤堀　貴一 on 2017/11/26.
 //  Copyright © 2017年 Ryukyu. All rights reserved.
 //
 
 import XCTest
 
-class ARukeUITests: XCTestCase {
+class AfuRoUITests: XCTestCase {
         
     override func setUp() {
         super.setUp()

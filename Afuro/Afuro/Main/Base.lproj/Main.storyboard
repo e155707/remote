@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+    <device id="ipad10_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="yurumoji.ttf">
+            <string>Yurumoji</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Main Controller-->
+        <scene sceneID="tXr-a1-R10">
+            <objects>
+                <viewController storyboardIdentifier="Main" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BV1-FR-VrT" customClass="MainController" customModule="AfuRo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JtO-FI-dz9">
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DxB-1d-Iu0">
+                                <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </arscnView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7HU-hc-gfi">
+                                <rect key="frame" x="351" y="1012" width="46" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="-"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="81I-Sc-WMg">
+                                <rect key="frame" x="650" y="1030" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="←"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e9m-Ow-hIU">
+                                <rect key="frame" x="702" y="981" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="↑"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HEE-mT-5g5">
+                                <rect key="frame" x="750" y="1030" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="→"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ulh-7d-TwK">
+                                <rect key="frame" x="702" y="1082" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="↓"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KGt-XH-r14">
+                                <rect key="frame" x="44" y="103" width="50.5" height="51"/>
+                                <fontDescription key="fontDescription" name="Yurumoji" family="Yurumoji" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="AR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gfi-Bw-wRs">
+                                <rect key="frame" x="94.5" y="104" width="99.5" height="51"/>
+                                <fontDescription key="fontDescription" name="Yurumoji" family="Yurumoji" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vwy-zA-8fM" customClass="UIARSwitch" customModule="AfuRo" customModuleProvider="target">
+                                <rect key="frame" x="177" y="92" width="152" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="W1K-uA-zsw"/>
+                                    <constraint firstAttribute="height" constant="75" id="hfZ-Lu-GB5"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="dispSize">
+                                        <size key="value" width="150" height="75"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </switch>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ze0-lD-z2i">
+                                <rect key="frame" x="405" y="1012" width="46" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="+"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vwy-zA-8fM" firstAttribute="leading" secondItem="n0V-bE-e6E" secondAttribute="leading" constant="177" id="9Mf-ZA-V5x"/>
+                            <constraint firstItem="n0V-bE-e6E" firstAttribute="bottom" secondItem="KGt-XH-r14" secondAttribute="bottom" constant="958" id="DMB-4O-kyF"/>
+                            <constraint firstItem="Gfi-Bw-wRs" firstAttribute="leading" secondItem="KGt-XH-r14" secondAttribute="trailing" id="Fo2-TW-NZ1"/>
+                            <constraint firstItem="n0V-bE-e6E" firstAttribute="trailing" secondItem="Gfi-Bw-wRs" secondAttribute="trailing" constant="640" id="Gv8-6T-Mx0"/>
+                            <constraint firstItem="KGt-XH-r14" firstAttribute="top" secondItem="vwy-zA-8fM" secondAttribute="bottom" constant="-64" id="Hho-fP-AQV"/>
+                            <constraint firstItem="vwy-zA-8fM" firstAttribute="top" secondItem="n0V-bE-e6E" secondAttribute="top" constant="72" id="PQt-OJ-9t5"/>
+                            <constraint firstItem="n0V-bE-e6E" firstAttribute="bottom" secondItem="Gfi-Bw-wRs" secondAttribute="bottom" constant="957" id="R1l-xu-3p1"/>
+                            <constraint firstItem="KGt-XH-r14" firstAttribute="leading" secondItem="vwy-zA-8fM" secondAttribute="leading" constant="-133" id="qHQ-hr-d0v"/>
+                            <constraint firstItem="Gfi-Bw-wRs" firstAttribute="top" secondItem="n0V-bE-e6E" secondAttribute="top" constant="84" id="ts3-AK-ber"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="n0V-bE-e6E"/>
+                    </view>
+                    <connections>
+                        <outlet property="AROnOffLabel" destination="Gfi-Bw-wRs" id="kpu-Sb-7jq"/>
+                        <outlet property="ARSwitch" destination="vwy-zA-8fM" id="rlE-UI-hLu"/>
+                        <outlet property="ARView" destination="DxB-1d-Iu0" id="nwK-ct-l9q"/>
+                        <outlet property="View" destination="JtO-FI-dz9" id="Zwf-ca-5kI"/>
+                        <outlet property="downButton" destination="Ulh-7d-TwK" id="01U-SB-0sU"/>
+                        <outlet property="leftButton" destination="81I-Sc-WMg" id="V0l-zf-zen"/>
+                        <outlet property="minusButton" destination="7HU-hc-gfi" id="n0u-xI-6GG"/>
+                        <outlet property="plusButton" destination="ze0-lD-z2i" id="nBh-gR-C6h"/>
+                        <outlet property="rightButton" destination="HEE-mT-5g5" id="AaQ-3Y-mLh"/>
+                        <outlet property="upButton" destination="e9m-Ow-hIU" id="Zcx-YU-0N5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="135.97122302158274" y="113.30935251798562"/>
+        </scene>
+    </scenes>
+</document>
