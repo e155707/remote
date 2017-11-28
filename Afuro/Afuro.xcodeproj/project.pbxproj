@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B0C099381FCD0BCA00121A95 /* HealthDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C099371FCD0BC900121A95 /* HealthDataController.swift */; };
 		B0C2F92F1FCA1CF3004D879D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C2F92E1FCA1CF3004D879D /* AppDelegate.swift */; };
 		B0C2F9311FCA1CF3004D879D /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = B0C2F9301FCA1CF3004D879D /* art.scnassets */; };
 		B0C2F9361FCA1CF3004D879D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0C2F9341FCA1CF3004D879D /* Main.storyboard */; };
@@ -56,6 +57,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B0C099371FCD0BC900121A95 /* HealthDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthDataController.swift; sourceTree = "<group>"; };
 		B0C2F92B1FCA1CF3004D879D /* AfuRo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AfuRo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0C2F92E1FCA1CF3004D879D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0C2F9301FCA1CF3004D879D /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 			children = (
 				F03DC6B91FCC09770076A845 /* MainController.swift */,
 				F03DC6E61FCC12130076A845 /* DataController.swift */,
+				B0C099371FCD0BC900121A95 /* HealthDataController.swift */,
 				B0C2F9341FCA1CF3004D879D /* Main.storyboard */,
 			);
 			path = Main;
@@ -337,7 +340,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B0C2F9261FCA1CF3004D879D /* Build configuration list for PBXProject "Afuro" */;
+			buildConfigurationList = B0C2F9261FCA1CF3004D879D /* Build configuration list for PBXProject "AfuRo" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -411,6 +414,7 @@
 				F03DC6BA1FCC09770076A845 /* MainController.swift in Sources */,
 				F03DC6EB1FCC565D0076A845 /* UIARSwitch.swift in Sources */,
 				F03DC6E51FCC09BF0076A845 /* ScreenTransition.swift in Sources */,
+				B0C099381FCD0BCA00121A95 /* HealthDataController.swift in Sources */,
 				F03DC6D91FCC09B10076A845 /* SecondTutorialController.swift in Sources */,
 				B0C2F92F1FCA1CF3004D879D /* AppDelegate.swift in Sources */,
 			);
@@ -673,7 +677,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B0C2F9261FCA1CF3004D879D /* Build configuration list for PBXProject "Afuro" */ = {
+		B0C2F9261FCA1CF3004D879D /* Build configuration list for PBXProject "AfuRo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B0C2F9531FCA1CF3004D879D /* Debug */,
