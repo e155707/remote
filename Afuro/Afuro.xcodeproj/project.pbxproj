@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02D2EC4BC5587B8792362DA5 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B95D45F1C391CA1EFE729DC4 /* AssetsLibrary.framework */; };
+		1420012AA4D316EB895FB9C5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34AF59E437F28DCA34EAD344 /* AVFoundation.framework */; };
+		29A1C2C290E9A421AC460904 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81ABAF4C944EDED9444FCD64 /* CoreText.framework */; };
+		31F450F47539FB72A5985454 /* BuddyBuildSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D26F3F05372D6E3D997677 /* BuddyBuildSDK.framework */; };
+		43859F997E36ECAA2900F6AF /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F3868896F296E2D86F1DDEF /* CoreVideo.framework */; };
+		82536D33F5AD0E5165A9997E /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1C1F92E8C7F3F2FE800B1F1 /* CoreMedia.framework */; };
+		AC3E5395941B84D9257127C2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 063CF30DA775A00D5C516211 /* QuartzCore.framework */; };
 		B0C099381FCD0BCA00121A95 /* HealthDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C099371FCD0BC900121A95 /* HealthDataController.swift */; };
 		B0C2F92F1FCA1CF3004D879D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C2F92E1FCA1CF3004D879D /* AppDelegate.swift */; };
 		B0C2F9311FCA1CF3004D879D /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = B0C2F9301FCA1CF3004D879D /* art.scnassets */; };
@@ -15,6 +22,8 @@
 		B0C2F93B1FCA1CF3004D879D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0C2F9391FCA1CF3004D879D /* LaunchScreen.storyboard */; };
 		B0C2F9461FCA1CF3004D879D /* AfuRoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C2F9451FCA1CF3004D879D /* AfuRoTests.swift */; };
 		B0C2F9511FCA1CF3004D879D /* AfuRoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C2F9501FCA1CF3004D879D /* AfuRoUITests.swift */; };
+		CFF23B0D7388C8CCD2F5C940 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3789C430F8062EFF1629F09D /* CoreTelephony.framework */; };
+		E507F1AA58B0E69AA5156D26 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F509DEAE91A4E7D828908062 /* SystemConfiguration.framework */; };
 		F03DC6BA1FCC09770076A845 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03DC6B91FCC09770076A845 /* MainController.swift */; };
 		F03DC6D21FCC09B10076A845 /* title.png in Resources */ = {isa = PBXBuildFile; fileRef = F03DC6BC1FCC09B00076A845 /* title.png */; };
 		F03DC6D31FCC09B10076A845 /* Title.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F03DC6BD1FCC09B00076A845 /* Title.storyboard */; };
@@ -57,6 +66,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		063CF30DA775A00D5C516211 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		34AF59E437F28DCA34EAD344 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		3789C430F8062EFF1629F09D /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		45D26F3F05372D6E3D997677 /* BuddyBuildSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BuddyBuildSDK.framework; path = BuddyBuildSDK.framework; sourceTree = "<group>"; };
+		5A64AF753998565F6E688CAA /* Bridging-Header.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		5F3868896F296E2D86F1DDEF /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		81ABAF4C944EDED9444FCD64 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		B0786F521FCD112600DA75AA /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		B0786F531FCD112E00DA75AA /* HealthKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKitUI.framework; path = System/Library/Frameworks/HealthKitUI.framework; sourceTree = SDKROOT; };
 		B0C099371FCD0BC900121A95 /* HealthDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthDataController.swift; sourceTree = "<group>"; };
@@ -73,6 +89,8 @@
 		B0C2F94C1FCA1CF3004D879D /* AfuRoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AfuRoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0C2F9501FCA1CF3004D879D /* AfuRoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfuRoUITests.swift; sourceTree = "<group>"; };
 		B0C2F9521FCA1CF3004D879D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B95D45F1C391CA1EFE729DC4 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		D1C1F92E8C7F3F2FE800B1F1 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		F03DC6B91FCC09770076A845 /* MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		F03DC6BC1FCC09B00076A845 /* title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = title.png; sourceTree = "<group>"; };
 		F03DC6BD1FCC09B00076A845 /* Title.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Title.storyboard; sourceTree = "<group>"; };
@@ -95,6 +113,7 @@
 		F03DC6E61FCC12130076A845 /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		F03DC6E81FCC3FC00076A845 /* yurumoji.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = yurumoji.ttf; sourceTree = "<group>"; };
 		F03DC6EA1FCC565D0076A845 /* UIARSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIARSwitch.swift; sourceTree = "<group>"; };
+		F509DEAE91A4E7D828908062 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +121,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31F450F47539FB72A5985454 /* BuddyBuildSDK.framework in Frameworks */,
+				02D2EC4BC5587B8792362DA5 /* AssetsLibrary.framework in Frameworks */,
+				29A1C2C290E9A421AC460904 /* CoreText.framework in Frameworks */,
+				CFF23B0D7388C8CCD2F5C940 /* CoreTelephony.framework in Frameworks */,
+				E507F1AA58B0E69AA5156D26 /* SystemConfiguration.framework in Frameworks */,
+				AC3E5395941B84D9257127C2 /* QuartzCore.framework in Frameworks */,
+				1420012AA4D316EB895FB9C5 /* AVFoundation.framework in Frameworks */,
+				82536D33F5AD0E5165A9997E /* CoreMedia.framework in Frameworks */,
+				43859F997E36ECAA2900F6AF /* CoreVideo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,6 +155,15 @@
 			children = (
 				B0786F531FCD112E00DA75AA /* HealthKitUI.framework */,
 				B0786F521FCD112600DA75AA /* HealthKit.framework */,
+				45D26F3F05372D6E3D997677 /* BuddyBuildSDK.framework */,
+				B95D45F1C391CA1EFE729DC4 /* AssetsLibrary.framework */,
+				81ABAF4C944EDED9444FCD64 /* CoreText.framework */,
+				3789C430F8062EFF1629F09D /* CoreTelephony.framework */,
+				F509DEAE91A4E7D828908062 /* SystemConfiguration.framework */,
+				063CF30DA775A00D5C516211 /* QuartzCore.framework */,
+				34AF59E437F28DCA34EAD344 /* AVFoundation.framework */,
+				D1C1F92E8C7F3F2FE800B1F1 /* CoreMedia.framework */,
+				5F3868896F296E2D86F1DDEF /* CoreVideo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -139,6 +176,7 @@
 				B0C2F94F1FCA1CF3004D879D /* AfuRoUITests */,
 				B0C2F92C1FCA1CF3004D879D /* Products */,
 				B0786F511FCD112500DA75AA /* Frameworks */,
+				5A64AF753998565F6E688CAA /* Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -352,7 +390,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B0C2F9261FCA1CF3004D879D /* Build configuration list for PBXProject "AfuRo" */;
+			buildConfigurationList = B0C2F9261FCA1CF3004D879D /* Build configuration list for PBXProject "Afuro" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -596,10 +634,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 33M9746R68;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = AfuRo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Ryukyu.AfuRo.aka;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -611,10 +654,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 33M9746R68;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = AfuRo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Ryukyu.AfuRo.aka;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -689,7 +737,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B0C2F9261FCA1CF3004D879D /* Build configuration list for PBXProject "AfuRo" */ = {
+		B0C2F9261FCA1CF3004D879D /* Build configuration list for PBXProject "Afuro" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B0C2F9531FCA1CF3004D879D /* Debug */,
