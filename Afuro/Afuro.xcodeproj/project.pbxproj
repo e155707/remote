@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B0414B291FD0384400E5A5A9 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0414B281FD0384400E5A5A9 /* Login.swift */; };
 		B0C099381FCD0BCA00121A95 /* HealthDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C099371FCD0BC900121A95 /* HealthDataController.swift */; };
 		B0C2F92F1FCA1CF3004D879D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C2F92E1FCA1CF3004D879D /* AppDelegate.swift */; };
 		B0C2F9311FCA1CF3004D879D /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = B0C2F9301FCA1CF3004D879D /* art.scnassets */; };
@@ -15,7 +16,6 @@
 		B0C2F93B1FCA1CF3004D879D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0C2F9391FCA1CF3004D879D /* LaunchScreen.storyboard */; };
 		B0C2F9461FCA1CF3004D879D /* AfuRoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C2F9451FCA1CF3004D879D /* AfuRoTests.swift */; };
 		B0C2F9511FCA1CF3004D879D /* AfuRoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C2F9501FCA1CF3004D879D /* AfuRoUITests.swift */; };
-		F03DC6BA1FCC09770076A845 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03DC6B91FCC09770076A845 /* MainController.swift */; };
 		F03DC6D21FCC09B10076A845 /* title.png in Resources */ = {isa = PBXBuildFile; fileRef = F03DC6BC1FCC09B00076A845 /* title.png */; };
 		F03DC6D31FCC09B10076A845 /* Title.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F03DC6BD1FCC09B00076A845 /* Title.storyboard */; };
 		F03DC6D41FCC09B10076A845 /* TitleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03DC6BE1FCC09B00076A845 /* TitleController.swift */; };
@@ -57,6 +57,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B0414B281FD0384400E5A5A9 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		B0786F521FCD112600DA75AA /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		B0786F531FCD112E00DA75AA /* HealthKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKitUI.framework; path = System/Library/Frameworks/HealthKitUI.framework; sourceTree = SDKROOT; };
 		B0C099371FCD0BC900121A95 /* HealthDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthDataController.swift; sourceTree = "<group>"; };
@@ -194,6 +195,7 @@
 				F03DC6E61FCC12130076A845 /* DataController.swift */,
 				B0C099371FCD0BC900121A95 /* HealthDataController.swift */,
 				B0C2F9341FCA1CF3004D879D /* Main.storyboard */,
+				B0414B281FD0384400E5A5A9 /* Login.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -419,11 +421,11 @@
 			files = (
 				F03DC6D61FCC09B10076A845 /* FirstTutorialController.swift in Sources */,
 				F03DC6DF1FCC09B10076A845 /* FourTutorialController.swift in Sources */,
+				B0414B291FD0384400E5A5A9 /* Login.swift in Sources */,
 				F03DC6D41FCC09B10076A845 /* TitleController.swift in Sources */,
 				F03DC6E21FCC09B10076A845 /* TutorialController.swift in Sources */,
 				F03DC6DC1FCC09B10076A845 /* ThreeTutorialController.swift in Sources */,
 				F03DC6E71FCC12130076A845 /* DataController.swift in Sources */,
-				F03DC6BA1FCC09770076A845 /* MainController.swift in Sources */,
 				F03DC6EB1FCC565D0076A845 /* UIARSwitch.swift in Sources */,
 				F03DC6E51FCC09BF0076A845 /* ScreenTransition.swift in Sources */,
 				B0C099381FCD0BCA00121A95 /* HealthDataController.swift in Sources */,

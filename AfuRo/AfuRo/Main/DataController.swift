@@ -11,29 +11,34 @@ import Foundation
 class DataController{
     let defaults = UserDefaults.standard
     
+    
+    
     func getTotalStepsData() -> Int{
         let steps = defaults.integer(forKey: "totalSteps")
         return steps
+        
     }
     
     func setTotalStepsData(_ steps:Int){
-        
         defaults.set(steps, forKey: "totalSteps")
         
     }
     
     func getLastDateData() -> Date{
-        
         guard
-            let lastDate = defaults.object(forKey: "lastDate")
-            else{ return Date() }
-        return lastDate as! Date
+            let lastDate:Date = defaults.object(forKey: "lastDate") as? Date
+        else {
+            print("ラストデータを取得できません.")
+            return Date()
+        }
         
+        return lastDate
     }
     
+    
     func setLastDateData(_ lastDate:Date){
-        
         defaults.set(lastDate, forKey: "lastDate")
-        
+
     }
+        
 }
