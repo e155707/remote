@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B0414B291FD0384400E5A5A9 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0414B281FD0384400E5A5A9 /* Login.swift */; };
+		B0414B2C1FD356DD00E5A5A9 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03DC6B91FCC09770076A845 /* MainController.swift */; };
 		B0C099381FCD0BCA00121A95 /* HealthDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C099371FCD0BC900121A95 /* HealthDataController.swift */; };
 		B0C2F92F1FCA1CF3004D879D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C2F92E1FCA1CF3004D879D /* AppDelegate.swift */; };
 		B0C2F9311FCA1CF3004D879D /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = B0C2F9301FCA1CF3004D879D /* art.scnassets */; };
@@ -430,6 +431,7 @@
 				F03DC6E51FCC09BF0076A845 /* ScreenTransition.swift in Sources */,
 				B0C099381FCD0BCA00121A95 /* HealthDataController.swift in Sources */,
 				F03DC6D91FCC09B10076A845 /* SecondTutorialController.swift in Sources */,
+				B0414B2C1FD356DD00E5A5A9 /* MainController.swift in Sources */,
 				B0C2F92F1FCA1CF3004D879D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -597,10 +599,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 33M9746R68;
+				DEVELOPMENT_TEAM = UDN7C83R23;
 				INFOPLIST_FILE = AfuRo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Ryukyu.AfuRo.aka;
+				PRODUCT_BUNDLE_IDENTIFIER = Ryukyu.AfuRo.ac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -612,10 +614,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 33M9746R68;
+				DEVELOPMENT_TEAM = UDN7C83R23;
 				INFOPLIST_FILE = AfuRo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Ryukyu.AfuRo.aka;
+				PRODUCT_BUNDLE_IDENTIFIER = Ryukyu.AfuRo.ac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
