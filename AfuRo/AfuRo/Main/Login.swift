@@ -10,34 +10,52 @@ import Foundation
 
 class Login{
     let dataController = DataController()
+    
+    // ログインボーナス.
+    let loginDayAddSteps = 10
+    // 1日ログインしていない場合に減る歩数.
     let oneDayLossSteps = 10
     
-    func login(){
-        // Debug用
-        /*
-         let calendar = Calendar.current
-         let yesterday = calendar.date(byAdding: .day, value: -1, to: Date())
-         dataController.setLastDateData(yesterday!)
-         */
+    func loginGetSteps() -> Int{
+
+        // 歩数
+        var bonasSteps = 0
         
+        // 最後にログインした日を取得.
         let lastLoginDate = dataController.getLastDateData()
+        
+        // もし, 初めてのログインなら, bonasStepsにログインボーナスなどを足す.
         if self.isDailyFirstLogin(lastLoginDate) {
-            let notLoginDays = self.getNotLoginDay(lastLoginDate)
-            self.loginBonas()
-            self.notLoginBonas(notLoginDays)
+            
+            bonasSteps += self.loginBonasGetSteps()
+            bonasSteps -= self.notLoginBonasGetSteps(lastLoginDate)
         }
+        // ログインした日にちを更新
         dataController.setLastDateData(Date())
+        // リターンする.
+        return bonasSteps
     }
     
-    func loginBonas() {
+    // ダミー関数を返す.
+    func dummyLoginGetSteps() -> Int {
+         let calendar = Calendar.current
+         let Days2Ago = calendar.date(byAdding: .day, value: -2, to: Date())
+         dataController.setLastDateData(Days2Ago!)
+
+        return self.loginGetSteps()
+    }
+    
+    func loginBonasGetSteps() -> Int{
+        return loginDayAddSteps
+    }
+    
+    func notLoginBonasGetSteps(_ lastLoginDate: Date) -> Int{
+        let notLoginDays = self.getNotLoginDay(lastLoginDate)
+        return notLoginDays * oneDayLossSteps
         
     }
     
-    func notLoginBonas(_ notLoginDays: Int){
-        let lossSteps = notLoginDays * oneDayLossSteps
-        
-    }
-    
+    // この日最初のログインかどうかを判定
     func isDailyFirstLogin(_ lastDate: Date) -> Bool{
         let notLoginDay = getNotLoginDay(lastDate)
         
@@ -47,7 +65,7 @@ class Login{
         return true
     }
 
-    
+    // ログイン
     func getNotLoginDay(_ lastDate: Date) -> Int{
         var notLoginDayCount = 0
         let nowDate = roundDate(Date())
