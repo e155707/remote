@@ -29,6 +29,12 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </arscnView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7HU-hc-gfi">
+                                <rect key="frame" x="351" y="1012" width="46" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="-"/>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="81I-Sc-WMg">
                                 <rect key="frame" x="650" y="1030" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -77,6 +83,12 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </switch>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ze0-lD-z2i">
+                                <rect key="frame" x="405" y="1012" width="46" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="+"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -101,6 +113,8 @@
                         <outlet property="View" destination="JtO-FI-dz9" id="Zwf-ca-5kI"/>
                         <outlet property="downButton" destination="Ulh-7d-TwK" id="01U-SB-0sU"/>
                         <outlet property="leftButton" destination="81I-Sc-WMg" id="V0l-zf-zen"/>
+                        <outlet property="minusButton" destination="7HU-hc-gfi" id="n0u-xI-6GG"/>
+                        <outlet property="plusButton" destination="ze0-lD-z2i" id="nBh-gR-C6h"/>
                         <outlet property="rightButton" destination="HEE-mT-5g5" id="AaQ-3Y-mLh"/>
                         <outlet property="upButton" destination="e9m-Ow-hIU" id="Zcx-YU-0N5"/>
                     </connections>

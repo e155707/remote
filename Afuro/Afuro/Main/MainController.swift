@@ -21,6 +21,10 @@ class MainController: UIViewController, ARSCNViewDelegate {
     @IBOutlet var leftButton: UIButton!
     @IBOutlet var upButton: UIButton!
     @IBOutlet var downButton: UIButton!
+
+    // アフロの大きさを調整するボタン
+    @IBOutlet var plusButton: UIButton!
+    @IBOutlet var minusButton: UIButton!
     
     @IBOutlet weak var ARSwitch: UISwitch!
     
@@ -31,10 +35,12 @@ class MainController: UIViewController, ARSCNViewDelegate {
         case Left = 2
         case Up = 3
         case Down = 4
+        case Plus = 5
+        case Minus = 6
     }
-
+    
     // ボタンを押した時に, 移動する量を調整する.
-    let moveAmount:Float = 1;
+    let moveAmount:Float = 0.1;
     
     // 合計の歩いた数を格納する変数
     var totalStepsData = 0
@@ -44,11 +50,11 @@ class MainController: UIViewController, ARSCNViewDelegate {
     
     // Afuroの増える大きさを調整する係数.
     // 今の計算式 アフロの大きさ = 1 + 歩数(totalStepsData) * afuroScaleCoeff
-    let afuroScaleCoeff:Float = 0.1;
+    let afuroScaleCoeff:Float = 1;
     
     let dataController = DataController()
     let healthDataController = HealthDataController()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -83,11 +89,19 @@ class MainController: UIViewController, ARSCNViewDelegate {
         
         // アフロの位置
         afuroNode.position = SCNVector3(0,0,1)
+        
+        afuroNode.position = SCNVector3(0,0,-3)
+        // アフロの回転
+        afuroNode.eulerAngles = SCNVector3(-90,0,0)
+        
+        totalStepsData += Login().loginGetSteps()
+        
         // アフロの大きさの調整
         afuroNode.scale.x = 1 + Float(totalStepsData) * afuroScaleCoeff
         afuroNode.scale.y = 1 + Float(totalStepsData) * afuroScaleCoeff
         afuroNode.scale.z = 1 + Float(totalStepsData) * afuroScaleCoeff
 
+        
         ARView.scene.rootNode.addChildNode(afuroNode)
         
         ARSwitch.addTarget(self, action: #selector(MainController.onClickARSwitch(sender:)), for: UIControlEvents.valueChanged)
@@ -110,7 +124,6 @@ class MainController: UIViewController, ARSCNViewDelegate {
         dataController.setTotalStepsData(totalStepsData)
         dataController.setLastDateData(Date())
     }
-
     
     // アフロを移動させるボタンの設定.
     func initMoveButton(){
@@ -119,6 +132,8 @@ class MainController: UIViewController, ARSCNViewDelegate {
          *  2 : 左のボタン.
          *  3 : 上のボタン.
          *  4 : 下のボタン.
+         *  5 : アフロが大きくなるボタン.
+         *  6 : アフロが小さくなるボタン.
          */
     
         // 右に移動させるボタンの設定.
@@ -145,7 +160,17 @@ class MainController: UIViewController, ARSCNViewDelegate {
         // タップされている間, moveNodeを呼ぶよう設定.
         downButton.addTarget(self, action: #selector(self.touchButtonMoveNode), for: .touchDown)
         
+        // アフロを大きくさせるボタンの設定.
+        // タグの設定.
+        plusButton.tag = ButtonTag.Plus.rawValue;
+        // タップされている間, moveNodeを呼ぶよう設定.
+        plusButton.addTarget(self, action: #selector(self.touchButtonScale), for: .touchDown)
         
+        // アフロを大きくさせるボタンの設定.
+        // タグの設定.
+        minusButton.tag = ButtonTag.Minus.rawValue;
+        // タップされている間, moveNodeを呼ぶよう設定.
+        minusButton.addTarget(self, action: #selector(self.touchButtonScale), for: .touchDown)
     }
     
     // ボタンがタップされた時に呼び出されるメソッド
@@ -178,7 +203,34 @@ class MainController: UIViewController, ARSCNViewDelegate {
         }
         
     }
-
+    
+    //
+    @objc func touchButtonScale(_ moveButton: UIButton){
+        guard
+            let afuroNode = ARView.scene.rootNode.childNode(withName: "afuro", recursively: true)
+            else{ print("afuroが...ない!"); return}
+        // afuroを移動させる.
+        switch moveButton.tag {
+            
+        case ButtonTag.Plus.rawValue:
+            afuroNode.scale.x += afuroScaleCoeff * 1
+            afuroNode.scale.y += afuroScaleCoeff * 1
+            afuroNode.scale.z += afuroScaleCoeff * 1
+            print("plus")
+            break
+            
+        case ButtonTag.Minus.rawValue:
+            afuroNode.scale.x += afuroScaleCoeff * -1
+            afuroNode.scale.y += afuroScaleCoeff * -1
+            afuroNode.scale.z += afuroScaleCoeff * -1
+            print("minus")
+            break
+            
+        default:
+            return
+        }
+    }
+    
     
     @objc func onClickARSwitch(sender: UISwitch){
         if sender.isOn {

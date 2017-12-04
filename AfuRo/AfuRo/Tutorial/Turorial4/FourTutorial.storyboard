@@ -19,11 +19,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M5X-T9-aFg">
-                                <rect key="frame" x="0.0" y="0.0" width="891" height="1112"/>
+                                <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <state key="normal" title="Button" image="tutorial4.png"/>
+                                <state key="normal" image="tutorial4.png"/>
                                 <connections>
                                     <action selector="pushToMain:" destination="Jah-ks-fCh" eventType="touchUpInside" id="vwA-p7-pZw"/>
+                                    <segue destination="oTV-55-uRH" kind="show" id="Sy9-pR-kcr"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -34,6 +35,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YBW-ud-Z7s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="189.92805755395685" y="206.65467625899282"/>
+        </scene>
+        <!--MainIphone-->
+        <scene sceneID="Vx4-yn-ZKv">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="MainIphone" storyboardName="MainIphone" id="oTV-55-uRH" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pt6-xB-aTp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="741" y="194"/>
         </scene>
     </scenes>
     <resources>

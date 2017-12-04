@@ -25,7 +25,13 @@ class DataController{
     }
     
     func getLastDateData() -> Date{
-        let lastDate = defaults.object(forKey: "yourKey") as! Date
+        guard
+            let lastDate = defaults.object(forKey: "lastDate") as? Date
+        else {
+            print("ラストデータを取得できません.")
+            return Date()
+        }
+        
         return lastDate
     }
     
