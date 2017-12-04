@@ -90,8 +90,9 @@ class MainController: UIViewController, ARSCNViewDelegate {
         // アフロの位置
         afuroNode.position = SCNVector3(0,0,-3)
         // アフロの回転
-         afuroNode.eulerAngles = SCNVector3(-90,0,0)
+        afuroNode.eulerAngles = SCNVector3(-90,0,0)
         
+        totalStepsData += Login().loginGetSteps()
         // アフロの大きさの調整
         afuroNode.scale.x = 1 + Float(totalStepsData) * afuroScaleCoeff
         afuroNode.scale.y = 1 + Float(totalStepsData) * afuroScaleCoeff
