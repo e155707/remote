@@ -20,7 +20,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uPX-4T-pvc">
                                 <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <state key="normal" image="title.png"/>
                                 <connections>
                                     <action selector="pushMainButton:" destination="zv3-mf-Bt5" eventType="touchUpInside" id="8Um-Dd-olB"/>
@@ -34,6 +34,8 @@
                             <outletCollection property="gestureRecognizers" destination="9Qg-o9-Awr" appends="YES" id="Fgp-xc-TZC"/>
                         </connections>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="834" height="1112"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VBJ-ya-Vml" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="9Qg-o9-Awr"/>

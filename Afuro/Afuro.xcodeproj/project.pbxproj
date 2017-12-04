@@ -352,7 +352,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B0C2F9261FCA1CF3004D879D /* Build configuration list for PBXProject "AfuRo" */;
+			buildConfigurationList = B0C2F9261FCA1CF3004D879D /* Build configuration list for PBXProject "Afuro" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -689,7 +689,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B0C2F9261FCA1CF3004D879D /* Build configuration list for PBXProject "AfuRo" */ = {
+		B0C2F9261FCA1CF3004D879D /* Build configuration list for PBXProject "Afuro" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B0C2F9531FCA1CF3004D879D /* Debug */,
