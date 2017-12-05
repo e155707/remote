@@ -51,6 +51,7 @@
 		F0C2D79D1FD4FD7A00F41C20 /* MainIphone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0C2D79C1FD4FD7A00F41C20 /* MainIphone.storyboard */; };
 		F0C2D79F1FD50A4800F41C20 /* MainIphoneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C2D79E1FD50A4800F41C20 /* MainIphoneController.swift */; };
 		F0C2D7A11FD526F700F41C20 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0786F521FCD112600DA75AA /* HealthKit.framework */; };
+		F0C2D7A31FD63D3F00F41C20 /* login.png in Resources */ = {isa = PBXBuildFile; fileRef = F0C2D7A21FD63D3F00F41C20 /* login.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +125,7 @@
 		F0C2D79C1FD4FD7A00F41C20 /* MainIphone.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainIphone.storyboard; sourceTree = "<group>"; };
 		F0C2D79E1FD50A4800F41C20 /* MainIphoneController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainIphoneController.swift; sourceTree = "<group>"; };
 		F0C2D7A01FD526F700F41C20 /* AfuRo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AfuRo.entitlements; sourceTree = "<group>"; };
+		F0C2D7A21FD63D3F00F41C20 /* login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +242,7 @@
 		B0C2F95E1FCA1D23004D879D /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				F0C2D7A21FD63D3F00F41C20 /* login.png */,
 				F03DC6B91FCC09770076A845 /* MainController.swift */,
 				F0C2D7981FD4F8FF00F41C20 /* MoveController.swift */,
 				F03DC6E61FCC12130076A845 /* DataController.swift */,
@@ -449,6 +452,7 @@
 				F03DC6E11FCC09B10076A845 /* Tutorial.storyboard in Resources */,
 				F03DC6D71FCC09B10076A845 /* tutorial1.png in Resources */,
 				F0C2D79D1FD4FD7A00F41C20 /* MainIphone.storyboard in Resources */,
+				F0C2D7A31FD63D3F00F41C20 /* login.png in Resources */,
 				F03DC6E91FCC3FC10076A845 /* yurumoji.ttf in Resources */,
 				B0C2F9361FCA1CF3004D879D /* Main.storyboard in Resources */,
 				F03DC6DB1FCC09B10076A845 /* ThreeTutorial.storyboard in Resources */,

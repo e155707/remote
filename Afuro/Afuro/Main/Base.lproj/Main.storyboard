@@ -110,7 +110,6 @@
                         <outlet property="AROnOffLabel" destination="Gfi-Bw-wRs" id="kpu-Sb-7jq"/>
                         <outlet property="ARSwitch" destination="vwy-zA-8fM" id="rlE-UI-hLu"/>
                         <outlet property="ARView" destination="DxB-1d-Iu0" id="nwK-ct-l9q"/>
-                        <outlet property="View" destination="JtO-FI-dz9" id="Zwf-ca-5kI"/>
                         <outlet property="downButton" destination="Ulh-7d-TwK" id="01U-SB-0sU"/>
                         <outlet property="leftButton" destination="81I-Sc-WMg" id="V0l-zf-zen"/>
                         <outlet property="minusButton" destination="7HU-hc-gfi" id="n0u-xI-6GG"/>
