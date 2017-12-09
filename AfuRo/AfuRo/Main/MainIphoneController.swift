@@ -27,10 +27,6 @@ class MainIphoneController: UIViewController, ARSCNViewDelegate {
     @IBOutlet var plusButton: UIButton!
     @IBOutlet var minusButton: UIButton!
     
-    @IBOutlet weak var ARSwitch: UISwitch!
-    
-    @IBOutlet weak var AROnOffLabel: UILabel!
-    
     enum ButtonTag: Int {
         case Right = 1
         case Left = 2
@@ -96,20 +92,19 @@ class MainIphoneController: UIViewController, ARSCNViewDelegate {
         afuroNode.eulerAngles = SCNVector3(-90,0,0)
         
         totalStepsData += Login().loginGetSteps()
+        if Login().isDailyFirstLogin(dataController.getLastDateData()){
+            self.createSelectElementWindow()
+        }
+        
+        //self.createSelectElementWindow()
         
         // アフロの大きさの調整
         afuroNode.scale.x = 1 + Float(totalStepsData) * afuroScaleCoeff
         afuroNode.scale.y = 1 + Float(totalStepsData) * afuroScaleCoeff
         afuroNode.scale.z = 1 + Float(totalStepsData) * afuroScaleCoeff
         
-        
+        //createSelectElementWindow()
         ARView.scene.rootNode.addChildNode(afuroNode)
-        
-        ARSwitch.addTarget(self, action: #selector(MainController.onClickARSwitch(sender:)), for: UIControlEvents.valueChanged)
-        
-        AROnOffLabel.text = "on"
-        AROnOffLabel.textColor = UIColor.red
-        
         
         // アプリ終了時にsaveDataを呼ぶための関数.
         let notificationCenter = NotificationCenter.default
@@ -232,17 +227,6 @@ class MainIphoneController: UIViewController, ARSCNViewDelegate {
         }
     }
     
-    
-    @objc func onClickARSwitch(sender: UISwitch){
-        if sender.isOn {
-            AROnOffLabel.text = "on"
-            AROnOffLabel.textColor = UIColor.red
-        }else {
-            AROnOffLabel.text = "off"
-            AROnOffLabel.textColor = UIColor.blue
-        }
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -276,6 +260,39 @@ class MainIphoneController: UIViewController, ARSCNViewDelegate {
      }
      */
     
+    var selectElementWindow:UIWindow!
+    
+    func createSelectElementWindow(){
+        selectElementWindow = UIWindow()
+        // 背景を黒に設定する.
+        selectElementWindow.backgroundColor = UIColor.black
+        
+        if let image = UIImage(named: "login") {
+            selectElementWindow?.layer.contents = image.cgImage
+        }
+        
+        selectElementWindow.frame = CGRect(x: 50, y: 150, width: 275, height: 450)
+        selectElementWindow.alpha = 1.0
+        
+        // myWindowをkeyWindowにする.
+        selectElementWindow.makeKey()
+        
+        // windowを表示する.
+        self.selectElementWindow.makeKeyAndVisible()
+        
+        let tapSelectElementWindowGesture = UITapGestureRecognizer(
+            target: self,
+            action: #selector(self.tapSelectElementWindow))
+        
+        selectElementWindow.addGestureRecognizer(tapSelectElementWindowGesture)
+        print("tap1")
+        
+    }
+    
+    @objc func tapSelectElementWindow(){
+        selectElementWindow = nil
+        print("tap2")
+    }
     
     func session(_ session: ARSession, didFailWithError error: Error) {
         // Present an error message to the user

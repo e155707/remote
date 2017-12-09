@@ -40,7 +40,7 @@ class MainController: UIViewController, ARSCNViewDelegate {
     }
     
     // ボタンを押した時に, 移動する量を調整する.
-    let moveAmount:Float = 0.1;
+    let moveAmount:Float = 1;
     
     // 合計の歩いた数を格納する変数
     var totalStepsData = 0

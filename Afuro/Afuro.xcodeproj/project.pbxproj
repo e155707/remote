@@ -47,6 +47,13 @@
 		F03DC6E71FCC12130076A845 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03DC6E61FCC12130076A845 /* DataController.swift */; };
 		F03DC6E91FCC3FC10076A845 /* yurumoji.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F03DC6E81FCC3FC00076A845 /* yurumoji.ttf */; };
 		F03DC6EB1FCC565D0076A845 /* UIARSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03DC6EA1FCC565D0076A845 /* UIARSwitch.swift */; };
+		F06F45891FDC40860024BCDF /* view1.png in Resources */ = {isa = PBXBuildFile; fileRef = F06F45881FDC40860024BCDF /* view1.png */; };
+		F06F458B1FDC40950024BCDF /* view2.png in Resources */ = {isa = PBXBuildFile; fileRef = F06F458A1FDC40950024BCDF /* view2.png */; };
+		F06F458D1FDC409E0024BCDF /* view3.png in Resources */ = {isa = PBXBuildFile; fileRef = F06F458C1FDC409E0024BCDF /* view3.png */; };
+		F06F458F1FDC40A90024BCDF /* view4.png in Resources */ = {isa = PBXBuildFile; fileRef = F06F458E1FDC40A90024BCDF /* view4.png */; };
+		F06F45911FDC40B40024BCDF /* view5.png in Resources */ = {isa = PBXBuildFile; fileRef = F06F45901FDC40B40024BCDF /* view5.png */; };
+		F06F45931FDC40C40024BCDF /* button1.png in Resources */ = {isa = PBXBuildFile; fileRef = F06F45921FDC40C40024BCDF /* button1.png */; };
+		F06F45951FDC40CB0024BCDF /* button2.png in Resources */ = {isa = PBXBuildFile; fileRef = F06F45941FDC40CB0024BCDF /* button2.png */; };
 		F0C2D7991FD4F8FF00F41C20 /* MoveController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C2D7981FD4F8FF00F41C20 /* MoveController.swift */; };
 		F0C2D79D1FD4FD7A00F41C20 /* MainIphone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0C2D79C1FD4FD7A00F41C20 /* MainIphone.storyboard */; };
 		F0C2D79F1FD50A4800F41C20 /* MainIphoneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C2D79E1FD50A4800F41C20 /* MainIphoneController.swift */; };
@@ -121,6 +128,13 @@
 		F03DC6E61FCC12130076A845 /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		F03DC6E81FCC3FC00076A845 /* yurumoji.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = yurumoji.ttf; sourceTree = "<group>"; };
 		F03DC6EA1FCC565D0076A845 /* UIARSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIARSwitch.swift; sourceTree = "<group>"; };
+		F06F45881FDC40860024BCDF /* view1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = view1.png; sourceTree = "<group>"; };
+		F06F458A1FDC40950024BCDF /* view2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = view2.png; sourceTree = "<group>"; };
+		F06F458C1FDC409E0024BCDF /* view3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = view3.png; sourceTree = "<group>"; };
+		F06F458E1FDC40A90024BCDF /* view4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = view4.png; sourceTree = "<group>"; };
+		F06F45901FDC40B40024BCDF /* view5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = view5.png; sourceTree = "<group>"; };
+		F06F45921FDC40C40024BCDF /* button1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button1.png; sourceTree = "<group>"; };
+		F06F45941FDC40CB0024BCDF /* button2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button2.png; sourceTree = "<group>"; };
 		F0C2D7981FD4F8FF00F41C20 /* MoveController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveController.swift; sourceTree = "<group>"; };
 		F0C2D79C1FD4FD7A00F41C20 /* MainIphone.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainIphone.storyboard; sourceTree = "<group>"; };
 		F0C2D79E1FD50A4800F41C20 /* MainIphoneController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainIphoneController.swift; sourceTree = "<group>"; };
@@ -258,6 +272,7 @@
 		F03DC6BB1FCC09B00076A845 /* Title */ = {
 			isa = PBXGroup;
 			children = (
+				F06F45881FDC40860024BCDF /* view1.png */,
 				F03DC6BC1FCC09B00076A845 /* title.png */,
 				F03DC6BD1FCC09B00076A845 /* Title.storyboard */,
 				F03DC6BE1FCC09B00076A845 /* TitleController.swift */,
@@ -283,6 +298,7 @@
 			children = (
 				F03DC6C11FCC09B00076A845 /* FirstTutorial.storyboard */,
 				F03DC6C21FCC09B00076A845 /* FirstTutorialController.swift */,
+				F06F458A1FDC40950024BCDF /* view2.png */,
 				F03DC6C31FCC09B00076A845 /* tutorial1.png */,
 			);
 			path = Turorial1;
@@ -294,6 +310,7 @@
 				F03DC6C51FCC09B00076A845 /* SecondTutorial.storyboard */,
 				F03DC6C61FCC09B00076A845 /* SecondTutorialController.swift */,
 				F03DC6C71FCC09B00076A845 /* tutorial2.png */,
+				F06F458C1FDC409E0024BCDF /* view3.png */,
 			);
 			path = Turorial2;
 			sourceTree = "<group>";
@@ -301,6 +318,7 @@
 		F03DC6C81FCC09B00076A845 /* Turorial3 */ = {
 			isa = PBXGroup;
 			children = (
+				F06F458E1FDC40A90024BCDF /* view4.png */,
 				F03DC6C91FCC09B00076A845 /* ThreeTutorial.storyboard */,
 				F03DC6CA1FCC09B00076A845 /* ThreeTutorialController.swift */,
 				F03DC6CB1FCC09B00076A845 /* tutorial3.png */,
@@ -311,9 +329,12 @@
 		F03DC6CC1FCC09B00076A845 /* Turorial4 */ = {
 			isa = PBXGroup;
 			children = (
+				F06F45901FDC40B40024BCDF /* view5.png */,
 				F03DC6CD1FCC09B00076A845 /* FourTutorial.storyboard */,
 				F03DC6CE1FCC09B00076A845 /* FourTutorialController.swift */,
 				F03DC6CF1FCC09B10076A845 /* tutorial4.png */,
+				F06F45921FDC40C40024BCDF /* button1.png */,
+				F06F45941FDC40CB0024BCDF /* button2.png */,
 			);
 			path = Turorial4;
 			sourceTree = "<group>";
@@ -444,18 +465,25 @@
 				F03DC6E01FCC09B10076A845 /* tutorial4.png in Resources */,
 				B0C2F9381FCA1CF3004D879D /* Assets.xcassets in Resources */,
 				F03DC6DE1FCC09B10076A845 /* FourTutorial.storyboard in Resources */,
+				F06F458B1FDC40950024BCDF /* view2.png in Resources */,
 				F03DC6DD1FCC09B10076A845 /* tutorial3.png in Resources */,
 				F03DC6D31FCC09B10076A845 /* Title.storyboard in Resources */,
 				F03DC6DA1FCC09B10076A845 /* tutorial2.png in Resources */,
 				F03DC6D51FCC09B10076A845 /* FirstTutorial.storyboard in Resources */,
+				F06F45911FDC40B40024BCDF /* view5.png in Resources */,
+				F06F45931FDC40C40024BCDF /* button1.png in Resources */,
 				F03DC6D81FCC09B10076A845 /* SecondTutorial.storyboard in Resources */,
+				F06F458F1FDC40A90024BCDF /* view4.png in Resources */,
 				F03DC6E11FCC09B10076A845 /* Tutorial.storyboard in Resources */,
 				F03DC6D71FCC09B10076A845 /* tutorial1.png in Resources */,
 				F0C2D79D1FD4FD7A00F41C20 /* MainIphone.storyboard in Resources */,
+				F06F45951FDC40CB0024BCDF /* button2.png in Resources */,
 				F0C2D7A31FD63D3F00F41C20 /* login.png in Resources */,
 				F03DC6E91FCC3FC10076A845 /* yurumoji.ttf in Resources */,
 				B0C2F9361FCA1CF3004D879D /* Main.storyboard in Resources */,
+				F06F45891FDC40860024BCDF /* view1.png in Resources */,
 				F03DC6DB1FCC09B10076A845 /* ThreeTutorial.storyboard in Resources */,
+				F06F458D1FDC409E0024BCDF /* view3.png in Resources */,
 				F03DC6D21FCC09B10076A845 /* title.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

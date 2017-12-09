@@ -79,7 +79,7 @@ extension TutorialController : UIPageViewControllerDataSource {
         } else if viewController.isKind(of:MainController.self) {
             return nil
         } else {
-            return getMain()
+            return nil
         }
         
     }
