@@ -12,12 +12,13 @@ import ARKit
 import MapKit
 
 class MainController: UIViewController, ARSCNViewDelegate,CLLocationManagerDelegate {
-
-    let locationManager = CLLocationManager()
-    var oldLocation: CLLocation?
+    
+    let cameraController = CameraController()
+    let login = Login()
+    
     
     @IBOutlet var ARView: ARSCNView!
-    //var ARView:ARSCNView?
+    
     // ボタンを追加
     //@IBOutlet var afuroView: UIView!
     @IBOutlet var rightButton: UIButton!
@@ -86,7 +87,7 @@ class MainController: UIViewController, ARSCNViewDelegate,CLLocationManagerDeleg
         // アフロの回転
         afuroNode.eulerAngles = SCNVector3(-90,0,0)
         
-        totalStepsData += Login().loginGetSteps()
+        totalStepsData += login.loginGetSteps()
         
         // アフロの大きさの調整
         afuroNode.scale.x = 1 + Float(totalStepsData) * afuroScaleCoeff
@@ -223,6 +224,9 @@ class MainController: UIViewController, ARSCNViewDelegate,CLLocationManagerDeleg
         }
     }
     
+    @objc func shutter(){
+        cameraController.savePicture(ARView.snapshot())
+    }
     
     @objc func onClickARSwitch(sender: UISwitch){
         if sender.isOn {
@@ -272,7 +276,8 @@ class MainController: UIViewController, ARSCNViewDelegate,CLLocationManagerDeleg
         return healthStepsData
     }
     
-    
+    let locationManager = CLLocationManager()
+    var oldLocation: CLLocation?
     
     // 位置情報の設定
     func setLocationManager(){
@@ -324,19 +329,17 @@ class MainController: UIViewController, ARSCNViewDelegate,CLLocationManagerDeleg
             // 位置情報アクセスを常に許可するかを問いかける
             locationManager.requestAlwaysAuthorization()
             // 「設定 > プライバシー > 位置情報サービス で、位置情報サービスの利用を許可して下さい」を表示する
-            MapErrorController().notGetLocation()
+            ErrorController().notGetLocation()
             break
             
         case .restricted:
             print("このアプリケーションは位置情報サービスを使用できません(ユーザによって拒否されたわけではありません)")
             // 「このアプリは、位置情報を取得できないために、正常に動作できません」を表示する
-            MapErrorController().notGetLocation()
+            ErrorController().notGetLocation()
             break
             
         case .authorizedAlways:
             print("常時、位置情報の取得が許可されています。")
-            
-            
             break
             
         case .authorizedWhenInUse:
