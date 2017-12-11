@@ -93,10 +93,10 @@ class MainIphoneController: UIViewController, ARSCNViewDelegate {
         
         totalStepsData += Login().loginGetSteps()
         if Login().isDailyFirstLogin(dataController.getLastDateData()){
-            self.createSelectElementWindow()
+            //self.createSelectElementWindow()
         }
         
-        //self.createSelectElementWindow()
+        self.createSelectElementWindow()
         
         // アフロの大きさの調整
         afuroNode.scale.x = 1 + Float(totalStepsData) * afuroScaleCoeff
