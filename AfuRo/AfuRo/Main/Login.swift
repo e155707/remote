@@ -10,11 +10,10 @@ import Foundation
 
 class Login{
     
-    let myWindow = UIWindow()
-    let main = MainIphoneController()
+    var loginWindow: UIWindow!
     
     let dataController = DataController()
-    
+
     // ログインボーナス.
     let loginDayAddSteps = 10
     // 1日ログインしていない場合に減る歩数.
@@ -28,7 +27,7 @@ class Login{
         // 最後にログインした日を取得.
         let lastLoginDate = dataController.getLastDateData()
         
-        // もし, 初めてのログインなら, bonasStepsにログインボーナスなどを足す.
+        // もし, 一日の初めてのログインなら, bonasStepsにログインボーナスなどを足す.
         if self.isDailyFirstLogin(lastLoginDate) {
             
             bonasSteps += self.loginBonasGetSteps()
@@ -86,10 +85,6 @@ class Login{
     // Dateから年日月を抽出する関数
     func roundDate(_ date: Date, calendar cal: Calendar = Calendar.current) -> Date {
         return cal.date(from: DateComponents(year: cal.component(.year, from: date), month: cal.component(.month, from: date), day: cal.component(.day, from: date)))!
-    }
-    
-    func CGRectMake(_ x: CGFloat, _ y: CGFloat, _ width: CGFloat, _ height: CGFloat) -> CGRect {
-        return CGRect(x: x, y: y, width: width, height: height)
     }
     
 }

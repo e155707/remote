@@ -1,21 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PA5-d3-7kW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PA5-d3-7kW">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
-        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="yurumoji.ttf">
-            <string>Yurumoji</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Main Iphone Controller-->
         <scene sceneID="qhZ-ba-5q7">
@@ -49,31 +42,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="←"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fQZ-bc-dOw">
-                                <rect key="frame" x="16" y="111" width="51" height="51"/>
-                                <fontDescription key="fontDescription" name="Yurumoji" family="Yurumoji" pointSize="40"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="AR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jqr-ik-2Ol">
-                                <rect key="frame" x="74" y="111" width="100" height="51"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="sJL-Gx-jIC"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Yurumoji" family="Yurumoji" pointSize="40"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hEk-CT-3Aj" customClass="UIARSwitch" customModule="AfuRo" customModuleProvider="target">
-                                <rect key="frame" x="64" y="44" width="51" height="31"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="size" keyPath="dispSize">
-                                        <size key="value" width="150" height="60"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </switch>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tmp-MO-3YE">
-                                <rect key="frame" x="21" y="701" width="46" height="48"/>
+                                <rect key="frame" x="24" y="589" width="46" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="-"/>
@@ -85,29 +55,28 @@
                                 <state key="normal" title="↓"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P7f-Uy-kuG">
-                                <rect key="frame" x="75" y="701" width="46" height="48"/>
+                                <rect key="frame" x="78" y="590" width="46" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="+"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dlx-yh-meI">
+                                <rect key="frame" x="158" y="696" width="58" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
+                                <state key="normal" backgroundImage="camera.png"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rfG-Ua-y8A">
+                                <rect key="frame" x="34" y="696" width="75" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="twitter.png"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="tjo-NN-TLR" firstAttribute="bottom" secondItem="Jqr-ik-2Ol" secondAttribute="bottom" constant="616" id="HEe-xi-zvS"/>
-                            <constraint firstItem="Jqr-ik-2Ol" firstAttribute="baseline" secondItem="fQZ-bc-dOw" secondAttribute="baseline" id="VLj-Ip-dO8"/>
-                            <constraint firstItem="Jqr-ik-2Ol" firstAttribute="top" secondItem="tjo-NN-TLR" secondAttribute="top" constant="67" id="WTW-1I-aAk"/>
-                            <constraint firstItem="Jqr-ik-2Ol" firstAttribute="leading" secondItem="fQZ-bc-dOw" secondAttribute="trailing" constant="7" id="aeH-cT-ZJF"/>
-                            <constraint firstItem="hEk-CT-3Aj" firstAttribute="top" secondItem="tjo-NN-TLR" secondAttribute="top" id="dwg-pZ-ckJ"/>
-                            <constraint firstItem="Jqr-ik-2Ol" firstAttribute="firstBaseline" secondItem="fQZ-bc-dOw" secondAttribute="firstBaseline" id="hz8-LK-Lay"/>
-                            <constraint firstItem="fQZ-bc-dOw" firstAttribute="leading" secondItem="0Ok-Ay-qQr" secondAttribute="leadingMargin" id="mIu-kF-msA"/>
-                            <constraint firstItem="hEk-CT-3Aj" firstAttribute="leading" secondItem="fQZ-bc-dOw" secondAttribute="leading" constant="48" id="qdY-Za-2Mc"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="tjo-NN-TLR"/>
                     </view>
                     <connections>
-                        <outlet property="AROnOffLabel" destination="Jqr-ik-2Ol" id="l8x-mP-bZs"/>
-                        <outlet property="ARSwitch" destination="hEk-CT-3Aj" id="ocX-Ju-Adp"/>
                         <outlet property="ARView" destination="O0U-TG-yQi" id="Dsc-og-UFj"/>
+                        <outlet property="cameraButton" destination="Dlx-yh-meI" id="Lnf-sJ-s6i"/>
                         <outlet property="downButton" destination="4Jf-Xd-R6Q" id="HGU-mj-k8C"/>
                         <outlet property="leftButton" destination="0Rd-cf-TKQ" id="Sek-vR-tBB"/>
                         <outlet property="minusButton" destination="Tmp-MO-3YE" id="01k-KR-mHq"/>
@@ -121,4 +90,8 @@
             <point key="canvasLocation" x="149.59999999999999" y="178.81773399014779"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="camera.png" width="256" height="256"/>
+        <image name="twitter.png" width="256" height="256"/>
+    </resources>
 </document>

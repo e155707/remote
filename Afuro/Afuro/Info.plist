@@ -2,12 +2,16 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>アルバムを使用します</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>カメラで画像を撮ったあと, あなたのライブラリに入れます.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>個人情報ください</string>
+	<string>歩数計測のために位置情報の使用を許可して下さい</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>個人情報ください</string>
+	<string>歩数計測のために位置情報の使用を許可して下さい</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>個人情報ください</string>
+	<string>歩数計測のために位置情報の使用を許可して下さい</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
@@ -31,11 +35,11 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>This application will use the camera for Augmented Reality.</string>
+	<string>ARを使用するために, カメラへのアクセス許可が必要です.</string>
 	<key>NSHealthShareUsageDescription</key>
-	<string>個人情報ください</string>
+	<string>歩数計測のためにヘルスケへのアクセスを許可して下さい</string>
 	<key>NSHealthUpdateUsageDescription</key>
-	<string>個人情報ください</string>
+	<string>歩数計測のためにヘルスケへのアクセスを許可して下さい</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
