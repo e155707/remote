@@ -56,6 +56,8 @@
 		F06F45911FDC40B40024BCDF /* view5.png in Resources */ = {isa = PBXBuildFile; fileRef = F06F45901FDC40B40024BCDF /* view5.png */; };
 		F06F45931FDC40C40024BCDF /* button1.png in Resources */ = {isa = PBXBuildFile; fileRef = F06F45921FDC40C40024BCDF /* button1.png */; };
 		F06F45951FDC40CB0024BCDF /* button2.png in Resources */ = {isa = PBXBuildFile; fileRef = F06F45941FDC40CB0024BCDF /* button2.png */; };
+		F06F45971FDE39030024BCDF /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = F06F45961FDE39030024BCDF /* camera.png */; };
+		F06F45991FDE3FC60024BCDF /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F06F45981FDE3FC60024BCDF /* Social.framework */; };
 		F0C2D7991FD4F8FF00F41C20 /* MoveController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C2D7981FD4F8FF00F41C20 /* MoveController.swift */; };
 		F0C2D79D1FD4FD7A00F41C20 /* MainIphone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0C2D79C1FD4FD7A00F41C20 /* MainIphone.storyboard */; };
 		F0C2D79F1FD50A4800F41C20 /* MainIphoneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C2D79E1FD50A4800F41C20 /* MainIphoneController.swift */; };
@@ -139,6 +141,8 @@
 		F06F45901FDC40B40024BCDF /* view5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = view5.png; sourceTree = "<group>"; };
 		F06F45921FDC40C40024BCDF /* button1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button1.png; sourceTree = "<group>"; };
 		F06F45941FDC40CB0024BCDF /* button2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button2.png; sourceTree = "<group>"; };
+		F06F45961FDE39030024BCDF /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
+		F06F45981FDE3FC60024BCDF /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		F0C2D7981FD4F8FF00F41C20 /* MoveController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveController.swift; sourceTree = "<group>"; };
 		F0C2D79C1FD4FD7A00F41C20 /* MainIphone.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainIphone.storyboard; sourceTree = "<group>"; };
 		F0C2D79E1FD50A4800F41C20 /* MainIphoneController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainIphoneController.swift; sourceTree = "<group>"; };
@@ -151,6 +155,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F06F45991FDE3FC60024BCDF /* Social.framework in Frameworks */,
 				923F5095D125701622AB1132 /* BuddyBuildSDK.framework in Frameworks */,
 				52D3799A9A611DC4E4C2CA29 /* AssetsLibrary.framework in Frameworks */,
 				449A6C58985CEE337753A320 /* CoreText.framework in Frameworks */,
@@ -184,6 +189,7 @@
 		B0786F511FCD112500DA75AA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F06F45981FDE3FC60024BCDF /* Social.framework */,
 				B0786F531FCD112E00DA75AA /* HealthKitUI.framework */,
 				B0786F521FCD112600DA75AA /* HealthKit.framework */,
 				563A28ED96D4F742C822942F /* BuddyBuildSDK.framework */,
@@ -261,6 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				F0C2D7A21FD63D3F00F41C20 /* login.png */,
+				F06F45961FDE39030024BCDF /* camera.png */,
 				F03DC6B91FCC09770076A845 /* MainController.swift */,
 				B0414B331FD806D700E5A5A9 /* ErrorController.swift */,
 				F0C2D7981FD4F8FF00F41C20 /* MoveController.swift */,
@@ -441,7 +448,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B0C2F9261FCA1CF3004D879D /* Build configuration list for PBXProject "AfuRo" */;
+			buildConfigurationList = B0C2F9261FCA1CF3004D879D /* Build configuration list for PBXProject "Afuro" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -472,6 +479,7 @@
 				B0C2F9381FCA1CF3004D879D /* Assets.xcassets in Resources */,
 				F03DC6DE1FCC09B10076A845 /* FourTutorial.storyboard in Resources */,
 				F06F458B1FDC40950024BCDF /* view2.png in Resources */,
+				F06F45971FDE39030024BCDF /* camera.png in Resources */,
 				F03DC6DD1FCC09B10076A845 /* tutorial3.png in Resources */,
 				F03DC6D31FCC09B10076A845 /* Title.storyboard in Resources */,
 				F03DC6DA1FCC09B10076A845 /* tutorial2.png in Resources */,
@@ -804,7 +812,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B0C2F9261FCA1CF3004D879D /* Build configuration list for PBXProject "AfuRo" */ = {
+		B0C2F9261FCA1CF3004D879D /* Build configuration list for PBXProject "Afuro" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B0C2F9531FCA1CF3004D879D /* Debug */,
