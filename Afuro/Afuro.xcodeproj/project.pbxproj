@@ -58,6 +58,7 @@
 		F06F45951FDC40CB0024BCDF /* button2.png in Resources */ = {isa = PBXBuildFile; fileRef = F06F45941FDC40CB0024BCDF /* button2.png */; };
 		F06F45971FDE39030024BCDF /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = F06F45961FDE39030024BCDF /* camera.png */; };
 		F06F45991FDE3FC60024BCDF /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F06F45981FDE3FC60024BCDF /* Social.framework */; };
+		F06F459B1FDE450A0024BCDF /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = F06F459A1FDE450A0024BCDF /* twitter.png */; };
 		F0C2D7991FD4F8FF00F41C20 /* MoveController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C2D7981FD4F8FF00F41C20 /* MoveController.swift */; };
 		F0C2D79D1FD4FD7A00F41C20 /* MainIphone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0C2D79C1FD4FD7A00F41C20 /* MainIphone.storyboard */; };
 		F0C2D79F1FD50A4800F41C20 /* MainIphoneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C2D79E1FD50A4800F41C20 /* MainIphoneController.swift */; };
@@ -143,6 +144,7 @@
 		F06F45941FDC40CB0024BCDF /* button2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button2.png; sourceTree = "<group>"; };
 		F06F45961FDE39030024BCDF /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
 		F06F45981FDE3FC60024BCDF /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		F06F459A1FDE450A0024BCDF /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
 		F0C2D7981FD4F8FF00F41C20 /* MoveController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveController.swift; sourceTree = "<group>"; };
 		F0C2D79C1FD4FD7A00F41C20 /* MainIphone.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainIphone.storyboard; sourceTree = "<group>"; };
 		F0C2D79E1FD50A4800F41C20 /* MainIphoneController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainIphoneController.swift; sourceTree = "<group>"; };
@@ -268,6 +270,7 @@
 			children = (
 				F0C2D7A21FD63D3F00F41C20 /* login.png */,
 				F06F45961FDE39030024BCDF /* camera.png */,
+				F06F459A1FDE450A0024BCDF /* twitter.png */,
 				F03DC6B91FCC09770076A845 /* MainController.swift */,
 				B0414B331FD806D700E5A5A9 /* ErrorController.swift */,
 				F0C2D7981FD4F8FF00F41C20 /* MoveController.swift */,
@@ -497,6 +500,7 @@
 				B0C2F9361FCA1CF3004D879D /* Main.storyboard in Resources */,
 				F06F45891FDC40860024BCDF /* view1.png in Resources */,
 				F03DC6DB1FCC09B10076A845 /* ThreeTutorial.storyboard in Resources */,
+				F06F459B1FDE450A0024BCDF /* twitter.png in Resources */,
 				F06F458D1FDC409E0024BCDF /* view3.png in Resources */,
 				F03DC6D21FCC09B10076A845 /* title.png in Resources */,
 			);
