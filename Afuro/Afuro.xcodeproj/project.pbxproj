@@ -28,6 +28,7 @@
 		B0C2F93B1FCA1CF3004D879D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0C2F9391FCA1CF3004D879D /* LaunchScreen.storyboard */; };
 		B0C2F9461FCA1CF3004D879D /* AfuRoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C2F9451FCA1CF3004D879D /* AfuRoTests.swift */; };
 		B0C2F9511FCA1CF3004D879D /* AfuRoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C2F9501FCA1CF3004D879D /* AfuRoUITests.swift */; };
+		F01215201FDEE07C00124A89 /* camera.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F012151F1FDEE07C00124A89 /* camera.mp3 */; };
 		F03DC6D21FCC09B10076A845 /* title.png in Resources */ = {isa = PBXBuildFile; fileRef = F03DC6BC1FCC09B00076A845 /* title.png */; };
 		F03DC6D31FCC09B10076A845 /* Title.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F03DC6BD1FCC09B00076A845 /* Title.storyboard */; };
 		F03DC6D41FCC09B10076A845 /* TitleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03DC6BE1FCC09B00076A845 /* TitleController.swift */; };
@@ -113,6 +114,7 @@
 		B0C2F9501FCA1CF3004D879D /* AfuRoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfuRoUITests.swift; sourceTree = "<group>"; };
 		B0C2F9521FCA1CF3004D879D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2B56CD1A4920C0892AD6907 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		F012151F1FDEE07C00124A89 /* camera.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = camera.mp3; sourceTree = "<group>"; };
 		F03DC6B91FCC09770076A845 /* MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		F03DC6BC1FCC09B00076A845 /* title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = title.png; sourceTree = "<group>"; };
 		F03DC6BD1FCC09B00076A845 /* Title.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Title.storyboard; sourceTree = "<group>"; };
@@ -271,6 +273,7 @@
 				F0C2D7A21FD63D3F00F41C20 /* login.png */,
 				F06F45961FDE39030024BCDF /* camera.png */,
 				F06F459A1FDE450A0024BCDF /* twitter.png */,
+				F012151F1FDEE07C00124A89 /* camera.mp3 */,
 				F03DC6B91FCC09770076A845 /* MainController.swift */,
 				B0414B331FD806D700E5A5A9 /* ErrorController.swift */,
 				F0C2D7981FD4F8FF00F41C20 /* MoveController.swift */,
@@ -497,6 +500,7 @@
 				F06F45951FDC40CB0024BCDF /* button2.png in Resources */,
 				F0C2D7A31FD63D3F00F41C20 /* login.png in Resources */,
 				F03DC6E91FCC3FC10076A845 /* yurumoji.ttf in Resources */,
+				F01215201FDEE07C00124A89 /* camera.mp3 in Resources */,
 				B0C2F9361FCA1CF3004D879D /* Main.storyboard in Resources */,
 				F06F45891FDC40860024BCDF /* view1.png in Resources */,
 				F03DC6DB1FCC09B10076A845 /* ThreeTutorial.storyboard in Resources */,
