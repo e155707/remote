@@ -13,6 +13,7 @@ import ARKit
 import MapKit
 import Social
 import AVFoundation
+import Accounts
 
 class MainIphoneController: UIViewController, ARSCNViewDelegate, CLLocationManagerDelegate {
     
@@ -34,7 +35,6 @@ class MainIphoneController: UIViewController, ARSCNViewDelegate, CLLocationManag
     @IBOutlet var plusButton: UIButton!
     @IBOutlet var minusButton: UIButton!
     @IBOutlet var cameraButton: UIButton!
-    @IBOutlet weak var twitterButton: UIButton!
     
     enum ButtonTag: Int {
         case Right = 1
@@ -92,7 +92,7 @@ class MainIphoneController: UIViewController, ARSCNViewDelegate, CLLocationManag
         
         afuroNode.position = SCNVector3(0,0,-3)
         // アフロの回転
-        afuroNode.eulerAngles = SCNVector3(-100,0,0)
+        afuroNode.eulerAngles = SCNVector3(-92,0,0)
         
         totalStepsData += login.loginGetSteps()
         if Login().isDailyFirstLogin(dataController.getLastDateData()){
@@ -117,8 +117,6 @@ class MainIphoneController: UIViewController, ARSCNViewDelegate, CLLocationManag
             name:NSNotification.Name.UIApplicationWillTerminate,
             object: nil)
         
-        twitterButton.addTarget(self, action: #selector(self.shareWithSocialFramework), for: .touchUpInside)
-        
         // Do any additional setup after loading the view, typically from a nib.
         // サウンドファイルのパスを生成
         let soundFilePath = Bundle.main.path(forResource: "camera", ofType: "mp3")!
@@ -133,13 +131,30 @@ class MainIphoneController: UIViewController, ARSCNViewDelegate, CLLocationManag
         audioPlayerInstance.prepareToPlay()
     }
     
-    @objc func shareWithSocialFramework(on viewController: UIViewController) {
-        guard let composeVC = SLComposeViewController(forServiceType: SLServiceTypeTwitter) else {
-            return
-        }
-        composeVC.setInitialText("a")
-         print("saka")
-        viewController.present(composeVC, animated: true, completion: nil)
+    @IBAction func share(_ sender: UIButton) {
+        // 共有する項目
+        let shareText = "#Aruke"
+        //let shareWebsite = NSURL(string: "https://www.apple.com/jp/watch/")!
+        let shareImage = ARView.snapshot()
+        
+        let activityItems = [shareText, shareImage] as [Any]
+        
+        // 初期化処理
+        let activityVC = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
+        
+        // 使用しないアクティビティタイプ
+        let excludedActivityTypes = [
+            UIActivityType.postToFacebook,
+            //UIActivityType.postToTwitter,
+            UIActivityType.message,
+            UIActivityType.saveToCameraRoll,
+            UIActivityType.print
+        ]
+        
+        activityVC.excludedActivityTypes = excludedActivityTypes
+        
+        // UIActivityViewControllerを表示
+        self.present(activityVC, animated: true, completion: nil)
     }
     
     // データを保存する関数.

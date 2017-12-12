@@ -69,6 +69,9 @@
                                 <rect key="frame" x="34" y="696" width="75" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="twitter.png"/>
+                                <connections>
+                                    <action selector="share:" destination="PA5-d3-7kW" eventType="touchUpInside" id="7xT-SS-Bhd"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -82,7 +85,6 @@
                         <outlet property="minusButton" destination="Tmp-MO-3YE" id="01k-KR-mHq"/>
                         <outlet property="plusButton" destination="P7f-Uy-kuG" id="dMS-2l-mZK"/>
                         <outlet property="rightButton" destination="hBP-j9-nXk" id="oze-Rj-fvb"/>
-                        <outlet property="twitterButton" destination="rfG-Ua-y8A" id="lax-Vf-ZKV"/>
                         <outlet property="upButton" destination="ak6-cO-zxI" id="VVb-Ei-zs1"/>
                     </connections>
                 </viewController>

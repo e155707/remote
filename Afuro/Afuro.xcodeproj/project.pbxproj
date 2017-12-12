@@ -243,6 +243,7 @@
 				F03DC6BF1FCC09B00076A845 /* Tutorial */,
 				F03DC6E31FCC09BF0076A845 /* Other */,
 				B0C2F9371FCA1CF3004D879D /* Assets.xcassets */,
+				F06F45961FDE39030024BCDF /* camera.png */,
 				B0C2F9391FCA1CF3004D879D /* LaunchScreen.storyboard */,
 				B0C2F93C1FCA1CF3004D879D /* Info.plist */,
 			);
@@ -271,7 +272,6 @@
 			isa = PBXGroup;
 			children = (
 				F0C2D7A21FD63D3F00F41C20 /* login.png */,
-				F06F45961FDE39030024BCDF /* camera.png */,
 				F06F459A1FDE450A0024BCDF /* twitter.png */,
 				F012151F1FDEE07C00124A89 /* camera.mp3 */,
 				F03DC6B91FCC09770076A845 /* MainController.swift */,
