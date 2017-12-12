@@ -5,7 +5,9 @@ import HealthKit
 
 class HealthDataController{
     var storage:HKHealthStore = HKHealthStore()
-    
+    init() {
+        checkAuthorization()
+    }
     @discardableResult
     func checkAuthorization() -> Bool {
         var isEnabled = true
@@ -14,10 +16,10 @@ class HealthDataController{
         if HKHealthStore.isHealthDataAvailable()
         {
             // 歩数の取得をリクエスト
-            let steps = NSSet(object: HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)!)
+            let steps = NSSet(object: HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount) ?? 0)
             
             // 許可されているかどうかを確認
-            storage.requestAuthorization(toShare: nil, read: steps as? Set) { (success, error) -> Void in
+            storage.requestAuthorization(toShare: nil, read: steps as? Set<HKObjectType>) { (success, error) -> Void in
                 isEnabled = success
             }
         }
@@ -35,7 +37,7 @@ class HealthDataController{
     func getStepsHealthKit(startDate: Date, endDate: Date) -> Int {
         // セマフォアの作成.
         let semaphore = DispatchSemaphore(value: 0)
-        
+        //print("self = \(self.checkAuthorization())")
         // startDateから, endDateまでの歩数を取得する
         let predicate = HKQuery.predicateForSamples(
             withStart: startDate,
@@ -56,6 +58,7 @@ class HealthDataController{
             // 指定期間で取得できた歩数の合計を計算
                 if results.count > 0
                 {
+                    
                     for result in results as! [HKQuantitySample]
                     {
                         steps += Int(result.quantity.doubleValue(for: HKUnit.count()))
@@ -66,6 +69,7 @@ class HealthDataController{
             }else{
                 print(error ?? "results = nil")
             }
+            
 
             // セマフォアの解除. データ取得の完了
             semaphore.signal()
