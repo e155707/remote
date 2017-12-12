@@ -12,11 +12,14 @@ import SceneKit
 import ARKit
 import MapKit
 import Social
+import AVFoundation
 
 class MainIphoneController: UIViewController, ARSCNViewDelegate, CLLocationManagerDelegate {
     
     let cameraController = CameraController()
     let login = Login()
+    
+    var audioPlayerInstance : AVAudioPlayer! = nil
     
     @IBOutlet var ARView: ARSCNView!
     //var ARView:ARSCNView?
@@ -31,6 +34,7 @@ class MainIphoneController: UIViewController, ARSCNViewDelegate, CLLocationManag
     @IBOutlet var plusButton: UIButton!
     @IBOutlet var minusButton: UIButton!
     @IBOutlet var cameraButton: UIButton!
+    @IBOutlet weak var twitterButton: UIButton!
     
     enum ButtonTag: Int {
         case Right = 1
@@ -112,6 +116,30 @@ class MainIphoneController: UIViewController, ARSCNViewDelegate, CLLocationManag
             selector: #selector(self.saveData),
             name:NSNotification.Name.UIApplicationWillTerminate,
             object: nil)
+        
+        twitterButton.addTarget(self, action: #selector(self.shareWithSocialFramework), for: .touchUpInside)
+        
+        // Do any additional setup after loading the view, typically from a nib.
+        // サウンドファイルのパスを生成
+        let soundFilePath = Bundle.main.path(forResource: "camera", ofType: "mp3")!
+        let sound:URL = URL(fileURLWithPath: soundFilePath)
+        // AVAudioPlayerのインスタンスを作成
+        do {
+            audioPlayerInstance = try AVAudioPlayer(contentsOf: sound, fileTypeHint:nil)
+        } catch {
+            print("AVAudioPlayerインスタンス作成失敗")
+        }
+        // バッファに保持していつでも再生できるようにする
+        audioPlayerInstance.prepareToPlay()
+    }
+    
+    @objc func shareWithSocialFramework(on viewController: UIViewController) {
+        guard let composeVC = SLComposeViewController(forServiceType: SLServiceTypeTwitter) else {
+            return
+        }
+        composeVC.setInitialText("a")
+         print("saka")
+        viewController.present(composeVC, animated: true, completion: nil)
     }
     
     // データを保存する関数.
@@ -229,6 +257,8 @@ class MainIphoneController: UIViewController, ARSCNViewDelegate, CLLocationManag
     }
     
     @objc func shutter(){
+        
+        audioPlayerInstance.play()
         cameraController.savePicture(ARView.snapshot())
     }
     
