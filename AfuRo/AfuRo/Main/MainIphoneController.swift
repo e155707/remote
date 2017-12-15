@@ -88,7 +88,7 @@ class MainIphoneController: UIViewController, ARSCNViewDelegate, CLLocationManag
         print("totalStepsDate =\(dataController.getTotalStepsData())")
         
         // アフロの位置
-        afuroNode.position = SCNVector3(0,0,1)
+        afuroNode.position = SCNVector3(0,0,afuroNode.scale.z/2)
         
         afuroNode.position = SCNVector3(0,0,-3)
         // アフロの回転
