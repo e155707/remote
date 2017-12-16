@@ -82,6 +82,7 @@
                         <outlet property="minusButton" destination="Tmp-MO-3YE" id="01k-KR-mHq"/>
                         <outlet property="plusButton" destination="P7f-Uy-kuG" id="dMS-2l-mZK"/>
                         <outlet property="rightButton" destination="hBP-j9-nXk" id="oze-Rj-fvb"/>
+                        <outlet property="twitterButton" destination="rfG-Ua-y8A" id="lax-Vf-ZKV"/>
                         <outlet property="upButton" destination="ak6-cO-zxI" id="VVb-Ei-zs1"/>
                     </connections>
                 </viewController>
