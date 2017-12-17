@@ -92,7 +92,7 @@ class MainIphoneController: UIViewController, ARSCNViewDelegate, CLLocationManag
         
         afuroNode.position = SCNVector3(0,0,-3)
         // アフロの回転
-        afuroNode.eulerAngles = SCNVector3(-92,0,0)
+        afuroNode.eulerAngles = SCNVector3(-90,0,0)
         
         totalStepsData += login.loginGetSteps()
         if Login().isDailyFirstLogin(dataController.getLastDateData()){
@@ -157,6 +157,9 @@ class MainIphoneController: UIViewController, ARSCNViewDelegate, CLLocationManag
         self.present(activityVC, animated: true, completion: nil)
     }
     
+    @IBAction func reload(_ sender: Any) {
+        ARView.scene.rootNode.childNode(withName: "afuro", recursively: false)?.runAction(SCNAction.removeFromParentNode())
+    }
     // データを保存する関数.
     @objc func saveData(){
         dataController.setTotalStepsData(totalStepsData)
