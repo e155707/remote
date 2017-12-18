@@ -158,42 +158,50 @@ class MainIphoneController: UIViewController, ARSCNViewDelegate, CLLocationManag
     }
     
     @IBAction func reload(_ sender: Any) {
-        ARView.scene.rootNode.childNode(withName: "afuro", recursively: false)?.runAction(SCNAction.removeFromParentNode())
+        //ARView.scene.rootNode.childNode(withName: "afuro", recursively: false)?.runAction(SCNAction.removeFromParentNode())
         
         guard
-            let afuroScene = SCNScene(named: "art.scnassets/daefile/aforo.scn"),
-            let afuroNode = afuroScene.rootNode.childNode(withName:"afuro" , recursively: true)
-            else{ return }
-        
-        setLocationManager()
+            let afuroNode = ARView.scene.rootNode.childNode(withName: "afuro", recursively: true)
+            else {return}
         
         // これまでの歩数の取得
-        totalStepsData = dataController.getTotalStepsData()
-        print("totalStepsDate =\(dataController.getTotalStepsData())")
+        //totalStepsData = dataController.getTotalStepsData()
+        //print("totalStepsDate =\(dataController.getTotalStepsData())")
+        
         // アフロの位置
-        afuroNode.position = SCNVector3(0,0,1)
-        
         afuroNode.position = SCNVector3(0,0,-3)
-        // アフロの回転
-        afuroNode.eulerAngles = SCNVector3(-90,0,0)
         
-        self.createSelectElementWindow()
+        var r:Float = 3
+    
+        let phi:Float = (ARView.pointOfView?.eulerAngles.x)! - .pi
+        let thete:Float = (ARView.pointOfView?.eulerAngles.y)! - .pi/2
+        if(sin((ARView.pointOfView?.eulerAngles.y)!) >= 0){
+            afuroNode.position.x = r*sin(thete)*cos(phi)
+            afuroNode.position.y = r*sin(thete)*sin(phi)
+            afuroNode.position.z = r*cos(thete)
+        }else{
+            afuroNode.position.x = r*sin(thete)*cos(phi)
+            afuroNode.position.y = r*sin(thete)*sin(phi)
+            afuroNode.position.z = r*cos(thete)
+        }
+        
+        //afuroNode.position.x = r*sin(thete)*cos(phi)
+        //afuroNode.position.y = r*sin(thete)*sin(phi)
+        //afuroNode.position.z = r*cos(thete)
+        
+        
+        // アフロの回転
+        //afuroNode.eulerAngles = SCNVector3(-90,0,0)
+        
+        //self.createSelectElementWindow()
         
         // アフロの大きさの調整
-        afuroNode.scale.x = 1 + Float(totalStepsData) * afuroScaleCoeff
-        afuroNode.scale.y = 1 + Float(totalStepsData) * afuroScaleCoeff
-        afuroNode.scale.z = 1 + Float(totalStepsData) * afuroScaleCoeff
+        //afuroNode.scale.x = 1 + Float(totalStepsData) * afuroScaleCoeff
+        //afuroNode.scale.y = 1 + Float(totalStepsData) * afuroScaleCoeff
+        //afuroNode.scale.z = 1 + Float(totalStepsData) * afuroScaleCoeff
         
         //createSelectElementWindow()
-        ARView.scene.rootNode.addChildNode(afuroNode)
-        
-        // アプリ終了時にsaveDataを呼ぶための関数.
-        let notificationCenter = NotificationCenter.default
-        notificationCenter.addObserver(
-            self,
-            selector: #selector(self.saveData),
-            name:NSNotification.Name.UIApplicationWillTerminate,
-            object: nil)
+        //ARView.scene.rootNode.addChildNode(afuroNode)
     }
     // データを保存する関数.
     @objc func saveData(){
