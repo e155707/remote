@@ -92,7 +92,7 @@ class MainIphoneController: UIViewController, ARSCNViewDelegate, CLLocationManag
         
         afuroNode.position = SCNVector3(0,0,-3)
         // アフロの回転
-        afuroNode.eulerAngles = SCNVector3(-92,0,0)
+        afuroNode.eulerAngles = SCNVector3(-90,0,0)
         
         totalStepsData += login.loginGetSteps()
         if Login().isDailyFirstLogin(dataController.getLastDateData()){
@@ -157,6 +157,44 @@ class MainIphoneController: UIViewController, ARSCNViewDelegate, CLLocationManag
         self.present(activityVC, animated: true, completion: nil)
     }
     
+    @IBAction func reload(_ sender: Any) {
+        ARView.scene.rootNode.childNode(withName: "afuro", recursively: false)?.runAction(SCNAction.removeFromParentNode())
+        
+        guard
+            let afuroScene = SCNScene(named: "art.scnassets/daefile/aforo.scn"),
+            let afuroNode = afuroScene.rootNode.childNode(withName:"afuro" , recursively: true)
+            else{ return }
+        
+        setLocationManager()
+        
+        // これまでの歩数の取得
+        totalStepsData = dataController.getTotalStepsData()
+        print("totalStepsDate =\(dataController.getTotalStepsData())")
+        // アフロの位置
+        afuroNode.position = SCNVector3(0,0,1)
+        
+        afuroNode.position = SCNVector3(0,0,-3)
+        // アフロの回転
+        afuroNode.eulerAngles = SCNVector3(-90,0,0)
+        
+        self.createSelectElementWindow()
+        
+        // アフロの大きさの調整
+        afuroNode.scale.x = 1 + Float(totalStepsData) * afuroScaleCoeff
+        afuroNode.scale.y = 1 + Float(totalStepsData) * afuroScaleCoeff
+        afuroNode.scale.z = 1 + Float(totalStepsData) * afuroScaleCoeff
+        
+        //createSelectElementWindow()
+        ARView.scene.rootNode.addChildNode(afuroNode)
+        
+        // アプリ終了時にsaveDataを呼ぶための関数.
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(
+            self,
+            selector: #selector(self.saveData),
+            name:NSNotification.Name.UIApplicationWillTerminate,
+            object: nil)
+    }
     // データを保存する関数.
     @objc func saveData(){
         dataController.setTotalStepsData(totalStepsData)

@@ -21,7 +21,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uPX-4T-pvc">
                                 <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <state key="normal" image="view1.png"/>
+                                <state key="normal" image="v1.png"/>
                                 <connections>
                                     <action selector="pushMainButton:" destination="zv3-mf-Bt5" eventType="touchUpInside" id="8Um-Dd-olB"/>
                                 </connections>
@@ -44,6 +44,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="view1.png" width="454" height="906"/>
+        <image name="v1.png" width="324" height="650"/>
     </resources>
 </document>
