@@ -65,6 +65,11 @@
 		F0C2D79F1FD50A4800F41C20 /* MainIphoneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C2D79E1FD50A4800F41C20 /* MainIphoneController.swift */; };
 		F0C2D7A11FD526F700F41C20 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0786F521FCD112600DA75AA /* HealthKit.framework */; };
 		F0C2D7A31FD63D3F00F41C20 /* login.png in Resources */ = {isa = PBXBuildFile; fileRef = F0C2D7A21FD63D3F00F41C20 /* login.png */; };
+		F0DDE1C41FE7584D003373E7 /* v1.png in Resources */ = {isa = PBXBuildFile; fileRef = F0DDE1C31FE7584D003373E7 /* v1.png */; };
+		F0DDE1C61FE75871003373E7 /* v2.png in Resources */ = {isa = PBXBuildFile; fileRef = F0DDE1C51FE75871003373E7 /* v2.png */; };
+		F0DDE1C81FE75894003373E7 /* v3.png in Resources */ = {isa = PBXBuildFile; fileRef = F0DDE1C71FE75894003373E7 /* v3.png */; };
+		F0DDE1CA1FE758BA003373E7 /* v4.png in Resources */ = {isa = PBXBuildFile; fileRef = F0DDE1C91FE758BA003373E7 /* v4.png */; };
+		F0DDE1CC1FE758E6003373E7 /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = F0DDE1CB1FE758E5003373E7 /* 5.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -152,6 +157,11 @@
 		F0C2D79E1FD50A4800F41C20 /* MainIphoneController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainIphoneController.swift; sourceTree = "<group>"; };
 		F0C2D7A01FD526F700F41C20 /* AfuRo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AfuRo.entitlements; sourceTree = "<group>"; };
 		F0C2D7A21FD63D3F00F41C20 /* login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login.png; sourceTree = "<group>"; };
+		F0DDE1C31FE7584D003373E7 /* v1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = v1.png; sourceTree = "<group>"; };
+		F0DDE1C51FE75871003373E7 /* v2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = v2.png; sourceTree = "<group>"; };
+		F0DDE1C71FE75894003373E7 /* v3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = v3.png; sourceTree = "<group>"; };
+		F0DDE1C91FE758BA003373E7 /* v4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = v4.png; sourceTree = "<group>"; };
+		F0DDE1CB1FE758E5003373E7 /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -291,6 +301,7 @@
 		F03DC6BB1FCC09B00076A845 /* Title */ = {
 			isa = PBXGroup;
 			children = (
+				F0DDE1C31FE7584D003373E7 /* v1.png */,
 				F06F45881FDC40860024BCDF /* view1.png */,
 				F03DC6BC1FCC09B00076A845 /* title.png */,
 				F03DC6BD1FCC09B00076A845 /* Title.storyboard */,
@@ -317,6 +328,7 @@
 			children = (
 				F03DC6C11FCC09B00076A845 /* FirstTutorial.storyboard */,
 				F03DC6C21FCC09B00076A845 /* FirstTutorialController.swift */,
+				F0DDE1C51FE75871003373E7 /* v2.png */,
 				F06F458A1FDC40950024BCDF /* view2.png */,
 				F03DC6C31FCC09B00076A845 /* tutorial1.png */,
 			);
@@ -328,6 +340,7 @@
 			children = (
 				F03DC6C51FCC09B00076A845 /* SecondTutorial.storyboard */,
 				F03DC6C61FCC09B00076A845 /* SecondTutorialController.swift */,
+				F0DDE1C71FE75894003373E7 /* v3.png */,
 				F03DC6C71FCC09B00076A845 /* tutorial2.png */,
 				F06F458C1FDC409E0024BCDF /* view3.png */,
 			);
@@ -337,6 +350,7 @@
 		F03DC6C81FCC09B00076A845 /* Turorial3 */ = {
 			isa = PBXGroup;
 			children = (
+				F0DDE1C91FE758BA003373E7 /* v4.png */,
 				F06F458E1FDC40A90024BCDF /* view4.png */,
 				F03DC6C91FCC09B00076A845 /* ThreeTutorial.storyboard */,
 				F03DC6CA1FCC09B00076A845 /* ThreeTutorialController.swift */,
@@ -351,6 +365,7 @@
 				F06F45901FDC40B40024BCDF /* view5.png */,
 				F03DC6CD1FCC09B00076A845 /* FourTutorial.storyboard */,
 				F03DC6CE1FCC09B00076A845 /* FourTutorialController.swift */,
+				F0DDE1CB1FE758E5003373E7 /* 5.png */,
 				F03DC6CF1FCC09B10076A845 /* tutorial4.png */,
 				F06F45921FDC40C40024BCDF /* button1.png */,
 				F06F45941FDC40CB0024BCDF /* button2.png */,
@@ -479,9 +494,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0DDE1CC1FE758E6003373E7 /* 5.png in Resources */,
 				B0C2F9311FCA1CF3004D879D /* art.scnassets in Resources */,
 				B0C2F93B1FCA1CF3004D879D /* LaunchScreen.storyboard in Resources */,
 				F03DC6E01FCC09B10076A845 /* tutorial4.png in Resources */,
+				F0DDE1CA1FE758BA003373E7 /* v4.png in Resources */,
 				B0C2F9381FCA1CF3004D879D /* Assets.xcassets in Resources */,
 				F03DC6DE1FCC09B10076A845 /* FourTutorial.storyboard in Resources */,
 				F06F458B1FDC40950024BCDF /* view2.png in Resources */,
@@ -493,10 +510,13 @@
 				F06F45911FDC40B40024BCDF /* view5.png in Resources */,
 				F06F45931FDC40C40024BCDF /* button1.png in Resources */,
 				F03DC6D81FCC09B10076A845 /* SecondTutorial.storyboard in Resources */,
+				F0DDE1C41FE7584D003373E7 /* v1.png in Resources */,
+				F0DDE1C61FE75871003373E7 /* v2.png in Resources */,
 				F06F458F1FDC40A90024BCDF /* view4.png in Resources */,
 				F03DC6E11FCC09B10076A845 /* Tutorial.storyboard in Resources */,
 				F03DC6D71FCC09B10076A845 /* tutorial1.png in Resources */,
 				F0C2D79D1FD4FD7A00F41C20 /* MainIphone.storyboard in Resources */,
+				F0DDE1C81FE75894003373E7 /* v3.png in Resources */,
 				F06F45951FDC40CB0024BCDF /* button2.png in Resources */,
 				F0C2D7A31FD63D3F00F41C20 /* login.png in Resources */,
 				F03DC6E91FCC3FC10076A845 /* yurumoji.ttf in Resources */,
