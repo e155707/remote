@@ -171,38 +171,40 @@ class MainIphoneController: UIViewController, ARSCNViewDelegate, CLLocationManag
         // アフロの位置
         afuroNode.position = SCNVector3(0,0,-3)
         
-        var r:Float = 3
-    
-        let phi:Float = (ARView.pointOfView?.eulerAngles.x)! - .pi
-        let thete:Float = (ARView.pointOfView?.eulerAngles.y)! - .pi/2
-        if(sin((ARView.pointOfView?.eulerAngles.y)!) >= 0){
-            afuroNode.position.x = r*sin(thete)*cos(phi)
-            afuroNode.position.y = r*sin(thete)*sin(phi)
-            afuroNode.position.z = r*cos(thete)
+        var r:Float = 5
+        
+        let phi:Float = (ARView.pointOfView?.eulerAngles.x)!
+        let thete:Float = (ARView.pointOfView?.eulerAngles.y)!
+        
+        if(cos((ARView.pointOfView?.eulerAngles.x)!) >= 0){
+            r = -3
         }else{
-            afuroNode.position.x = r*sin(thete)*cos(phi)
-            afuroNode.position.y = r*sin(thete)*sin(phi)
-            afuroNode.position.z = r*cos(thete)
+            r = 3
         }
         
-        //afuroNode.position.x = r*sin(thete)*cos(phi)
-        //afuroNode.position.y = r*sin(thete)*sin(phi)
-        //afuroNode.position.z = r*cos(thete)
+        afuroNode.position.x = r*sin(thete)*cos(phi)
+        afuroNode.position.y = r*sin(thete)*sin(phi)
+        afuroNode.position.z = r*cos(thete)
         
+        print("--------------------------------------")
+        print("x:",afuroNode.position.x)
+        print("y:",afuroNode.position.y)
+        print("z:",afuroNode.position.z)
         
         // アフロの回転
-        //afuroNode.eulerAngles = SCNVector3(-90,0,0)
+        afuroNode.eulerAngles = SCNVector3(-90,0,0)
         
         //self.createSelectElementWindow()
         
         // アフロの大きさの調整
-        //afuroNode.scale.x = 1 + Float(totalStepsData) * afuroScaleCoeff
-        //afuroNode.scale.y = 1 + Float(totalStepsData) * afuroScaleCoeff
-        //afuroNode.scale.z = 1 + Float(totalStepsData) * afuroScaleCoeff
+        afuroNode.scale.x = 1 + Float(totalStepsData) * afuroScaleCoeff
+        afuroNode.scale.y = 1 + Float(totalStepsData) * afuroScaleCoeff
+        afuroNode.scale.z = 1 + Float(totalStepsData) * afuroScaleCoeff
         
         //createSelectElementWindow()
         //ARView.scene.rootNode.addChildNode(afuroNode)
     }
+    
     // データを保存する関数.
     @objc func saveData(){
         dataController.setTotalStepsData(totalStepsData)

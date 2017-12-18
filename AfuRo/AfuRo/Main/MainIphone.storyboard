@@ -73,15 +73,13 @@
                                     <action selector="share:" destination="PA5-d3-7kW" eventType="touchUpInside" id="7xT-SS-Bhd"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="840-aZ-afN">
-                                <rect key="frame" x="255" y="589" width="104" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WPw-9y-CRh">
+                                <rect key="frame" x="255" y="581" width="91" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="リロード">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="リロード"/>
                                 <connections>
-                                    <action selector="reload:" destination="PA5-d3-7kW" eventType="touchUpInside" id="fhK-lQ-RgX"/>
+                                    <action selector="reload:" destination="PA5-d3-7kW" eventType="touchUpInside" id="PHf-7i-qyF"/>
                                 </connections>
                             </button>
                         </subviews>
