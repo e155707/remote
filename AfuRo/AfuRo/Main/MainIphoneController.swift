@@ -20,6 +20,8 @@ class MainIphoneController: UIViewController, ARSCNViewDelegate, CLLocationManag
     let cameraController = CameraController()
     let login = Login()
     
+    let anglex = -89.6
+    
     var audioPlayerInstance : AVAudioPlayer! = nil
     
     @IBOutlet var ARView: ARSCNView!
@@ -92,7 +94,7 @@ class MainIphoneController: UIViewController, ARSCNViewDelegate, CLLocationManag
         
         afuroNode.position = SCNVector3(0,0,-3)
         // アフロの回転
-        afuroNode.eulerAngles = SCNVector3(-90,0,0)
+        afuroNode.eulerAngles = SCNVector3(anglex,0,0)
         
         totalStepsData += login.loginGetSteps()
         if Login().isDailyFirstLogin(dataController.getLastDateData()){
@@ -183,7 +185,7 @@ class MainIphoneController: UIViewController, ARSCNViewDelegate, CLLocationManag
         }
         
         afuroNode.position.x = r*sin(thete)*cos(phi)
-        afuroNode.position.y = r*sin(thete)*sin(phi)
+        afuroNode.position.y = -r*sin(thete)*sin(phi)
         afuroNode.position.z = r*cos(thete)
         
         print("--------------------------------------")
@@ -192,7 +194,7 @@ class MainIphoneController: UIViewController, ARSCNViewDelegate, CLLocationManag
         print("z:",afuroNode.position.z)
         
         // アフロの回転
-        afuroNode.eulerAngles = SCNVector3(-90,0,0)
+        afuroNode.eulerAngles = SCNVector3(anglex,0,0)
         
         //self.createSelectElementWindow()
         
@@ -248,15 +250,15 @@ class MainIphoneController: UIViewController, ARSCNViewDelegate, CLLocationManag
         
         // アフロを大きくさせるボタンの設定.
         // タグの設定.
-        plusButton.tag = ButtonTag.Plus.rawValue;
+        //plusButton.tag = ButtonTag.Plus.rawValue;
         // タップされている間, moveNodeを呼ぶよう設定.
-        plusButton.addTarget(self, action: #selector(self.touchButtonScale), for: .touchDown)
+        //plusButton.addTarget(self, action: #selector(self.touchButtonScale), for: .touchDown)
         
         // アフロを大きくさせるボタンの設定.
         // タグの設定.
-        minusButton.tag = ButtonTag.Minus.rawValue;
+        //minusButton.tag = ButtonTag.Minus.rawValue;
         // タップされている間, moveNodeを呼ぶよう設定.
-        minusButton.addTarget(self, action: #selector(self.touchButtonScale), for: .touchDown)
+        //minusButton.addTarget(self, action: #selector(self.touchButtonScale), for: .touchDown)
         
         cameraButton.addTarget(self, action: #selector(self.shutter), for: .touchDown)
     }
