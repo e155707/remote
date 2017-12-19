@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="view5.png" translatesAutoresizingMaskIntoConstraints="NO" id="eCC-6c-YVT">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="5.png" translatesAutoresizingMaskIntoConstraints="NO" id="eCC-6c-YVT">
                                 <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
@@ -31,7 +31,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I84-eR-azs">
-                                <rect key="frame" x="101" y="884" width="666" height="180"/>
+                                <rect key="frame" x="102" y="850" width="666" height="180"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="button2.png"/>
                             </button>
@@ -54,8 +54,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="5.png" width="325" height="650"/>
         <image name="button1.png" width="404" height="264"/>
         <image name="button2.png" width="404" height="154"/>
-        <image name="view5.png" width="690" height="1384"/>
     </resources>
 </document>
