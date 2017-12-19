@@ -70,7 +70,7 @@ class MainIphoneController: UIViewController, ARSCNViewDelegate, CLLocationManag
         ARView.delegate = self
         
         // Show statistics such as fps and timing information
-        ARView.showsStatistics = true
+        //ARView.showsStatistics = true
         
         // Create a new scene
         let scene = SCNScene()

@@ -72,6 +72,7 @@
 		F0DDE1C81FE75894003373E7 /* v3.png in Resources */ = {isa = PBXBuildFile; fileRef = F0DDE1C71FE75894003373E7 /* v3.png */; };
 		F0DDE1CA1FE758BA003373E7 /* v4.png in Resources */ = {isa = PBXBuildFile; fileRef = F0DDE1C91FE758BA003373E7 /* v4.png */; };
 		F0DDE1CC1FE758E6003373E7 /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = F0DDE1CB1FE758E5003373E7 /* 5.png */; };
+		F0FD5AF81FE8FC97000F6BB3 /* reload.png in Resources */ = {isa = PBXBuildFile; fileRef = F0FD5AF71FE8FC97000F6BB3 /* reload.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -166,6 +167,7 @@
 		F0DDE1C71FE75894003373E7 /* v3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = v3.png; sourceTree = "<group>"; };
 		F0DDE1C91FE758BA003373E7 /* v4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = v4.png; sourceTree = "<group>"; };
 		F0DDE1CB1FE758E5003373E7 /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5.png; sourceTree = "<group>"; };
+		F0FD5AF71FE8FC97000F6BB3 /* reload.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reload.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -297,6 +299,7 @@
 			children = (
 				F0C2D7A21FD63D3F00F41C20 /* login.png */,
 				F06F459A1FDE450A0024BCDF /* twitter.png */,
+				F0FD5AF71FE8FC97000F6BB3 /* reload.png */,
 				F012151F1FDEE07C00124A89 /* camera.mp3 */,
 				F03DC6B91FCC09770076A845 /* MainController.swift */,
 				B0414B331FD806D700E5A5A9 /* ErrorController.swift */,
@@ -483,7 +486,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B0C2F9261FCA1CF3004D879D /* Build configuration list for PBXProject "AfuRo" */;
+			buildConfigurationList = B0C2F9261FCA1CF3004D879D /* Build configuration list for PBXProject "Afuro" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -536,6 +539,7 @@
 				F06F45951FDC40CB0024BCDF /* button2.png in Resources */,
 				F0C2D7A31FD63D3F00F41C20 /* login.png in Resources */,
 				F03DC6E91FCC3FC10076A845 /* yurumoji.ttf in Resources */,
+				F0FD5AF81FE8FC97000F6BB3 /* reload.png in Resources */,
 				F01215201FDEE07C00124A89 /* camera.mp3 in Resources */,
 				B0C2F9361FCA1CF3004D879D /* Main.storyboard in Resources */,
 				F06F45891FDC40860024BCDF /* view1.png in Resources */,
@@ -856,7 +860,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B0C2F9261FCA1CF3004D879D /* Build configuration list for PBXProject "AfuRo" */ = {
+		B0C2F9261FCA1CF3004D879D /* Build configuration list for PBXProject "Afuro" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B0C2F9531FCA1CF3004D879D /* Debug */,
