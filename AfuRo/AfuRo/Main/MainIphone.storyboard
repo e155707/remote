@@ -42,23 +42,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="←"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tmp-MO-3YE">
-                                <rect key="frame" x="24" y="589" width="46" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="-"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Jf-Xd-R6Q">
                                 <rect key="frame" x="283" y="748" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="↓"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P7f-Uy-kuG">
-                                <rect key="frame" x="78" y="590" width="46" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="+"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dlx-yh-meI">
                                 <rect key="frame" x="158" y="696" width="58" height="59"/>
@@ -91,8 +79,6 @@
                         <outlet property="cameraButton" destination="Dlx-yh-meI" id="Lnf-sJ-s6i"/>
                         <outlet property="downButton" destination="4Jf-Xd-R6Q" id="HGU-mj-k8C"/>
                         <outlet property="leftButton" destination="0Rd-cf-TKQ" id="Sek-vR-tBB"/>
-                        <outlet property="minusButton" destination="Tmp-MO-3YE" id="01k-KR-mHq"/>
-                        <outlet property="plusButton" destination="P7f-Uy-kuG" id="dMS-2l-mZK"/>
                         <outlet property="rightButton" destination="hBP-j9-nXk" id="oze-Rj-fvb"/>
                         <outlet property="upButton" destination="ak6-cO-zxI" id="VVb-Ei-zs1"/>
                     </connections>
