@@ -22,6 +22,7 @@
 		B0414B361FDA247400E5A5A9 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0414B351FDA247400E5A5A9 /* CameraController.swift */; };
 		B0AC1CD21FE8ABF600ADCF94 /* share.png in Resources */ = {isa = PBXBuildFile; fileRef = B0AC1CD11FE8ABF600ADCF94 /* share.png */; };
 		B0AC1CD41FE8AC0400ADCF94 /* cross_button.png in Resources */ = {isa = PBXBuildFile; fileRef = B0AC1CD31FE8AC0400ADCF94 /* cross_button.png */; };
+		B0AC1CC51FE60C4900ADCF94 /* Afuro.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AC1CC41FE60C4900ADCF94 /* Afuro.swift */; };
 		B0C099381FCD0BCA00121A95 /* HealthDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C099371FCD0BC900121A95 /* HealthDataController.swift */; };
 		B0C2F92F1FCA1CF3004D879D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C2F92E1FCA1CF3004D879D /* AppDelegate.swift */; };
 		B0C2F9311FCA1CF3004D879D /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = B0C2F9301FCA1CF3004D879D /* art.scnassets */; };
@@ -107,7 +108,8 @@
 		B0414B351FDA247400E5A5A9 /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 		B0786F521FCD112600DA75AA /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		B0786F531FCD112E00DA75AA /* HealthKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKitUI.framework; path = System/Library/Frameworks/HealthKitUI.framework; sourceTree = SDKROOT; };
-		B0AC1CD11FE8ABF600ADCF94 /* share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share.png; sourceTree = "<group>"; };
+		B0AC1CC41FE60C4900ADCF94 /* Afuro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Afuro.swift; sourceTree = "<group>"; };
+        B0AC1CD11FE8ABF600ADCF94 /* share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share.png; sourceTree = "<group>"; };
 		B0AC1CD31FE8AC0400ADCF94 /* cross_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cross_button.png; sourceTree = "<group>"; };
 		B0C099371FCD0BC900121A95 /* HealthDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthDataController.swift; sourceTree = "<group>"; };
 		B0C2F92B1FCA1CF3004D879D /* AfuRo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AfuRo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -311,6 +313,7 @@
 				F0C2D79E1FD50A4800F41C20 /* MainIphoneController.swift */,
 				B0414B281FD0384400E5A5A9 /* Login.swift */,
 				B0414B351FDA247400E5A5A9 /* CameraController.swift */,
+				B0AC1CC41FE60C4900ADCF94 /* Afuro.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -582,6 +585,7 @@
 				F0C2D7991FD4F8FF00F41C20 /* MoveController.swift in Sources */,
 				F03DC6E51FCC09BF0076A845 /* ScreenTransition.swift in Sources */,
 				B0C099381FCD0BCA00121A95 /* HealthDataController.swift in Sources */,
+				B0AC1CC51FE60C4900ADCF94 /* Afuro.swift in Sources */,
 				F0C2D79F1FD50A4800F41C20 /* MainIphoneController.swift in Sources */,
 				F03DC6D91FCC09B10076A845 /* SecondTutorialController.swift in Sources */,
 				B0414B2C1FD356DD00E5A5A9 /* MainController.swift in Sources */,
