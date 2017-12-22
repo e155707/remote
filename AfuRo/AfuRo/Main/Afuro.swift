@@ -15,44 +15,60 @@ class Afuro: SCNNode {
     
     var afuroNode: SCNNode!
     
+    let anglex = -89.6
+    
     // Afuroの増える大きさを調整する係数.
-    // 今の計算式 アフロの大きさ = afuroScale + 歩数(totalStepsData) * afuroScaleCoeff
+    // 今の計算式 アフロの大きさ = afuroInitScale + 歩数(totalStepsData) * afuroScaleCoeff
     let afuroScaleCoeff:Float = 0.01
-    var afuroScale:Float = 1
+    
+    let afuroInitScale:Float = 1
     let changeBirdAfuroSteps = 100
+    var _steps = 0
     
     init(steps:Int) {
         super.init()
-        var afuroScene:SCNScene!
-        var _steps = steps
-        if changeBirdAfuroSteps < steps{
-            
-            afuroScene = SCNScene(named: "art.scnassets/daefile/afuro_bird.scn")
-            _steps = steps-changeBirdAfuroSteps
-        }else{
-            
-            afuroScene = SCNScene(named: "art.scnassets/daefile/afuro.scn")
-            
-        }
-        afuroNode = afuroScene.rootNode.childNode(withName:"afuro" , recursively: true)
-        addScale(steps: _steps)
+        
+        afuroNode = SCNScene(named: "art.scnassets/daefile/afuro.scn")?.rootNode.childNode(withName:"afuro" , recursively: true)
+        
+        self.addScale(steps: steps)
+        
         // アフロの回転
-        afuroNode.eulerAngles = SCNVector3(-90,0,0)
-        // 大きさの変更
-        afuroNode.scale = SCNVector3Make(afuroScale, afuroScale, afuroScale)
-        // アフロの位置
-        afuroNode.position = SCNVector3(0,0,-2-afuroNode.scale.z/2)
-        addChildNode(afuroNode)
+        self.afuroNode.eulerAngles = SCNVector3(anglex,0,0)
+
+        self.addChildNode(afuroNode)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
     func addScale(steps:Int){
-        afuroScale += Float(steps) * afuroScaleCoeff
-        // 大きさの変更
-        afuroNode.scale = SCNVector3Make(afuroScale, afuroScale, afuroScale)
+        // アフロの大きさ
+        _steps += steps
+        let afuroScale = afuroInitScale + Float(_steps) * afuroScaleCoeff
+        self.afuroNode.scale = SCNVector3(afuroScale, afuroScale, afuroScale)
+        // 位置の変更
+        self.afuroNode.position = SCNVector3(0,0, -2 + -1*afuroScale)
+        self.changeAfuroGeometory()
+
+    }
+    
+    func changeAfuroGeometory(){
+        var afuroScene:SCNScene!
+        
+        if changeBirdAfuroSteps < _steps {
+            
+            afuroScene = SCNScene(named: "art.scnassets/daefile/afuro_bird.scn")
+            print("afuro bird")
+        }else{
+            
+            afuroScene = SCNScene(named: "art.scnassets/daefile/afuro.scn")
+            print("afuro normal")
+            
+        }
+        afuroNode.geometry = afuroScene.rootNode.childNode(withName:"afuro" , recursively: true)?.geometry
+
     }
     
     

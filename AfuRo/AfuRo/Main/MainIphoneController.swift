@@ -17,11 +17,6 @@ import Accounts
 
 class MainIphoneController: UIViewController, ARSCNViewDelegate, CLLocationManagerDelegate {
     
-    let cameraController = CameraController()
-    let login = Login()
-    
-    let anglex = -89.6
-    
     var audioPlayerInstance : AVAudioPlayer! = nil
     
     @IBOutlet var ARView: ARSCNView!
@@ -34,8 +29,8 @@ class MainIphoneController: UIViewController, ARSCNViewDelegate, CLLocationManag
     @IBOutlet var downButton: UIButton!
     
     // アフロの大きさを調整するボタン
-    @IBOutlet var plusButton: UIButton!
-    @IBOutlet var minusButton: UIButton!
+    //@IBOutlet var plusButton: UIButton!
+    //@IBOutlet var minusButton: UIButton!
     @IBOutlet var cameraButton: UIButton!
     
     enum ButtonTag: Int {
@@ -52,25 +47,21 @@ class MainIphoneController: UIViewController, ARSCNViewDelegate, CLLocationManag
     
     // 合計の歩いた数を格納する変数
     var totalStepsData = 0
-    
-    // ヘルスケアから取ってきた歩数を保存する変数
-    var healthStepsData = 0
-    
-    // Afuroの増える大きさを調整する係数.
-    // 今の計算式 アフロの大きさ = 1 + 歩数(totalStepsData) * afuroScaleCoeff
-    let afuroScaleCoeff:Float = 0.001;
-    
+
     let dataController = DataController()
     let healthDataController = HealthDataController()
+    let cameraController = CameraController()
+    let login = Login()
     
+    var afuro:Afuro!
+    
+    var lastDate = Date()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Set the view's delegate
         ARView.delegate = self
-        
-        // Show statistics such as fps and timing information
-        //ARView.showsStatistics = true
         
         // Create a new scene
         let scene = SCNScene()
@@ -78,38 +69,24 @@ class MainIphoneController: UIViewController, ARSCNViewDelegate, CLLocationManag
         // Set the scene to the view
         ARView.scene = scene
         initMoveButton();
-        guard
-            let afuroScene = SCNScene(named: "art.scnassets/daefile/afuro.scn"),
-            let afuroNode = afuroScene.rootNode.childNode(withName:"afuro" , recursively: true)
-            else{ return }
         
-       // setLocationManager()
-        
-        // これまでの歩数の取得
+        lastDate = dataController.getLastDateData()
         totalStepsData = dataController.getTotalStepsData() + getStepsHealthKit()
-        print("totalStepsDate =\(dataController.getTotalStepsData())")
-        
-        // アフロの位置
-        afuroNode.position = SCNVector3(0,0,afuroNode.scale.z/2)
-        
-        afuroNode.position = SCNVector3(0,0,-3)
-        // アフロの回転
-        afuroNode.eulerAngles = SCNVector3(anglex,0,0)
-        
         totalStepsData += login.loginGetSteps()
-        if Login().isDailyFirstLogin(dataController.getLastDateData()){
+        
+        print("totalStepsDate = \(totalStepsData)")
+        
+        saveData()
+        
+        if login.isDailyFirstLogin(lastDate){
             //self.createSelectElementWindow()
         }
         
         self.createSelectElementWindow()
         
-        // アフロの大きさの調整
-        afuroNode.scale.x = 1 + Float(totalStepsData) * afuroScaleCoeff
-        afuroNode.scale.y = 1 + Float(totalStepsData) * afuroScaleCoeff
-        afuroNode.scale.z = 1 + Float(totalStepsData) * afuroScaleCoeff
-        
-        //createSelectElementWindow()
-        ARView.scene.rootNode.addChildNode(afuroNode)
+        afuro = Afuro(steps: totalStepsData)
+
+        ARView.scene.rootNode.addChildNode(afuro)
         
         // アプリ終了時にsaveDataを呼ぶための関数.
         let notificationCenter = NotificationCenter.default
@@ -131,6 +108,8 @@ class MainIphoneController: UIViewController, ARSCNViewDelegate, CLLocationManag
         }
         // バッファに保持していつでも再生できるようにする
         audioPlayerInstance.prepareToPlay()
+        
+        
     }
     
     @IBAction func share(_ sender: UIButton) {
@@ -160,18 +139,15 @@ class MainIphoneController: UIViewController, ARSCNViewDelegate, CLLocationManag
     }
     
     @IBAction func reload(_ sender: Any) {
-        //ARView.scene.rootNode.childNode(withName: "afuro", recursively: false)?.runAction(SCNAction.removeFromParentNode())
         
-        guard
-            let afuroNode = ARView.scene.rootNode.childNode(withName: "afuro", recursively: true)
-            else {return}
+        // 歩数の取得
+        //getStepsHealthKit()
+        print("totalStepsDate =\(totalStepsData)")
         
-        // これまでの歩数の取得
-        //totalStepsData = dataController.getTotalStepsData()
-        //print("totalStepsDate =\(dataController.getTotalStepsData())")
-        
-        // アフロの位置
-        afuroNode.position = SCNVector3(0,0,-3)
+        // Debug
+        //afuro.addScale(steps: 100)
+
+        afuro.addScale(steps: getStepsHealthKit())
         
         var r:Float = 5
         
@@ -179,32 +155,21 @@ class MainIphoneController: UIViewController, ARSCNViewDelegate, CLLocationManag
         let thete:Float = (ARView.pointOfView?.eulerAngles.y)!
         
         if(cos((ARView.pointOfView?.eulerAngles.x)!) >= 0){
-            r = -3
+            r = -afuro.scale.z
+            
         }else{
-            r = 3
+            r = afuro.scale.z
         }
         
-        afuroNode.position.x = r*sin(thete)*cos(phi)
-        afuroNode.position.y = -r*sin(thete)*sin(phi)
-        afuroNode.position.z = r*cos(thete)
+        afuro.position.x = r*sin(thete)*cos(phi)
+        afuro.position.y = -r*sin(thete)*sin(phi)
+        afuro.position.z = r*cos(thete)
         
         print("--------------------------------------")
-        print("x:",afuroNode.position.x)
-        print("y:",afuroNode.position.y)
-        print("z:",afuroNode.position.z)
-        
-        // アフロの回転
-        afuroNode.eulerAngles = SCNVector3(anglex,0,0)
-        
-        //self.createSelectElementWindow()
-        
-        // アフロの大きさの調整
-        afuroNode.scale.x = 1 + Float(totalStepsData) * afuroScaleCoeff
-        afuroNode.scale.y = 1 + Float(totalStepsData) * afuroScaleCoeff
-        afuroNode.scale.z = 1 + Float(totalStepsData) * afuroScaleCoeff
-        
-        //createSelectElementWindow()
-        //ARView.scene.rootNode.addChildNode(afuroNode)
+        print("x:",afuro.position.x)
+        print("y:",afuro.position.y)
+        print("z:",afuro.position.z)
+
     }
     
     // データを保存する関数.
@@ -265,26 +230,23 @@ class MainIphoneController: UIViewController, ARSCNViewDelegate, CLLocationManag
     
     // ボタンがタップされた時に呼び出されるメソッド
     @objc func touchButtonMoveNode(_ moveButton: UIButton){
-        guard
-            let afuroNode = ARView.scene.rootNode.childNode(withName: "afuro", recursively: true)
-            else{ print("afuroが...ない!"); return}
         // afuroを移動させる.
         switch moveButton.tag {
         case ButtonTag.Right.rawValue:
             
-            afuroNode.position.x += moveAmount * 1
+            afuro.position.x += moveAmount * 1
             print("right")
             break
         case ButtonTag.Left.rawValue:
-            afuroNode.position.x += moveAmount * -1
+            afuro.position.x += moveAmount * -1
             print("left")
             break
         case ButtonTag.Up.rawValue:
-            afuroNode.position.y += moveAmount * 1
+            afuro.position.y += moveAmount * 1
             print("up")
             break
         case ButtonTag.Down.rawValue:
-            afuroNode.position.y += moveAmount * -1
+            afuro.position.y += moveAmount * -1
             print("down")
             break
             
@@ -296,23 +258,17 @@ class MainIphoneController: UIViewController, ARSCNViewDelegate, CLLocationManag
     
     //
     @objc func touchButtonScale(_ moveButton: UIButton){
-        guard
-            let afuroNode = ARView.scene.rootNode.childNode(withName: "afuro", recursively: true)
-            else{ print("afuroが...ない!"); return}
+
         // afuroを移動させる.
         switch moveButton.tag {
             
         case ButtonTag.Plus.rawValue:
-            afuroNode.scale.x += afuroScaleCoeff * 1
-            afuroNode.scale.y += afuroScaleCoeff * 1
-            afuroNode.scale.z += afuroScaleCoeff * 1
+            afuro.addScale(steps: 1)
             print("plus")
             break
             
         case ButtonTag.Minus.rawValue:
-            afuroNode.scale.x += afuroScaleCoeff * -1
-            afuroNode.scale.y += afuroScaleCoeff * -1
-            afuroNode.scale.z += afuroScaleCoeff * -1
+            afuro.addScale(steps: -1)
             print("minus")
             break
             
@@ -401,8 +357,10 @@ class MainIphoneController: UIViewController, ARSCNViewDelegate, CLLocationManag
         // ヘルスケアのデータの取得
         if healthDataController.checkAuthorization() {
             // もしヘルスケアのアクセスがtrueなら, 今の時刻と最後に歩いた時刻の間の歩いた数の合計を取得.
-            healthStepsData = healthDataController.getStepsHealthKit(startDate: dataController.getLastDateData(), endDate: Date())
+            healthStepsData = healthDataController.getStepsHealthKit(startDate: lastDate, endDate: Date())
+            lastDate = Date()
             print("healthDate = \(healthStepsData)")
+            
         }else{
             // // もしヘルスケアにアクセスできないなら, ダミー関数を取得.
             healthStepsData = healthDataController.getDummyStepsData()
@@ -410,83 +368,7 @@ class MainIphoneController: UIViewController, ARSCNViewDelegate, CLLocationManag
         
         return healthStepsData
     }
-    
-    let locationManager = CLLocationManager()
-    var oldLocation: CLLocation?
-    
-    // 位置情報の設定
-    func setLocationManager(){
-        
-        // 現在位置情報の精度, 誤差を決定. 以下の様なものがある
-        // - kCLLocationAccuracyBestForNavigation ナビゲーションに最適な値
-        // - kCLLocationAccuracyBest 最高精度(iOS,macOSのデフォルト値)
-        // - kCLLocationAccuracyNearestTenMeters 10m
-        // - kCLLocationAccuracyHundredMeters 100m（watchOSのデフォルト値）
-        // - kCLLocationAccuracyKilometer 1Km
-        // - kCLLocationAccuracyThreeKilometers 3Km
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        
-        // 現在位置からどれぐらい動いたら更新するか. 単位はm
-        locationManager.distanceFilter = 10
-        locationManager.delegate = self
-        locationManager.startUpdatingLocation()
-        
-    }
-    
-    // 位置情報がlocationManager.distanceFilterの値分更新された時に呼び出されるメソッド.
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let location: CLLocation = locations.last else { return }
-        
-        if oldLocation == nil {
-            oldLocation = location
-        }
-        
-        let locationDistance = location.distance(from: oldLocation!)
-        print("moveDistance = \(locationDistance)")
-        totalStepsData += Int(locationDistance)
-        saveData()
-        oldLocation = location
-        
-    }
-    
-    //起動時と, 位置情報のアクセス許可が変更された場合に呼び出されるメソッド. ここで位置情報のアクセス許可をとる.
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        switch status {
-        case .notDetermined:
-            print("ユーザーはこのアプリケーションに関してまだ選択を行っていません")
-            // 位置情報アクセスを常に許可するかを問いかける
-            locationManager.requestAlwaysAuthorization()
-            
-            break
-            
-        case .denied:
-            print("ローケーションサービスの設定が「無効」になっています (ユーザーによって、明示的に拒否されています）")
-            // 位置情報アクセスを常に許可するかを問いかける
-            locationManager.requestAlwaysAuthorization()
-            // 「設定 > プライバシー > 位置情報サービス で、位置情報サービスの利用を許可して下さい」を表示する
-            ErrorController().notGetLocation()
-            break
-            
-        case .restricted:
-            print("このアプリケーションは位置情報サービスを使用できません(ユーザによって拒否されたわけではありません)")
-            // 「このアプリは、位置情報を取得できないために、正常に動作できません」を表示する
-            ErrorController().notGetLocation()
-            break
-            
-        case .authorizedAlways:
-            print("常時、位置情報の取得が許可されています。")
-            break
-            
-        case .authorizedWhenInUse:
-            print("起動時のみ、位置情報の取得が許可されています。")
-            
-            locationManager.requestAlwaysAuthorization()
-            // 位置情報取得の開始処理
-            break
-            
-        }
-    }
-    
+
     func session(_ session: ARSession, didFailWithError error: Error) {
         // Present an error message to the user
         
