@@ -21,7 +21,7 @@ class Afuro: SCNNode {
     // 今の計算式 アフロの大きさ = afuroInitScale + 歩数(totalStepsData) * afuroScaleCoeff
     let afuroScaleCoeff:Float = 0.01
     
-    let afuroInitScale:Float = 1
+    let afuroInitScale:Float = 0.5
     let changeBirdAfuroSteps = 100
     var _steps = 0
     

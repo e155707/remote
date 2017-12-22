@@ -149,16 +149,16 @@ class MainIphoneController: UIViewController, ARSCNViewDelegate, CLLocationManag
 
         afuro.addScale(steps: getStepsHealthKit())
         
-        var r:Float = 5
+        var r:Float = -2
         
         let phi:Float = (ARView.pointOfView?.eulerAngles.x)!
         let thete:Float = (ARView.pointOfView?.eulerAngles.y)!
         
         if(cos((ARView.pointOfView?.eulerAngles.x)!) >= 0){
-            r = -afuro.scale.z
+            r = -2 + -1*afuro.scale.z
             
         }else{
-            r = afuro.scale.z
+            r = 2 + -1*afuro.scale.z
         }
         
         afuro.position.x = r*sin(thete)*cos(phi)
