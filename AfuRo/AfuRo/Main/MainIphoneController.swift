@@ -238,28 +238,7 @@ class MainIphoneController: UIViewController, ARSCNViewDelegate, CLLocationManag
         }
         
     }
-    
-    //
-    @objc func touchButtonScale(_ moveButton: UIButton){
 
-        // afuroを移動させる.
-        switch moveButton.tag {
-            
-        case ButtonTag.Plus.rawValue:
-            afuro.addScale(steps: 1)
-            print("plus")
-            break
-            
-        case ButtonTag.Minus.rawValue:
-            afuro.addScale(steps: -1)
-            print("minus")
-            break
-            
-        default:
-            return
-        }
-    }
-    
     @objc func shutter(){
         
         audioPlayerInstance.play()
