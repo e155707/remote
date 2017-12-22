@@ -28,9 +28,7 @@ class MainIphoneController: UIViewController, ARSCNViewDelegate, CLLocationManag
     @IBOutlet var upButton: UIButton!
     @IBOutlet var downButton: UIButton!
     
-    // アフロの大きさを調整するボタン
-    //@IBOutlet var plusButton: UIButton!
-    //@IBOutlet var minusButton: UIButton!
+    // カメラボタン
     @IBOutlet var cameraButton: UIButton!
     
     enum ButtonTag: Int {
@@ -38,8 +36,6 @@ class MainIphoneController: UIViewController, ARSCNViewDelegate, CLLocationManag
         case Left = 2
         case Up = 3
         case Down = 4
-        case Plus = 5
-        case Minus = 6
     }
     
     // ボタンを押した時に, 移動する量を調整する.
@@ -185,8 +181,6 @@ class MainIphoneController: UIViewController, ARSCNViewDelegate, CLLocationManag
          *  2 : 左のボタン.
          *  3 : 上のボタン.
          *  4 : 下のボタン.
-         *  5 : アフロが大きくなるボタン.
-         *  6 : アフロが小さくなるボタン.
          */
         
         // 右に移動させるボタンの設定.
@@ -213,17 +207,6 @@ class MainIphoneController: UIViewController, ARSCNViewDelegate, CLLocationManag
         // タップされている間, moveNodeを呼ぶよう設定.
         downButton.addTarget(self, action: #selector(self.touchButtonMoveNode), for: .touchDown)
         
-        // アフロを大きくさせるボタンの設定.
-        // タグの設定.
-        //plusButton.tag = ButtonTag.Plus.rawValue;
-        // タップされている間, moveNodeを呼ぶよう設定.
-        //plusButton.addTarget(self, action: #selector(self.touchButtonScale), for: .touchDown)
-        
-        // アフロを大きくさせるボタンの設定.
-        // タグの設定.
-        //minusButton.tag = ButtonTag.Minus.rawValue;
-        // タップされている間, moveNodeを呼ぶよう設定.
-        //minusButton.addTarget(self, action: #selector(self.touchButtonScale), for: .touchDown)
         
         cameraButton.addTarget(self, action: #selector(self.shutter), for: .touchDown)
     }
